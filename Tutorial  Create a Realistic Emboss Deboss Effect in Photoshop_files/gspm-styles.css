@@ -1,0 +1,1675 @@
+/**
+ * Plugin: Genesis Social Profiles Menu
+ *
+ * @author	David Decker
+ *
+ * @since	1.0
+ * @version	1.2
+ *
+ * @copyright	Copyright 2011-2012, David Decker - DECKERWEB
+ * @license	GPLv2
+ * @link	http://deckerweb.de/
+ * @package 	genesis-social-profiles-menu
+ */
+
+/* Table of Contents
+
+* Defaults
+* Paul Robert Lloyd Icon Set (PRL)
+* StudioPress Icon Set (SP)
+* Universal Space Classes for Nav, Subnav, Header Menu
+
+*/
+
+/* Defaults
+------------------------------------------------------------ */
+
+/**
+ * @section layout
+ * @css-for (sidebar min-height)
+ */
+body.gspm .widget-area ul.menu {
+	min-height: 35px !important;
+	left: 0px !important;
+}
+
+#sidebar ul.menu,
+#sidebar-alt ul.menu,
+#footer-widgets .widget_nav_menu ul li {
+	margin: 0 !important;
+}
+
+
+/* Paul Robert Lloyd Icon Set (PRL)
+------------------------------------------------------------ */
+
+/**
+ * @icon layout
+ * @css-for (icon size 16px)
+ */
+#sidebar ul.menu li.email-prl-s16,
+#sidebar ul.menu li.facebook-prl-s16,
+#sidebar ul.menu li.feed-prl-s16,
+#sidebar ul.menu li.flickr-prl-s16,
+#sidebar ul.menu li.github-prl-s16,
+#sidebar ul.menu li.google-prl-s16,
+#sidebar ul.menu li.google2-prl-s16,
+#sidebar ul.menu li.linkedin-prl-s16,
+#sidebar ul.menu li.pinterest-prl-s16,
+#sidebar ul.menu li.slideshare-prl-s16,
+#sidebar ul.menu li.twitter-prl-s16,
+#sidebar ul.menu li.youtube-prl-s16,
+#sidebar ul.menu li.xing-prl-s16,
+#sidebar-alt ul.menu li.email-prl-s16,
+#sidebar-alt ul.menu li.facebook-prl-s16,
+#sidebar-alt ul.menu li.feed-prl-s16,
+#sidebar-alt ul.menu li.flickr-prl-s16,
+#sidebar-alt ul.menu li.github-prl-s16,
+#sidebar-alt ul.menu li.google-prl-s16,
+#sidebar-alt ul.menu li.google2-prl-s16,
+#sidebar-alt ul.menu li.linkedin-prl-s16,
+#sidebar-alt ul.menu li.pinterest-prl-s16,
+#sidebar-alt ul.menu li.slideshare-prl-s16,
+#sidebar-alt ul.menu li.twitter-prl-s16,
+#sidebar-alt ul.menu li.youtube-prl-s16,
+#sidebar-alt ul.menu li.xing-prl-s16,
+#footer-widgets ul.menu li.email-prl-s16,
+#footer-widgets ul.menu li.facebook-prl-s16,
+#footer-widgets ul.menu li.feed-prl-s16,
+#footer-widgets ul.menu li.flickr-prl-s16,
+#footer-widgets ul.menu li.github-prl-s16,
+#footer-widgets ul.menu li.google-prl-s16,
+#footer-widgets ul.menu li.google2-prl-s16,
+#footer-widgets ul.menu li.linkedin-prl-s16,
+#footer-widgets ul.menu li.pinterest-prl-s16,
+#footer-widgets ul.menu li.slideshare-prl-s16,
+#footer-widgets ul.menu li.twitter-prl-s16,
+#footer-widgets ul.menu li.youtube-prl-s16,
+#footer-widgets ul.menu li.xing-prl-s16 {
+	list-style-type: none !important;
+	float: left;
+	overflow: hidden;
+	display: inline;
+}
+
+#nav li.email-prl-s16 a,
+#nav li.facebook-prl-s16 a,
+#nav li.feed-prl-s16 a,
+#nav li.flickr-prl-s16 a,
+#nav li.github-prl-s16 a,
+#nav li.google-prl-s16 a,
+#nav li.google2-prl-s16 a,
+#nav li.linkedin-prl-s16 a,
+#nav li.pinterest-prl-s16 a,
+#nav li.slideshare-prl-s16 a,
+#nav li.twitter-prl-s16 a,
+#nav li.youtube-prl-s16 a,
+#nav li.xing-prl-s16 a,
+#subnav li.email-prl-s16 a,
+#subnav li.facebook-prl-s16 a,
+#subnav li.feed-prl-s16 a,
+#subnav li.flickr-prl-s16 a,
+#subnav li.github-prl-s16 a,
+#subnav li.google-prl-s16 a,
+#subnav li.google2-prl-s16 a,
+#subnav li.linkedin-prl-s16 a,
+#subnav li.pinterest-prl-s16 a,
+#subnav li.slideshare-prl-s16 a,
+#subnav li.twitter-prl-s16 a,
+#subnav li.youtube-prl-s16 a,
+#subnav li.xing-prl-s16 a,
+#header ul.menu li.email-prl-s16 a,
+#header ul.menu li.facebook-prl-s16 a,
+#header ul.menu li.feed-prl-s16 a,
+#header ul.menu li.flickr-prl-s16 a,
+#header ul.menu li.github-prl-s16 a,
+#header ul.menu li.google-prl-s16 a,
+#header ul.menu li.google2-prl-s16 a,
+#header ul.menu li.linkedin-prl-s16 a,
+#header ul.menu li.pinterest-prl-s16 a,
+#header ul.menu li.slideshare-prl-s16 a,
+#header ul.menu li.twitter-prl-s16 a,
+#header ul.menu li.youtube-prl-s16 a,
+#header ul.menu li.xing-prl-s16 a {
+	background: transparent url(../icon-sets/prl-sprites/prl-sprite-s16.png) 0 0 no-repeat;
+	display: block;
+	margin: 2px 3px;
+	padding: 0;
+	text-indent: -9999px;
+	vertical-align: middle !important;
+	width: 16px;
+	min-height: 16px !important;
+	opacity: 0.77;
+}
+
+#sidebar ul.menu li.email-prl-s16 a,
+#sidebar ul.menu li.facebook-prl-s16 a,
+#sidebar ul.menu li.feed-prl-s16 a,
+#sidebar ul.menu li.flickr-prl-s16 a,
+#sidebar ul.menu li.github-prl-s16 a,
+#sidebar ul.menu li.google-prl-s16 a,
+#sidebar ul.menu li.google2-prl-s16 a,
+#sidebar ul.menu li.linkedin-prl-s16 a,
+#sidebar ul.menu li.pinterest-prl-s16 a,
+#sidebar ul.menu li.slideshare-prl-s16 a,
+#sidebar ul.menu li.twitter-prl-s16 a,
+#sidebar ul.menu li.youtube-prl-s16 a,
+#sidebar ul.menu li.xing-prl-s16 a,
+#sidebar-alt ul.menu li.email-prl-s16 a,
+#sidebar-alt ul.menu li.facebook-prl-s16 a,
+#sidebar-alt ul.menu li.feed-prl-s16 a,
+#sidebar-alt ul.menu li.flickr-prl-s16 a,
+#sidebar-alt ul.menu li.github-prl-s16 a,
+#sidebar-alt ul.menu li.google-prl-s16 a,
+#sidebar-alt ul.menu li.google2-prl-s16 a,
+#sidebar-alt ul.menu li.linkedin-prl-s16 a,
+#sidebar-alt ul.menu li.pinterest-prl-s16 a,
+#sidebar-alt ul.menu li.slideshare-prl-s16 a,
+#sidebar-alt ul.menu li.twitter-prl-s16 a,
+#sidebar-alt ul.menu li.youtube-prl-s16 a,
+#sidebar-alt ul.menu li.xing-prl-s16 a,
+#footer-widgets ul.menu li.email-prl-s16 a,
+#footer-widgets ul.menu li.facebook-prl-s16 a,
+#footer-widgets ul.menu li.feed-prl-s16 a,
+#footer-widgets ul.menu li.flickr-prl-s16 a,
+#footer-widgets ul.menu li.github-prl-s16 a,
+#footer-widgets ul.menu li.google-prl-s16 a,
+#footer-widgets ul.menu li.google2-prl-s16 a,
+#footer-widgets ul.menu li.linkedin-prl-s16 a,
+#footer-widgets ul.menu li.pinterest-prl-s16 a,
+#footer-widgets ul.menu li.slideshare-prl-s16 a,
+#footer-widgets ul.menu li.twitter-prl-s16 a,
+#footer-widgets ul.menu li.youtube-prl-s16 a,
+#footer-widgets ul.menu li.xing-prl-s16 a {
+	background: transparent url(../icon-sets/prl-sprites/prl-sprite-s16.png) 0 0 no-repeat;
+	display: block;
+	margin: 2px 3px !important;
+	padding: 0;
+	text-indent: -9999px;
+	width: 16px;
+	height: 16px;
+	opacity: 0.77;
+}
+
+#nav li.email-prl-s16 a:hover,
+#nav li.facebook-prl-s16 a:hover,
+#nav li.feed-prl-s16 a:hover,
+#nav li.flickr-prl-s16 a:hover,
+#nav li.github-prl-s16 a:hover,
+#nav li.google-prl-s16 a:hover,
+#nav li.google2-prl-s16 a:hover,
+#nav li.linkedin-prl-s16 a:hover,
+#nav li.pinterest-prl-s16 a:hover,
+#nav li.slideshare-prl-s16 a:hover,
+#nav li.twitter-prl-s16 a:hover,
+#nav li.youtube-prl-s16 a:hover,
+#nav li.xing-prl-s16 a:hover,
+#subnav li.email-prl-s16 a:hover,
+#subnav li.facebook-prl-s16 a:hover,
+#subnav li.feed-prl-s16 a:hover,
+#subnav li.flickr-prl-s16 a:hover,
+#subnav li.github-prl-s16 a:hover,
+#subnav li.google-prl-s16 a:hover,
+#subnav li.google2-prl-s16 a:hover,
+#subnav li.linkedin-prl-s16 a:hover,
+#subnav li.pinterest-prl-s16 a:hover,
+#subnav li.slideshare-prl-s16 a:hover,
+#subnav li.twitter-prl-s16 a:hover,
+#subnav li.youtube-prl-s16 a:hover,
+#subnav li.xing-prl-s16 a:hover,
+#header ul.menu li.email-prl-s16 a:hover,
+#header ul.menu li.facebook-prl-s16 a:hover,
+#header ul.menu li.feed-prl-s16 a:hover,
+#header ul.menu li.flickr-prl-s16 a:hover,
+#header ul.menu li.github-prl-s16 a:hover,
+#header ul.menu li.google-prl-s16 a:hover,
+#header ul.menu li.google2-prl-s16 a:hover,
+#header ul.menu li.linkedin-prl-s16 a:hover,
+#header ul.menu li.pinterest-prl-s16 a:hover,
+#header ul.menu li.slideshare-prl-s16 a:hover,
+#header ul.menu li.twitter-prl-s16 a:hover,
+#header ul.menu li.youtube-prl-s16 a:hover,
+#header ul.menu li.xing-prl-s16 a:hover,
+#sidebar ul.menu li.email-prl-s16 a:hover,
+#sidebar ul.menu li.facebook-prl-s16 a:hover,
+#sidebar ul.menu li.feed-prl-s16 a:hover,
+#sidebar ul.menu li.flickr-prl-s16 a:hover,
+#sidebar ul.menu li.github-prl-s16 a:hover,
+#sidebar ul.menu li.google-prl-s16 a:hover,
+#sidebar ul.menu li.google2-prl-s16 a:hover,
+#sidebar ul.menu li.linkedin-prl-s16 a:hover,
+#sidebar ul.menu li.pinterest-prl-s16 a:hover,
+#sidebar ul.menu li.slideshare-prl-s16 a:hover,
+#sidebar ul.menu li.twitter-prl-s16 a:hover,
+#sidebar ul.menu li.youtube-prl-s16 a:hover,
+#sidebar ul.menu li.xing-prl-s16 a:hover,
+#sidebar-alt ul.menu li.email-prl-s16 a:hover,
+#sidebar-alt ul.menu li.facebook-prl-s16 a:hover,
+#sidebar-alt ul.menu li.feed-prl-s16 a:hover,
+#sidebar-alt ul.menu li.flickr-prl-s16 a:hover,
+#sidebar-alt ul.menu li.github-prl-s16 a:hover,
+#sidebar-alt ul.menu li.google-prl-s16 a:hover,
+#sidebar-alt ul.menu li.google2-prl-s16 a:hover,
+#sidebar-alt ul.menu li.linkedin-prl-s16 a:hover,
+#sidebar-alt ul.menu li.pinterest-prl-s16 a:hover,
+#sidebar-alt ul.menu li.slideshare-prl-s16 a:hover,
+#sidebar-alt ul.menu li.twitter-prl-s16 a:hover,
+#sidebar-alt ul.menu li.youtube-prl-s16 a:hover,
+#sidebar-alt ul.menu li.xing-prl-s16 a:hover,
+#footer-widgets ul.menu li.email-prl-s16 a:hover,
+#footer-widgets ul.menu li.facebook-prl-s16 a:hover,
+#footer-widgets ul.menu li.feed-prl-s16 a:hover,
+#footer-widgets ul.menu li.flickr-prl-s16 a:hover,
+#footer-widgets ul.menu li.github-prl-s16 a:hover,
+#footer-widgets ul.menu li.google-prl-s16 a:hover,
+#footer-widgets ul.menu li.google2-prl-s16 a:hover,
+#footer-widgets ul.menu li.linkedin-prl-s16 a:hover,
+#footer-widgets ul.menu li.pinterest-prl-s16 a:hover,
+#footer-widgets ul.menu li.slideshare-prl-s16 a:hover,
+#footer-widgets ul.menu li.twitter-prl-s16 a:hover,
+#footer-widgets ul.menu li.youtube-prl-s16 a:hover,
+#footer-widgets ul.menu li.xing-prl-s16 a:hover {
+	border: none;
+	opacity: 1;
+}
+
+#nav li.email-prl-s16 a,
+#subnav li.email-prl-s16 a,
+#header ul.menu li.email-prl-s16 a,
+#sidebar ul.menu li.email-prl-s16 a,
+#sidebar-alt ul.menu li.email-prl-s16 a,
+#footer-widgets ul.menu li.email-prl-s16 a {
+	background-position: -2px -2px;
+}
+
+#nav li.facebook-prl-s16 a,
+#subnav li.facebook-prl-s16 a,
+#header ul.menu li.facebook-prl-s16 a,
+#sidebar ul.menu li.facebook-prl-s16 a,
+#sidebar-alt ul.menu li.facebook-prl-s16 a,
+#footer-widgets ul.menu li.facebook-prl-s16 a {
+	background-position: -42px -2px;
+}
+
+#nav li.feed-prl-s16 a,
+#subnav li.feed-prl-s16 a,
+#header ul.menu li.feed-prl-s16 a,
+#sidebar ul.menu li.feed-prl-s16 a,
+#sidebar-alt ul.menu li.feed-prl-s16 a,
+#footer-widgets ul.menu li.feed-prl-s16 a {
+	background-position: -22px -2px;
+}
+
+#nav li.flickr-prl-s16 a,
+#subnav li.flickr-prl-s16 a,
+#header ul.menu li.flickr-prl-s16 a,
+#sidebar ul.menu li.flickr-prl-s16 a,
+#sidebar-alt ul.menu li.flickr-prl-s16 a,
+#footer-widgets ul.menu li.flickr-prl-s16 a {
+	background-position: -62px -2px;
+}
+
+#nav li.github-prl-s16 a,
+#subnav li.github-prl-s16 a,
+#header ul.menu li.github-prl-s16 a,
+#sidebar ul.menu li.github-prl-s16 a,
+#sidebar-alt ul.menu li.github-prl-s16 a,
+#footer-widgets ul.menu li.github-prl-s16 a {
+	background-position: -82px -2px;
+}
+
+#nav li.google-prl-s16 a,
+#subnav li.google-prl-s16 a,
+#header ul.menu li.google-prl-s16 a,
+#sidebar ul.menu li.google-prl-s16 a,
+#sidebar-alt ul.menu li.google-prl-s16 a,
+#footer-widgets ul.menu li.google-prl-s16 a {
+	background-position: -102px -2px;
+}
+
+#nav li.google2-prl-s16 a,
+#subnav li.google2-prl-s16 a,
+#header ul.menu li.google2-prl-s16 a,
+#sidebar ul.menu li.google2-prl-s16 a,
+#sidebar-alt ul.menu li.google2-prl-s16 a,
+#footer-widgets ul.menu li.google2-prl-s16 a {
+	background-position: -122px -2px;
+}
+
+#nav li.linkedin-prl-s16 a,
+#subnav li.linkedin-prl-s16 a,
+#header ul.menu li.linkedin-prl-s16 a,
+#sidebar ul.menu li.linkedin-prl-s16 a,
+#sidebar-alt ul.menu li.linkedin-prl-s16 a,
+#footer-widgets ul.menu li.linkedin-prl-s16 a {
+	background-position: -142px -2px;
+}
+
+#nav li.pinterest-prl-s16 a,
+#subnav li.pinterest-prl-s16 a,
+#header ul.menu li.pinterest-prl-s16 a,
+#sidebar ul.menu li.pinterest-prl-s16 a,
+#sidebar-alt ul.menu li.pinterest-prl-s16 a,
+#footer-widgets ul.menu li.pinterest-prl-s16 a {
+	background-position: -162px -2px;
+}
+
+#nav li.slideshare-prl-s16 a,
+#subnav li.slideshare-prl-s16 a,
+#header ul.menu li.slideshare-prl-s16 a,
+#sidebar ul.menu li.slideshare-prl-s16 a,
+#sidebar-alt ul.menu li.slideshare-prl-s16 a,
+#footer-widgets ul.menu li.slideshare-prl-s16 a {
+	background-position: -182px -2px;
+}
+
+#nav li.twitter-prl-s16 a,
+#subnav li.twitter-prl-s16 a,
+#header ul.menu li.twitter-prl-s16 a,
+#sidebar ul.menu li.twitter-prl-s16 a,
+#sidebar-alt ul.menu li.twitter-prl-s16 a,
+#footer-widgets ul.menu li.twitter-prl-s16 a {
+	background-position: -202px -2px;
+}
+
+#nav li.xing-prl-s16 a,
+#subnav li.xing-prl-s16 a,
+#header ul.menu li.xing-prl-s16 a,
+#sidebar ul.menu li.xing-prl-s16 a,
+#sidebar-alt ul.menu li.xing-prl-s16 a,
+#footer-widgets ul.menu li.xing-prl-s16 a {
+	background-position: -222px -2px;
+}
+
+#nav li.youtube-prl-s16 a,
+#subnav li.youtube-prl-s16 a,
+#header ul.menu li.youtube-prl-s16 a,
+#sidebar ul.menu li.youtube-prl-s16 a,
+#sidebar-alt ul.menu li.youtube-prl-s16 a,
+#footer-widgets ul.menu li.youtube-prl-s16 a {
+	background-position: -242px -2px;
+}
+
+/**
+ * @icon layout
+ * @css-for (icon size 24px)
+ */
+#sidebar ul.menu li.email-prl-s24,
+#sidebar ul.menu li.facebook-prl-s24,
+#sidebar ul.menu li.feed-prl-s24,
+#sidebar ul.menu li.flickr-prl-s24,
+#sidebar ul.menu li.github-prl-s24,
+#sidebar ul.menu li.google-prl-s24,
+#sidebar ul.menu li.google2-prl-s24,
+#sidebar ul.menu li.linkedin-prl-s24,
+#sidebar ul.menu li.pinterest-prl-s24,
+#sidebar ul.menu li.slideshare-prl-s24,
+#sidebar ul.menu li.twitter-prl-s24,
+#sidebar ul.menu li.youtube-prl-s24,
+#sidebar ul.menu li.xing-prl-s24,
+#sidebar-alt ul.menu li.email-prl-s24,
+#sidebar-alt ul.menu li.facebook-prl-s24,
+#sidebar-alt ul.menu li.feed-prl-s24,
+#sidebar-alt ul.menu li.flickr-prl-s24,
+#sidebar-alt ul.menu li.github-prl-s24,
+#sidebar-alt ul.menu li.google-prl-s24,
+#sidebar-alt ul.menu li.google2-prl-s24,
+#sidebar-alt ul.menu li.linkedin-prl-s24,
+#sidebar-alt ul.menu li.pinterest-prl-s24,
+#sidebar-alt ul.menu li.slideshare-prl-s24,
+#sidebar-alt ul.menu li.twitter-prl-s24,
+#sidebar-alt ul.menu li.youtube-prl-s24,
+#sidebar-alt ul.menu li.xing-prl-s24,
+#footer-widgets ul.menu li.email-prl-s24,
+#footer-widgets ul.menu li.facebook-prl-s24,
+#footer-widgets ul.menu li.feed-prl-s24,
+#footer-widgets ul.menu li.flickr-prl-s24,
+#footer-widgets ul.menu li.github-prl-s24,
+#footer-widgets ul.menu li.google-prl-s24,
+#footer-widgets ul.menu li.google2-prl-s24,
+#footer-widgets ul.menu li.linkedin-prl-s24,
+#footer-widgets ul.menu li.pinterest-prl-s24,
+#footer-widgets ul.menu li.slideshare-prl-s24,
+#footer-widgets ul.menu li.twitter-prl-s24,
+#footer-widgets ul.menu li.youtube-prl-s24,
+#footer-widgets ul.menu li.xing-prl-s24 {
+	list-style-type: none !important;
+	float: left;
+	overflow: hidden;
+	display: inline;
+}
+
+#nav li.email-prl-s24 a,
+#nav li.facebook-prl-s24 a,
+#nav li.feed-prl-s24 a,
+#nav li.flickr-prl-s24 a,
+#nav li.github-prl-s24 a,
+#nav li.google-prl-s24 a,
+#nav li.google2-prl-s24 a,
+#nav li.linkedin-prl-s24 a,
+#nav li.pinterest-prl-s24 a,
+#nav li.slideshare-prl-s24 a,
+#nav li.twitter-prl-s24 a,
+#nav li.youtube-prl-s24 a,
+#nav li.xing-prl-s24 a,
+#subnav li.email-prl-s24 a,
+#subnav li.facebook-prl-s24 a,
+#subnav li.feed-prl-s24 a,
+#subnav li.flickr-prl-s24 a,
+#subnav li.github-prl-s24 a,
+#subnav li.google-prl-s24 a,
+#subnav li.google2-prl-s24 a,
+#subnav li.linkedin-prl-s24 a,
+#subnav li.pinterest-prl-s24 a,
+#subnav li.slideshare-prl-s24 a,
+#subnav li.twitter-prl-s24 a,
+#subnav li.youtube-prl-s24 a,
+#subnav li.xing-prl-s24 a,
+#header ul.menu li.email-prl-s24 a,
+#header ul.menu li.facebook-prl-s24 a,
+#header ul.menu li.feed-prl-s24 a,
+#header ul.menu li.flickr-prl-s24 a,
+#header ul.menu li.github-prl-s24 a,
+#header ul.menu li.google-prl-s24 a,
+#header ul.menu li.google2-prl-s24 a,
+#header ul.menu li.linkedin-prl-s24 a,
+#header ul.menu li.pinterest-prl-s24 a,
+#header ul.menu li.slideshare-prl-s24 a,
+#header ul.menu li.twitter-prl-s24 a,
+#header ul.menu li.youtube-prl-s24 a,
+#header ul.menu li.xing-prl-s24 a {
+	background: transparent url(../icon-sets/prl-sprites/prl-sprite-s24.png) 0 0 no-repeat;
+	display: block;
+	margin: 2px 3px;
+	padding: 0;
+	text-indent: -9999px;
+	vertical-align: middle !important;
+	width: 24px;
+	min-height: 24px !important;
+	opacity: 0.77;
+}
+
+#sidebar ul.menu li.email-prl-s24 a,
+#sidebar ul.menu li.facebook-prl-s24 a,
+#sidebar ul.menu li.feed-prl-s24 a,
+#sidebar ul.menu li.flickr-prl-s24 a,
+#sidebar ul.menu li.github-prl-s24 a,
+#sidebar ul.menu li.google-prl-s24 a,
+#sidebar ul.menu li.google2-prl-s24 a,
+#sidebar ul.menu li.linkedin-prl-s24 a,
+#sidebar ul.menu li.pinterest-prl-s24 a,
+#sidebar ul.menu li.slideshare-prl-s24 a,
+#sidebar ul.menu li.twitter-prl-s24 a,
+#sidebar ul.menu li.youtube-prl-s24 a,
+#sidebar ul.menu li.xing-prl-s24 a,
+#sidebar-alt ul.menu li.email-prl-s24 a,
+#sidebar-alt ul.menu li.facebook-prl-s24 a,
+#sidebar-alt ul.menu li.feed-prl-s24 a,
+#sidebar-alt ul.menu li.flickr-prl-s24 a,
+#sidebar-alt ul.menu li.github-prl-s24 a,
+#sidebar-alt ul.menu li.google-prl-s24 a,
+#sidebar-alt ul.menu li.google2-prl-s24 a,
+#sidebar-alt ul.menu li.linkedin-prl-s24 a,
+#sidebar-alt ul.menu li.pinterest-prl-s24 a,
+#sidebar-alt ul.menu li.slideshare-prl-s24 a,
+#sidebar-alt ul.menu li.twitter-prl-s24 a,
+#sidebar-alt ul.menu li.youtube-prl-s24 a,
+#sidebar-alt ul.menu li.xing-prl-s24 a,
+#footer-widgets ul.menu li.email-prl-s24 a,
+#footer-widgets ul.menu li.facebook-prl-s24 a,
+#footer-widgets ul.menu li.feed-prl-s24 a,
+#footer-widgets ul.menu li.flickr-prl-s24 a,
+#footer-widgets ul.menu li.github-prl-s24 a,
+#footer-widgets ul.menu li.google-prl-s24 a,
+#footer-widgets ul.menu li.google2-prl-s24 a,
+#footer-widgets ul.menu li.linkedin-prl-s24 a,
+#footer-widgets ul.menu li.pinterest-prl-s24 a,
+#footer-widgets ul.menu li.slideshare-prl-s24 a,
+#footer-widgets ul.menu li.twitter-prl-s24 a,
+#footer-widgets ul.menu li.youtube-prl-s24 a,
+#footer-widgets ul.menu li.xing-prl-s24 a {
+	background: transparent url(../icon-sets/prl-sprites/prl-sprite-s24.png) 0 0 no-repeat;
+	display: block;
+	margin: 2px 3px !important;
+	padding: 0;
+	text-indent: -9999px;
+	width: 24px;
+	height: 24px;
+	opacity: 0.77;
+}
+
+#nav li.email-prl-s24 a:hover,
+#nav li.facebook-prl-s24 a:hover,
+#nav li.feed-prl-s24 a:hover,
+#nav li.flickr-prl-s24 a:hover,
+#nav li.github-prl-s24 a:hover,
+#nav li.google-prl-s24 a:hover,
+#nav li.google2-prl-s24 a:hover,
+#nav li.linkedin-prl-s24 a:hover,
+#nav li.pinterest-prl-s24 a:hover,
+#nav li.slideshare-prl-s24 a:hover,
+#nav li.twitter-prl-s24 a:hover,
+#nav li.youtube-prl-s24 a:hover,
+#nav li.xing-prl-s24 a:hover,
+#subnav li.email-prl-s24 a:hover,
+#subnav li.facebook-prl-s24 a:hover,
+#subnav li.feed-prl-s24 a:hover,
+#subnav li.flickr-prl-s24 a:hover,
+#subnav li.github-prl-s24 a:hover,
+#subnav li.google-prl-s24 a:hover,
+#subnav li.google2-prl-s24 a:hover,
+#subnav li.linkedin-prl-s24 a:hover,
+#subnav li.pinterest-prl-s24 a:hover,
+#subnav li.slideshare-prl-s24 a:hover,
+#subnav li.twitter-prl-s24 a:hover,
+#subnav li.youtube-prl-s24 a:hover,
+#subnav li.xing-prl-s24 a:hover,
+#header ul.menu li.email-prl-s24 a:hover,
+#header ul.menu li.facebook-prl-s24 a:hover,
+#header ul.menu li.feed-prl-s24 a:hover,
+#header ul.menu li.flickr-prl-s24 a:hover,
+#header ul.menu li.github-prl-s24 a:hover,
+#header ul.menu li.google-prl-s24 a:hover,
+#header ul.menu li.google2-prl-s24 a:hover,
+#header ul.menu li.linkedin-prl-s24 a:hover,
+#header ul.menu li.pinterest-prl-s24 a:hover,
+#header ul.menu li.slideshare-prl-s24 a:hover,
+#header ul.menu li.twitter-prl-s24 a:hover,
+#header ul.menu li.youtube-prl-s24 a:hover,
+#header ul.menu li.xing-prl-s24 a:hover,
+#sidebar ul.menu li.email-prl-s24 a:hover,
+#sidebar ul.menu li.facebook-prl-s24 a:hover,
+#sidebar ul.menu li.feed-prl-s24 a:hover,
+#sidebar ul.menu li.flickr-prl-s24 a:hover,
+#sidebar ul.menu li.github-prl-s24 a:hover,
+#sidebar ul.menu li.google-prl-s24 a:hover,
+#sidebar ul.menu li.google2-prl-s24 a:hover,
+#sidebar ul.menu li.linkedin-prl-s24 a:hover,
+#sidebar ul.menu li.pinterest-prl-s24 a:hover,
+#sidebar ul.menu li.slideshare-prl-s24 a:hover,
+#sidebar ul.menu li.twitter-prl-s24 a:hover,
+#sidebar ul.menu li.youtube-prl-s24 a:hover,
+#sidebar ul.menu li.xing-prl-s24 a:hover,
+#sidebar-alt ul.menu li.email-prl-s24 a:hover,
+#sidebar-alt ul.menu li.facebook-prl-s24 a:hover,
+#sidebar-alt ul.menu li.feed-prl-s24 a:hover,
+#sidebar-alt ul.menu li.flickr-prl-s24 a:hover,
+#sidebar-alt ul.menu li.github-prl-s24 a:hover,
+#sidebar-alt ul.menu li.google-prl-s24 a:hover,
+#sidebar-alt ul.menu li.google2-prl-s24 a:hover,
+#sidebar-alt ul.menu li.linkedin-prl-s24 a:hover,
+#sidebar-alt ul.menu li.pinterest-prl-s24 a:hover,
+#sidebar-alt ul.menu li.slideshare-prl-s24 a:hover,
+#sidebar-alt ul.menu li.twitter-prl-s24 a:hover,
+#sidebar-alt ul.menu li.youtube-prl-s24 a:hover,
+#sidebar-alt ul.menu li.xing-prl-s24 a:hover,
+#footer-widgets ul.menu li.email-prl-s24 a:hover,
+#footer-widgets ul.menu li.facebook-prl-s24 a:hover,
+#footer-widgets ul.menu li.feed-prl-s24 a:hover,
+#footer-widgets ul.menu li.flickr-prl-s24 a:hover,
+#footer-widgets ul.menu li.github-prl-s24 a:hover,
+#footer-widgets ul.menu li.google-prl-s24 a:hover,
+#footer-widgets ul.menu li.google2-prl-s24 a:hover,
+#footer-widgets ul.menu li.linkedin-prl-s24 a:hover,
+#footer-widgets ul.menu li.pinterest-prl-s24 a:hover,
+#footer-widgets ul.menu li.slideshare-prl-s24 a:hover,
+#footer-widgets ul.menu li.twitter-prl-s24 a:hover,
+#footer-widgets ul.menu li.youtube-prl-s24 a:hover,
+#footer-widgets ul.menu li.xing-prl-s24 a:hover {
+	border: none;
+	opacity: 1;
+}
+
+#nav li.email-prl-s24 a,
+#subnav li.email-prl-s24 a,
+#header ul.menu li.email-prl-s24 a,
+#sidebar ul.menu li.email-prl-s24 a,
+#sidebar-alt ul.menu li.email-prl-s24 a,
+#footer-widgets ul.menu li.email-prl-s24 a {
+	background-position: -3px -3px;
+}
+
+#nav li.facebook-prl-s24 a,
+#subnav li.facebook-prl-s24 a,
+#header ul.menu li.facebook-prl-s24 a,
+#sidebar ul.menu li.facebook-prl-s24 a,
+#sidebar-alt ul.menu li.facebook-prl-s24 a,
+#footer-widgets ul.menu li.facebook-prl-s24 a {
+	background-position: -63px -3px;
+}
+
+#nav li.feed-prl-s24 a,
+#subnav li.feed-prl-s24 a,
+#header ul.menu li.feed-prl-s24 a,
+#sidebar ul.menu li.feed-prl-s24 a,
+#sidebar-alt ul.menu li.feed-prl-s24 a,
+#footer-widgets ul.menu li.feed-prl-s24 a {
+	background-position: -33px -3px;
+}
+
+#nav li.flickr-prl-s24 a,
+#subnav li.flickr-prl-s24 a,
+#header ul.menu li.flickr-prl-s24 a,
+#sidebar ul.menu li.flickr-prl-s24 a,
+#sidebar-alt ul.menu li.flickr-prl-s24 a,
+#footer-widgets ul.menu li.flickr-prl-s24 a {
+	background-position: -93px -3px;
+}
+
+#nav li.github-prl-s24 a,
+#subnav li.github-prl-s24 a,
+#header ul.menu li.github-prl-s24 a,
+#sidebar ul.menu li.github-prl-s24 a,
+#sidebar-alt ul.menu li.github-prl-s24 a,
+#footer-widgets ul.menu li.github-prl-s24 a {
+	background-position: -123px -3px;
+}
+
+#nav li.google-prl-s24 a,
+#subnav li.google-prl-s24 a,
+#header ul.menu li.google-prl-s24 a,
+#sidebar ul.menu li.google-prl-s24 a,
+#sidebar-alt ul.menu li.google-prl-s24 a,
+#footer-widgets ul.menu li.google-prl-s24 a {
+	background-position: -153px -3px;
+}
+
+#nav li.google2-prl-s24 a,
+#subnav li.google2-prl-s24 a,
+#header ul.menu li.google2-prl-s24 a,
+#sidebar ul.menu li.google2-prl-s24 a,
+#sidebar-alt ul.menu li.google2-prl-s24 a,
+#footer-widgets ul.menu li.google2-prl-s24 a {
+	background-position: -183px -3px;
+}
+
+#nav li.linkedin-prl-s24 a,
+#subnav li.linkedin-prl-s24 a,
+#header ul.menu li.linkedin-prl-s24 a,
+#sidebar ul.menu li.linkedin-prl-s24 a,
+#sidebar-alt ul.menu li.linkedin-prl-s24 a,
+#footer-widgets ul.menu li.linkedin-prl-s24 a {
+	background-position: -213px -3px;
+}
+
+#nav li.pinterest-prl-s24 a,
+#subnav li.pinterest-prl-s24 a,
+#header ul.menu li.pinterest-prl-s24 a,
+#sidebar ul.menu li.pinterest-prl-s24 a,
+#sidebar-alt ul.menu li.pinterest-prl-s24 a,
+#footer-widgets ul.menu li.pinterest-prl-s24 a {
+	background-position: -243px -3px;
+}
+
+#nav li.slideshare-prl-s24 a,
+#subnav li.slideshare-prl-s24 a,
+#header ul.menu li.slideshare-prl-s24 a,
+#sidebar ul.menu li.slideshare-prl-s24 a,
+#sidebar-alt ul.menu li.slideshare-prl-s24 a,
+#footer-widgets ul.menu li.slideshare-prl-s24 a {
+	background-position: -273px -3px;
+}
+
+#nav li.twitter-prl-s24 a,
+#subnav li.twitter-prl-s24 a,
+#header ul.menu li.twitter-prl-s24 a,
+#sidebar ul.menu li.twitter-prl-s24 a,
+#sidebar-alt ul.menu li.twitter-prl-s24 a,
+#footer-widgets ul.menu li.twitter-prl-s24 a {
+	background-position: -303px -3px;
+}
+
+#nav li.xing-prl-s24 a,
+#subnav li.xing-prl-s24 a,
+#header ul.menu li.xing-prl-s24 a,
+#sidebar ul.menu li.xing-prl-s24 a,
+#sidebar-alt ul.menu li.xing-prl-s24 a,
+#footer-widgets ul.menu li.xing-prl-s24 a {
+	background-position: -333px -3px;
+}
+
+#nav li.youtube-prl-s24 a,
+#subnav li.youtube-prl-s24 a,
+#header ul.menu li.youtube-prl-s24 a,
+#sidebar ul.menu li.youtube-prl-s24 a,
+#sidebar-alt ul.menu li.youtube-prl-s24 a,
+#footer-widgets ul.menu li.youtube-prl-s24 a {
+	background-position: -363px -3px;
+}
+
+/**
+ * @icon layout
+ * @css-for (icon size 32px)
+ */
+#sidebar ul.menu li.email-prl-s32,
+#sidebar ul.menu li.facebook-prl-s32,
+#sidebar ul.menu li.feed-prl-s32,
+#sidebar ul.menu li.flickr-prl-s32,
+#sidebar ul.menu li.github-prl-s32,
+#sidebar ul.menu li.google-prl-s32,
+#sidebar ul.menu li.google2-prl-s32,
+#sidebar ul.menu li.linkedin-prl-s32,
+#sidebar ul.menu li.pinterest-prl-s32,
+#sidebar ul.menu li.slideshare-prl-s32,
+#sidebar ul.menu li.twitter-prl-s32,
+#sidebar ul.menu li.youtube-prl-s32,
+#sidebar ul.menu li.xing-prl-s32,
+#sidebar-alt ul.menu li.email-prl-s32,
+#sidebar-alt ul.menu li.facebook-prl-s32,
+#sidebar-alt ul.menu li.feed-prl-s32,
+#sidebar-alt ul.menu li.flickr-prl-s32,
+#sidebar-alt ul.menu li.github-prl-s32,
+#sidebar-alt ul.menu li.google-prl-s32,
+#sidebar-alt ul.menu li.google2-prl-s32,
+#sidebar-alt ul.menu li.linkedin-prl-s32,
+#sidebar-alt ul.menu li.pinterest-prl-s32,
+#sidebar-alt ul.menu li.slideshare-prl-s32,
+#sidebar-alt ul.menu li.twitter-prl-s32,
+#sidebar-alt ul.menu li.youtube-prl-s32,
+#sidebar-alt ul.menu li.xing-prl-s32,
+#footer-widgets ul.menu li.email-prl-s32,
+#footer-widgets ul.menu li.facebook-prl-s32,
+#footer-widgets ul.menu li.feed-prl-s32,
+#footer-widgets ul.menu li.flickr-prl-s32,
+#footer-widgets ul.menu li.github-prl-s32,
+#footer-widgets ul.menu li.google-prl-s32,
+#footer-widgets ul.menu li.google2-prl-s32,
+#footer-widgets ul.menu li.linkedin-prl-s32,
+#footer-widgets ul.menu li.pinterest-prl-s32,
+#footer-widgets ul.menu li.slideshare-prl-s32,
+#footer-widgets ul.menu li.twitter-prl-s32,
+#footer-widgets ul.menu li.youtube-prl-s32,
+#footer-widgets ul.menu li.xing-prl-s32 {
+	list-style-type: none !important;
+	float: left;
+	overflow: hidden;
+	display: inline;
+}
+
+#nav li.email-prl-s32 a,
+#nav li.facebook-prl-s32 a,
+#nav li.feed-prl-s32 a,
+#nav li.flickr-prl-s32 a,
+#nav li.github-prl-s32 a,
+#nav li.google-prl-s32 a,
+#nav li.google2-prl-s32 a,
+#nav li.linkedin-prl-s32 a,
+#nav li.pinterest-prl-s32 a,
+#nav li.slideshare-prl-s32 a,
+#nav li.twitter-prl-s32 a,
+#nav li.youtube-prl-s32 a,
+#nav li.xing-prl-s32 a,
+#subnav li.email-prl-s32 a,
+#subnav li.facebook-prl-s32 a,
+#subnav li.feed-prl-s32 a,
+#subnav li.flickr-prl-s32 a,
+#subnav li.github-prl-s32 a,
+#subnav li.google-prl-s32 a,
+#subnav li.google2-prl-s32 a,
+#subnav li.linkedin-prl-s32 a,
+#subnav li.pinterest-prl-s32 a,
+#subnav li.slideshare-prl-s32 a,
+#subnav li.twitter-prl-s32 a,
+#subnav li.youtube-prl-s32 a,
+#subnav li.xing-prl-s32 a,
+#header ul.menu li.email-prl-s32 a,
+#header ul.menu li.facebook-prl-s32 a,
+#header ul.menu li.feed-prl-s32 a,
+#header ul.menu li.flickr-prl-s32 a,
+#header ul.menu li.github-prl-s32 a,
+#header ul.menu li.google-prl-s32 a,
+#header ul.menu li.google2-prl-s32 a,
+#header ul.menu li.linkedin-prl-s32 a,
+#header ul.menu li.pinterest-prl-s32 a,
+#header ul.menu li.slideshare-prl-s32 a,
+#header ul.menu li.twitter-prl-s32 a,
+#header ul.menu li.youtube-prl-s32 a,
+#header ul.menu li.xing-prl-s32 a {
+	background: transparent url(../icon-sets/prl-sprites/prl-sprite-s32.png) 0 0 no-repeat;
+	display: block;
+	margin: 2px 3px;
+	padding: 0;
+	text-indent: -9999px;
+	vertical-align: middle !important;
+	width: 32px;
+	min-height: 32px !important;
+	opacity: 0.77;
+}
+
+#sidebar ul.menu li.email-prl-s32 a,
+#sidebar ul.menu li.facebook-prl-s32 a,
+#sidebar ul.menu li.feed-prl-s32 a,
+#sidebar ul.menu li.flickr-prl-s32 a,
+#sidebar ul.menu li.github-prl-s32 a,
+#sidebar ul.menu li.google-prl-s32 a,
+#sidebar ul.menu li.google2-prl-s32 a,
+#sidebar ul.menu li.linkedin-prl-s32 a,
+#sidebar ul.menu li.pinterest-prl-s32 a,
+#sidebar ul.menu li.slideshare-prl-s32 a,
+#sidebar ul.menu li.twitter-prl-s32 a,
+#sidebar ul.menu li.youtube-prl-s32 a,
+#sidebar ul.menu li.xing-prl-s32 a,
+#sidebar-alt ul.menu li.email-prl-s32 a,
+#sidebar-alt ul.menu li.facebook-prl-s32 a,
+#sidebar-alt ul.menu li.feed-prl-s32 a,
+#sidebar-alt ul.menu li.flickr-prl-s32 a,
+#sidebar-alt ul.menu li.github-prl-s32 a,
+#sidebar-alt ul.menu li.google-prl-s32 a,
+#sidebar-alt ul.menu li.google2-prl-s32 a,
+#sidebar-alt ul.menu li.linkedin-prl-s32 a,
+#sidebar-alt ul.menu li.pinterest-prl-s32 a,
+#sidebar-alt ul.menu li.slideshare-prl-s32 a,
+#sidebar-alt ul.menu li.twitter-prl-s32 a,
+#sidebar-alt ul.menu li.youtube-prl-s32 a,
+#sidebar-alt ul.menu li.xing-prl-s32 a,
+#footer-widgets ul.menu li.email-prl-s32 a,
+#footer-widgets ul.menu li.facebook-prl-s32 a,
+#footer-widgets ul.menu li.feed-prl-s32 a,
+#footer-widgets ul.menu li.flickr-prl-s32 a,
+#footer-widgets ul.menu li.github-prl-s32 a,
+#footer-widgets ul.menu li.google-prl-s32 a,
+#footer-widgets ul.menu li.google2-prl-s32 a,
+#footer-widgets ul.menu li.linkedin-prl-s32 a,
+#footer-widgets ul.menu li.pinterest-prl-s32 a,
+#footer-widgets ul.menu li.slideshare-prl-s32 a,
+#footer-widgets ul.menu li.twitter-prl-s32 a,
+#footer-widgets ul.menu li.youtube-prl-s32 a,
+#footer-widgets ul.menu li.xing-prl-s32 a {
+	background: transparent url(../icon-sets/prl-sprites/prl-sprite-s32.png) 0 0 no-repeat;
+	display: block;
+	margin: 2px 3px !important;
+	padding: 0;
+	text-indent: -9999px;
+	width: 32px;
+	height: 32px;
+	opacity: 0.77;
+}
+
+#nav li.email-prl-s32 a:hover,
+#nav li.facebook-prl-s32 a:hover,
+#nav li.feed-prl-s32 a:hover,
+#nav li.flickr-prl-s32 a:hover,
+#nav li.github-prl-s32 a:hover,
+#nav li.google-prl-s32 a:hover,
+#nav li.google2-prl-s32 a:hover,
+#nav li.linkedin-prl-s32 a:hover,
+#nav li.pinterest-prl-s32 a:hover,
+#nav li.slideshare-prl-s32 a:hover,
+#nav li.twitter-prl-s32 a:hover,
+#nav li.youtube-prl-s32 a:hover,
+#nav li.xing-prl-s32 a:hover,
+#subnav li.email-prl-s32 a:hover,
+#subnav li.facebook-prl-s32 a:hover,
+#subnav li.feed-prl-s32 a:hover,
+#subnav li.flickr-prl-s32 a:hover,
+#subnav li.github-prl-s32 a:hover,
+#subnav li.google-prl-s32 a:hover,
+#subnav li.google2-prl-s32 a:hover,
+#subnav li.linkedin-prl-s32 a:hover,
+#subnav li.pinterest-prl-s32 a:hover,
+#subnav li.slideshare-prl-s32 a:hover,
+#subnav li.twitter-prl-s32 a:hover,
+#subnav li.youtube-prl-s32 a:hover,
+#subnav li.xing-prl-s32 a:hover,
+#header ul.menu li.email-prl-s32 a:hover,
+#header ul.menu li.facebook-prl-s32 a:hover,
+#header ul.menu li.feed-prl-s32 a:hover,
+#header ul.menu li.flickr-prl-s32 a:hover,
+#header ul.menu li.github-prl-s32 a:hover,
+#header ul.menu li.google-prl-s32 a:hover,
+#header ul.menu li.google2-prl-s32 a:hover,
+#header ul.menu li.linkedin-prl-s32 a:hover,
+#header ul.menu li.pinterest-prl-s32 a:hover,
+#header ul.menu li.slideshare-prl-s32 a:hover,
+#header ul.menu li.twitter-prl-s32 a:hover,
+#header ul.menu li.youtube-prl-s32 a:hover,
+#header ul.menu li.xing-prl-s32 a:hover,
+#sidebar ul.menu li.email-prl-s32 a:hover,
+#sidebar ul.menu li.facebook-prl-s32 a:hover,
+#sidebar ul.menu li.feed-prl-s32 a:hover,
+#sidebar ul.menu li.flickr-prl-s32 a:hover,
+#sidebar ul.menu li.github-prl-s32 a:hover,
+#sidebar ul.menu li.google-prl-s32 a:hover,
+#sidebar ul.menu li.google2-prl-s32 a:hover,
+#sidebar ul.menu li.linkedin-prl-s32 a:hover,
+#sidebar ul.menu li.pinterest-prl-s32 a:hover,
+#sidebar ul.menu li.slideshare-prl-s32 a:hover,
+#sidebar ul.menu li.twitter-prl-s32 a:hover,
+#sidebar ul.menu li.youtube-prl-s32 a:hover,
+#sidebar ul.menu li.xing-prl-s32 a:hover,
+#sidebar-alt ul.menu li.email-prl-s32 a:hover,
+#sidebar-alt ul.menu li.facebook-prl-s32 a:hover,
+#sidebar-alt ul.menu li.feed-prl-s32 a:hover,
+#sidebar-alt ul.menu li.flickr-prl-s32 a:hover,
+#sidebar-alt ul.menu li.github-prl-s32 a:hover,
+#sidebar-alt ul.menu li.google-prl-s32 a:hover,
+#sidebar-alt ul.menu li.google2-prl-s32 a:hover,
+#sidebar-alt ul.menu li.linkedin-prl-s32 a:hover,
+#sidebar-alt ul.menu li.pinterest-prl-s32 a:hover,
+#sidebar-alt ul.menu li.slideshare-prl-s32 a:hover,
+#sidebar-alt ul.menu li.twitter-prl-s32 a:hover,
+#sidebar-alt ul.menu li.youtube-prl-s32 a:hover,
+#sidebar-alt ul.menu li.xing-prl-s32 a:hover,
+#footer-widgets ul.menu li.email-prl-s32 a:hover,
+#footer-widgets ul.menu li.facebook-prl-s32 a:hover,
+#footer-widgets ul.menu li.feed-prl-s32 a:hover,
+#footer-widgets ul.menu li.flickr-prl-s32 a:hover,
+#footer-widgets ul.menu li.github-prl-s32 a:hover,
+#footer-widgets ul.menu li.google-prl-s32 a:hover,
+#footer-widgets ul.menu li.google2-prl-s32 a:hover,
+#footer-widgets ul.menu li.linkedin-prl-s32 a:hover,
+#footer-widgets ul.menu li.pinterest-prl-s32 a:hover,
+#footer-widgets ul.menu li.slideshare-prl-s32 a:hover,
+#footer-widgets ul.menu li.twitter-prl-s32 a:hover,
+#footer-widgets ul.menu li.youtube-prl-s32 a:hover,
+#footer-widgets ul.menu li.xing-prl-s32 a:hover {
+	border: none;
+	opacity: 1;
+}
+
+#nav li.email-prl-s32 a,
+#subnav li.email-prl-s32 a,
+#header ul.menu li.email-prl-s32 a,
+#sidebar ul.menu li.email-prl-s32 a,
+#sidebar-alt ul.menu li.email-prl-s32 a,
+#footer-widgets ul.menu li.email-prl-s32 a {
+	background-position: -4px -4px;
+}
+
+#nav li.facebook-prl-s32 a,
+#subnav li.facebook-prl-s32 a,
+#header ul.menu li.facebook-prl-s32 a,
+#sidebar ul.menu li.facebook-prl-s32 a,
+#sidebar-alt ul.menu li.facebook-prl-s32 a,
+#footer-widgets ul.menu li.facebook-prl-s32 a {
+	background-position: -84px -4px;
+}
+
+#nav li.feed-prl-s32 a,
+#subnav li.feed-prl-s32 a,
+#header ul.menu li.feed-prl-s32 a,
+#sidebar ul.menu li.feed-prl-s32 a,
+#sidebar-alt ul.menu li.feed-prl-s32 a,
+#footer-widgets ul.menu li.feed-prl-s32 a {
+	background-position: -44px -4px;
+}
+
+#nav li.flickr-prl-s32 a,
+#subnav li.flickr-prl-s32 a,
+#header ul.menu li.flickr-prl-s32 a,
+#sidebar ul.menu li.flickr-prl-s32 a,
+#sidebar-alt ul.menu li.flickr-prl-s32 a,
+#footer-widgets ul.menu li.flickr-prl-s32 a {
+	background-position: -124px -4px;
+}
+
+#nav li.github-prl-s32 a,
+#subnav li.github-prl-s32 a,
+#header ul.menu li.github-prl-s32 a,
+#sidebar ul.menu li.github-prl-s32 a,
+#sidebar-alt ul.menu li.github-prl-s32 a,
+#footer-widgets ul.menu li.github-prl-s32 a {
+	background-position: -164px -4px;
+}
+
+#nav li.google-prl-s32 a,
+#subnav li.google-prl-s32 a,
+#header ul.menu li.google-prl-s32 a,
+#sidebar ul.menu li.google-prl-s32 a,
+#sidebar-alt ul.menu li.google-prl-s32 a,
+#footer-widgets ul.menu li.google-prl-s32 a {
+	background-position: -204px -4px;
+}
+
+#nav li.google2-prl-s32 a,
+#subnav li.google2-prl-s32 a,
+#header ul.menu li.google2-prl-s32 a,
+#sidebar ul.menu li.google2-prl-s32 a,
+#sidebar-alt ul.menu li.google2-prl-s32 a,
+#footer-widgets ul.menu li.google2-prl-s32 a {
+	background-position: -244px -4px;
+}
+
+#nav li.linkedin-prl-s32 a,
+#subnav li.linkedin-prl-s32 a,
+#header ul.menu li.linkedin-prl-s32 a,
+#sidebar ul.menu li.linkedin-prl-s32 a,
+#sidebar-alt ul.menu li.linkedin-prl-s32 a,
+#footer-widgets ul.menu li.linkedin-prl-s32 a {
+	background-position: -284px -4px;
+}
+
+#nav li.pinterest-prl-s32 a,
+#subnav li.pinterest-prl-s32 a,
+#header ul.menu li.pinterest-prl-s32 a,
+#sidebar ul.menu li.pinterest-prl-s32 a,
+#sidebar-alt ul.menu li.pinterest-prl-s32 a,
+#footer-widgets ul.menu li.pinterest-prl-s32 a {
+	background-position: -324px -4px;
+}
+
+#nav li.slideshare-prl-s32 a,
+#subnav li.slideshare-prl-s32 a,
+#header ul.menu li.slideshare-prl-s32 a,
+#sidebar ul.menu li.slideshare-prl-s32 a,
+#sidebar-alt ul.menu li.slideshare-prl-s32 a,
+#footer-widgets ul.menu li.google-prl-s32 a {
+	background-position: -364px -4px;
+}
+
+#nav li.twitter-prl-s32 a,
+#subnav li.twitter-prl-s32 a,
+#header ul.menu li.twitter-prl-s32 a,
+#sidebar ul.menu li.twitter-prl-s32 a,
+#sidebar-alt ul.menu li.twitter-prl-s32 a,
+#footer-widgets ul.menu li.twitter-prl-s32 a {
+	background-position: -404px -4px;
+}
+
+#nav li.xing-prl-s32 a,
+#subnav li.xing-prl-s32 a,
+#header ul.menu li.xing-prl-s32 a,
+#sidebar ul.menu li.xing-prl-s32 a,
+#sidebar-alt ul.menu li.xing-prl-s32 a,
+#footer-widgets ul.menu li.xing-prl-s32 a {
+	background-position: -444px -4px;
+}
+
+#nav li.youtube-prl-s32 a,
+#subnav li.youtube-prl-s32 a,
+#header ul.menu li.youtube-prl-s32 a,
+#sidebar ul.menu li.youtube-prl-s32 a,
+#sidebar-alt ul.menu li.youtube-prl-s32 a,
+#footer-widgets ul.menu li.youtube-prl-s32 a {
+	background-position: -484px -4px;
+}
+
+
+/* StudioPress Icon Set (SP)
+------------------------------------------------------------ */
+
+/**
+ * @icon .gspm helper class
+ * @css-for (all icon sizes)
+ */
+.gspm-sp {
+	background: #666;
+	margin: 2px 3px;
+}
+
+.gspm-sp:hover {
+	background: #999;
+}
+
+#sidebar ul.menu .gspm-sp,
+#sidebar-alt ul.menu .gspm-sp,
+#footer-widgets .widget_nav_menu ul li.gspm-sp {
+	margin: 2px 3px !important;
+}
+
+.sidebar.widget-area ul li.gspm-sp,
+#footer-widgets ul li.gspm-sp {
+	padding: 0 !important;
+}
+
+
+/**
+ * @icon layout
+ * @css-for (icon size 24px)
+ */
+#sidebar ul.menu li.facebook-sp-s24,
+#sidebar ul.menu li.feed-sp-s24,
+#sidebar ul.menu li.google-sp-s24,
+#sidebar ul.menu li.linkedin-sp-s24,
+#sidebar ul.menu li.pinterest-sp-s24,
+#sidebar ul.menu li.twitter-sp-s24,
+#sidebar-alt ul.menu li.facebook-sp-s24,
+#sidebar-alt ul.menu li.feed-sp-s24,
+#sidebar-alt ul.menu li.google-sp-s24,
+#sidebar-alt ul.menu li.linkedin-sp-s24,
+#sidebar-alt ul.menu li.pinterest-sp-s24,
+#sidebar-alt ul.menu li.twitter-sp-s24,
+#footer-widgets ul.menu li.facebook-sp-s24,
+#footer-widgets ul.menu li.feed-sp-s24,
+#footer-widgets ul.menu li.google-sp-s24,
+#footer-widgets ul.menu li.linkedin-sp-s24,
+#footer-widgets ul.menu li.pinterest-sp-s24,
+#footer-widgets ul.menu li.twitter-sp-s24 {
+	list-style-type: none !important;
+	float: left;
+	overflow: hidden;
+	display: inline;
+}
+
+#nav li.facebook-sp-s24 a,
+#nav li.feed-sp-s24 a,
+#nav li.google-sp-s24 a,
+#nav li.linkedin-sp-s24 a,
+#nav li.pinterest-sp-s24 a,
+#nav li.twitter-sp-s24 a,
+#subnav li.facebook-sp-s24 a,
+#subnav li.feed-sp-s24 a,
+#subnav li.google-sp-s24 a,
+#subnav li.linkedin-sp-s24 a,
+#subnav li.pinterest-sp-s24 a,
+#subnav li.twitter-sp-s24 a,
+#header ul.menu li.facebook-sp-s24 a,
+#header ul.menu li.feed-sp-s24 a,
+#header ul.menu li.google-sp-s24 a,
+#header ul.menu li.linkedin-sp-s24 a,
+#header ul.menu li.pinterest-sp-s24 a,
+#header ul.menu li.twitter-sp-s24 a {
+	background: transparent url(../icon-sets/sp-sprites/sp-sprite-s24.png) 0 0 no-repeat;
+	display: block;
+	padding: 0;
+	text-indent: -9999px;
+	vertical-align: middle !important;
+	width: 24px;
+	min-height: 24px !important;
+}
+
+#sidebar ul.menu li.facebook-sp-s24 a,
+#sidebar ul.menu li.feed-sp-s24 a,
+#sidebar ul.menu li.google-sp-s24 a,
+#sidebar ul.menu li.linkedin-sp-s24 a,
+#sidebar ul.menu li.pinterest-sp-s24 a,
+#sidebar ul.menu li.twitter-sp-s24 a,
+#sidebar-alt ul.menu li.facebook-sp-s24 a,
+#sidebar-alt ul.menu li.feed-sp-s24 a,
+#sidebar-alt ul.menu li.google-sp-s24 a,
+#sidebar-alt ul.menu li.linkedin-sp-s24 a,
+#sidebar-alt ul.menu li.pinterest-sp-s24 a,
+#sidebar-alt ul.menu li.twitter-sp-s24 a,
+#footer-widgets ul.menu li.facebook-sp-s24 a,
+#footer-widgets ul.menu li.feed-sp-s24 a,
+#footer-widgets ul.menu li.google-sp-s24 a,
+#footer-widgets ul.menu li.linkedin-sp-s24 a,
+#footer-widgets ul.menu li.pinterest-sp-s24 a,
+#footer-widgets ul.menu li.twitter-sp-s24 a {
+	background: transparent url(../icon-sets/sp-sprites/sp-sprite-s24.png) 0 0 no-repeat;
+	display: block;
+	padding: 0;
+	text-indent: -9999px;
+	width: 24px;
+	height: 24px;
+}
+
+#nav li.facebook-sp-s24 a:hover,
+#nav li.feed-sp-s24 a:hover,
+#nav li.google-sp-s24 a:hover,
+#nav li.linkedin-sp-s24 a:hover,
+#nav li.pinterest-sp-s24 a:hover,
+#nav li.twitter-sp-s24 a:hover,
+#subnav li.facebook-sp-s24 a:hover,
+#subnav li.feed-sp-s24 a:hover,
+#subnav li.google-sp-s24 a:hover,
+#subnav li.linkedin-sp-s24 a:hover,
+#subnav li.pinterest-sp-s24 a:hover,
+#subnav li.twitter-sp-s24 a:hover,
+#header ul.menu li.facebook-sp-s24 a:hover,
+#header ul.menu li.feed-sp-s24 a:hover,
+#header ul.menu li.google-sp-s24 a:hover,
+#header ul.menu li.linkedin-sp-s24 a:hover,
+#header ul.menu li.pinterest-sp-s24 a:hover,
+#header ul.menu li.twitter-sp-s24 a:hover,
+#sidebar ul.menu li.facebook-sp-s24 a:hover,
+#sidebar ul.menu li.feed-sp-s24 a:hover,
+#sidebar ul.menu li.google-sp-s24 a:hover,
+#sidebar ul.menu li.linkedin-sp-s24 a:hover,
+#sidebar ul.menu li.pinterest-sp-s24 a:hover,
+#sidebar ul.menu li.twitter-sp-s24 a:hover,
+#sidebar-alt ul.menu li.facebook-sp-s24 a:hover,
+#sidebar-alt ul.menu li.feed-sp-s24 a:hover,
+#sidebar-alt ul.menu li.google-sp-s24 a:hover,
+#sidebar-alt ul.menu li.linkedin-sp-s24 a:hover,
+#sidebar-alt ul.menu li.pinterest-sp-s24 a:hover,
+#sidebar-alt ul.menu li.twitter-sp-s24 a:hover,
+#footer-widgets ul.menu li.facebook-sp-s24 a:hover,
+#footer-widgets ul.menu li.feed-sp-s24 a:hover,
+#footer-widgets ul.menu li.google-sp-s24 a:hover,
+#footer-widgets ul.menu li.linkedin-sp-s24 a:hover,
+#footer-widgets ul.menu li.pinterest-sp-s24 a:hover,
+#footer-widgets ul.menu li.twitter-sp-s24 a:hover {
+	border: none;
+}
+
+#nav li.facebook-sp-s24 a,
+#subnav li.facebook-sp-s24 a,
+#header ul.menu li.facebook-sp-s24 a,
+#sidebar ul.menu li.facebook-sp-s24 a,
+#sidebar-alt ul.menu li.facebook-sp-s24 a,
+#footer-widgets ul.menu li.facebook-sp-s24 a {
+	background-position: -33px -3px;
+}
+
+#nav li.feed-sp-s24 a,
+#subnav li.feed-sp-s24 a,
+#header ul.menu li.feed-sp-s24 a,
+#sidebar ul.menu li.feed-sp-s24 a,
+#sidebar-alt ul.menu li.feed-sp-s24 a,
+#footer-widgets ul.menu li.feed-sp-s24 a {
+	background-position: -3px -3px;
+}
+
+#nav li.google-sp-s24 a,
+#subnav li.google-sp-s24 a,
+#header ul.menu li.google-sp-s24 a,
+#sidebar ul.menu li.google-sp-s24 a,
+#sidebar-alt ul.menu li.google-sp-s24 a,
+#footer-widgets ul.menu li.google-sp-s24 a {
+	background-position: -63px -3px;
+}
+
+#nav li.linkedin-sp-s24 a,
+#subnav li.linkedin-sp-s24 a,
+#header ul.menu li.linkedin-sp-s24 a,
+#sidebar ul.menu li.linkedin-sp-s24 a,
+#sidebar-alt ul.menu li.linkedin-sp-s24 a,
+#footer-widgets ul.menu li.linkedin-sp-s24 a {
+	background-position: -93px -3px;
+}
+
+#nav li.pinterest-sp-s24 a,
+#subnav li.pinterest-sp-s24 a,
+#header ul.menu li.pinterest-sp-s24 a,
+#sidebar ul.menu li.pinterest-sp-s24 a,
+#sidebar-alt ul.menu li.pinterest-sp-s24 a,
+#footer-widgets ul.menu li.pinterest-sp-s24 a {
+	background-position: -123px -3px;
+}
+
+#nav li.twitter-sp-s24 a,
+#subnav li.twitter-sp-s24 a,
+#header ul.menu li.twitter-sp-s24 a,
+#sidebar ul.menu li.twitter-sp-s24 a,
+#sidebar-alt ul.menu li.twitter-sp-s24 a,
+#footer-widgets ul.menu li.twitter-sp-s24 a {
+	background-position: -153px -3px;
+}
+
+/**
+ * @icon layout
+ * @css-for (icon size 32px)
+ */
+#sidebar ul.menu li.facebook-sp-s32,
+#sidebar ul.menu li.feed-sp-s32,
+#sidebar ul.menu li.google-sp-s32,
+#sidebar ul.menu li.linkedin-sp-s32,
+#sidebar ul.menu li.pinterest-sp-s32,
+#sidebar ul.menu li.twitter-sp-s32,
+#sidebar-alt ul.menu li.facebook-sp-s32,
+#sidebar-alt ul.menu li.feed-sp-s32,
+#sidebar-alt ul.menu li.google-sp-s32,
+#sidebar-alt ul.menu li.linkedin-sp-s32,
+#sidebar-alt ul.menu li.pinterest-sp-s32,
+#sidebar-alt ul.menu li.twitter-sp-s32,
+#footer-widgets ul.menu li.facebook-sp-s32,
+#footer-widgets ul.menu li.feed-sp-s32,
+#footer-widgets ul.menu li.google-sp-s32,
+#footer-widgets ul.menu li.linkedin-sp-s32,
+#footer-widgets ul.menu li.pinterest-sp-s32,
+#footer-widgets ul.menu li.twitter-sp-s32 {
+	list-style-type: none !important;
+	float: left;
+	overflow: hidden;
+	display: inline;
+}
+
+#nav li.facebook-sp-s32 a,
+#nav li.feed-sp-s32 a,
+#nav li.google-sp-s32 a,
+#nav li.linkedin-sp-s32 a,
+#nav li.pinterest-sp-s32 a,
+#nav li.twitter-sp-s32 a,
+#subnav li.facebook-sp-s32 a,
+#subnav li.feed-sp-s32 a,
+#subnav li.google-sp-s32 a,
+#subnav li.linkedin-sp-s32 a,
+#subnav li.pinterest-sp-s32 a,
+#subnav li.twitter-sp-s32 a,
+#header ul.menu li.facebook-sp-s32 a,
+#header ul.menu li.feed-sp-s32 a,
+#header ul.menu li.google-sp-s32 a,
+#header ul.menu li.linkedin-sp-s32 a,
+#header ul.menu li.pinterest-sp-s32 a,
+#header ul.menu li.twitter-sp-s32 a {
+	background: transparent url(../icon-sets/sp-sprites/sp-sprite-s32.png) 0 0 no-repeat;
+	display: block;
+	padding: 0;
+	text-indent: -9999px;
+	vertical-align: middle !important;
+	width: 32px;
+	min-height: 32px !important;
+}
+
+#sidebar ul.menu li.facebook-sp-s32 a,
+#sidebar ul.menu li.feed-sp-s32 a,
+#sidebar ul.menu li.google-sp-s32 a,
+#sidebar ul.menu li.linkedin-sp-s32 a,
+#sidebar ul.menu li.pinterest-sp-s32 a,
+#sidebar ul.menu li.twitter-sp-s32 a,
+#sidebar-alt ul.menu li.facebook-sp-s32 a,
+#sidebar-alt ul.menu li.feed-sp-s32 a,
+#sidebar-alt ul.menu li.google-sp-s32 a,
+#sidebar-alt ul.menu li.linkedin-sp-s32 a,
+#sidebar-alt ul.menu li.pinterest-sp-s32 a,
+#sidebar-alt ul.menu li.twitter-sp-s32 a,
+#footer-widgets ul.menu li.facebook-sp-s32 a,
+#footer-widgets ul.menu li.feed-sp-s32 a,
+#footer-widgets ul.menu li.google-sp-s32 a,
+#footer-widgets ul.menu li.linkedin-sp-s32 a,
+#footer-widgets ul.menu li.pinterest-sp-s32 a,
+#footer-widgets ul.menu li.twitter-sp-s32 a {
+	background: transparent url(../icon-sets/sp-sprites/sp-sprite-s32.png) 0 0 no-repeat;
+	display: block;
+	padding: 0;
+	text-indent: -9999px;
+	width: 32px;
+	height: 32px;
+}
+
+#nav li.facebook-sp-s32 a:hover,
+#nav li.feed-sp-s32 a:hover,
+#nav li.google-sp-s32 a:hover,
+#nav li.linkedin-sp-s32 a:hover,
+#nav li.pinterest-sp-s32 a:hover,
+#nav li.twitter-sp-s32 a:hover,
+#subnav li.facebook-sp-s32 a:hover,
+#subnav li.feed-sp-s32 a:hover,
+#subnav li.google-sp-s32 a:hover,
+#subnav li.linkedin-sp-s32 a:hover,
+#subnav li.pinterest-sp-s32 a:hover,
+#subnav li.twitter-sp-s32 a:hover,
+#header ul.menu li.facebook-sp-s32 a:hover,
+#header ul.menu li.feed-sp-s32 a:hover,
+#header ul.menu li.google-sp-s32 a:hover,
+#header ul.menu li.linkedin-sp-s32 a:hover,
+#header ul.menu li.pinterest-sp-s32 a:hover,
+#header ul.menu li.twitter-sp-s32 a:hover,
+#sidebar ul.menu li.facebook-sp-s32 a:hover,
+#sidebar ul.menu li.feed-sp-s32 a:hover,
+#sidebar ul.menu li.google-sp-s32 a:hover,
+#sidebar ul.menu li.linkedin-sp-s32 a:hover,
+#sidebar ul.menu li.pinterest-sp-s32 a:hover,
+#sidebar ul.menu li.twitter-sp-s32 a:hover,
+#sidebar-alt ul.menu li.facebook-sp-s32 a:hover,
+#sidebar-alt ul.menu li.feed-sp-s32 a:hover,
+#sidebar-alt ul.menu li.google-sp-s32 a:hover,
+#sidebar-alt ul.menu li.linkedin-sp-s32 a:hover,
+#sidebar-alt ul.menu li.pinterest-sp-s32 a:hover,
+#sidebar-alt ul.menu li.twitter-sp-s32 a:hover,
+#footer-widgets ul.menu li.facebook-sp-s32 a:hover,
+#footer-widgets ul.menu li.feed-sp-s32 a:hover,
+#footer-widgets ul.menu li.google-sp-s32 a:hover,
+#footer-widgets ul.menu li.linkedin-sp-s32 a:hover,
+#footer-widgets ul.menu li.pinterest-sp-s32 a:hover,
+#footer-widgets ul.menu li.twitter-sp-s32 a:hover {
+	border: none;
+}
+
+#nav li.facebook-sp-s32 a,
+#subnav li.facebook-sp-s32 a,
+#header ul.menu li.facebook-sp-s32 a,
+#sidebar ul.menu li.facebook-sp-s32 a,
+#sidebar-alt ul.menu li.facebook-sp-s32 a,
+#footer-widgets ul.menu li.facebook-sp-s32 a {
+	background-position: -44px -4px;
+}
+
+#nav li.feed-sp-s32 a,
+#subnav li.feed-sp-s32 a,
+#header ul.menu li.feed-sp-s32 a,
+#sidebar ul.menu li.feed-sp-s32 a,
+#sidebar-alt ul.menu li.feed-sp-s32 a,
+#footer-widgets ul.menu li.feed-sp-s32 a {
+	background-position: -4px -4px;
+}
+
+#nav li.google-sp-s32 a,
+#subnav li.google-sp-s32 a,
+#header ul.menu li.google-sp-s32 a,
+#sidebar ul.menu li.google-sp-s32 a,
+#sidebar-alt ul.menu li.google-sp-s32 a,
+#footer-widgets ul.menu li.google-sp-s32 a {
+	background-position: -84px -4px;
+}
+
+#nav li.linkedin-sp-s32 a,
+#subnav li.linkedin-sp-s32 a,
+#header ul.menu li.linkedin-sp-s32 a,
+#sidebar ul.menu li.linkedin-sp-s32 a,
+#sidebar-alt ul.menu li.linkedin-sp-s32 a,
+#footer-widgets ul.menu li.linkedin-sp-s32 a {
+	background-position: -124px -4px;
+}
+
+#nav li.pinterest-sp-s32 a,
+#subnav li.pinterest-sp-s32 a,
+#header ul.menu li.pinterest-sp-s32 a,
+#sidebar ul.menu li.pinterest-sp-s32 a,
+#sidebar-alt ul.menu li.pinterest-sp-s32 a,
+#footer-widgets ul.menu li.pinterest-sp-s32 a {
+	background-position: -164px -4px;
+}
+
+#nav li.twitter-sp-s32 a,
+#subnav li.twitter-sp-s32 a,
+#header ul.menu li.twitter-sp-s32 a,
+#sidebar ul.menu li.twitter-sp-s32 a,
+#sidebar-alt ul.menu li.twitter-sp-s32 a,
+#footer-widgets ul.menu li.twitter-sp-s32 a {
+	background-position: -204px -4px;
+}
+
+/**
+ * @icon layout
+ * @css-for (icon size 48px)
+ */
+#sidebar ul.menu li.facebook-sp-s48,
+#sidebar ul.menu li.feed-sp-s48,
+#sidebar ul.menu li.google-sp-s48,
+#sidebar ul.menu li.linkedin-sp-s48,
+#sidebar ul.menu li.pinterest-sp-s48,
+#sidebar ul.menu li.twitter-sp-s48,
+#sidebar-alt ul.menu li.facebook-sp-s48,
+#sidebar-alt ul.menu li.feed-sp-s48,
+#sidebar-alt ul.menu li.google-sp-s48,
+#sidebar-alt ul.menu li.linkedin-sp-s48,
+#sidebar-alt ul.menu li.pinterest-sp-s48,
+#sidebar-alt ul.menu li.twitter-sp-s48,
+#footer-widgets ul.menu li.facebook-sp-s48,
+#footer-widgets ul.menu li.feed-sp-s48,
+#footer-widgets ul.menu li.google-sp-s48,
+#footer-widgets ul.menu li.linkedin-sp-s48,
+#footer-widgets ul.menu li.pinterest-sp-s48,
+#footer-widgets ul.menu li.twitter-sp-s48 {
+	list-style-type: none !important;
+	float: left;
+	overflow: hidden;
+	display: inline;
+}
+
+#nav li.facebook-sp-s48 a,
+#nav li.feed-sp-s48 a,
+#nav li.google-sp-s48 a,
+#nav li.linkedin-sp-s48 a,
+#nav li.pinterest-sp-s48 a,
+#nav li.twitter-sp-s48 a,
+#subnav li.facebook-sp-s48 a,
+#subnav li.feed-sp-s48 a,
+#subnav li.google-sp-s48 a,
+#subnav li.linkedin-sp-s48 a,
+#subnav li.pinterest-sp-s48 a,
+#subnav li.twitter-sp-s48 a,
+#header ul.menu li.facebook-sp-s48 a,
+#header ul.menu li.feed-sp-s48 a,
+#header ul.menu li.google-sp-s48 a,
+#header ul.menu li.linkedin-sp-s48 a,
+#header ul.menu li.pinterest-sp-s48 a,
+#header ul.menu li.twitter-sp-s48 a {
+	background: transparent url(../icon-sets/sp-sprites/sp-sprite-s48.png) 0 0 no-repeat;
+	display: block;
+	padding: 0;
+	text-indent: -9999px;
+	vertical-align: middle !important;
+	width: 48px;
+	min-height: 48px !important;
+}
+
+#sidebar ul.menu li.facebook-sp-s48 a,
+#sidebar ul.menu li.feed-sp-s48 a,
+#sidebar ul.menu li.google-sp-s48 a,
+#sidebar ul.menu li.linkedin-sp-s48 a,
+#sidebar ul.menu li.pinterest-sp-s48 a,
+#sidebar ul.menu li.twitter-sp-s48 a,
+#sidebar-alt ul.menu li.facebook-sp-s48 a,
+#sidebar-alt ul.menu li.feed-sp-s48 a,
+#sidebar-alt ul.menu li.google-sp-s48 a,
+#sidebar-alt ul.menu li.linkedin-sp-s48 a,
+#sidebar-alt ul.menu li.pinterest-sp-s48 a,
+#sidebar-alt ul.menu li.twitter-sp-s48 a,
+#footer-widgets ul.menu li.facebook-sp-s48 a,
+#footer-widgets ul.menu li.feed-sp-s48 a,
+#footer-widgets ul.menu li.google-sp-s48 a,
+#footer-widgets ul.menu li.linkedin-sp-s48 a,
+#footer-widgets ul.menu li.pinterest-sp-s48 a,
+#footer-widgets ul.menu li.twitter-sp-s48 a {
+	background: transparent url(../icon-sets/sp-sprites/sp-sprite-s48.png) 0 0 no-repeat;
+	display: block;
+	padding: 0;
+	text-indent: -9999px;
+	width: 48px;
+	height: 48px;
+}
+
+#nav li.facebook-sp-s48 a:hover,
+#nav li.feed-sp-s48 a:hover,
+#nav li.google-sp-s48 a:hover,
+#nav li.linkedin-sp-s48 a:hover,
+#nav li.pinterest-sp-s48 a:hover,
+#nav li.twitter-sp-s48 a:hover,
+#subnav li.facebook-sp-s48 a:hover,
+#subnav li.feed-sp-s48 a:hover,
+#subnav li.google-sp-s48 a:hover,
+#subnav li.linkedin-sp-s48 a:hover,
+#subnav li.pinterest-sp-s48 a:hover,
+#subnav li.twitter-sp-s48 a:hover,
+#header ul.menu li.facebook-sp-s48 a:hover,
+#header ul.menu li.feed-sp-s48 a:hover,
+#header ul.menu li.google-sp-s48 a:hover,
+#header ul.menu li.linkedin-sp-s48 a:hover,
+#header ul.menu li.pinterest-sp-s48 a:hover,
+#header ul.menu li.twitter-sp-s48 a:hover,
+#sidebar ul.menu li.facebook-sp-s48 a:hover,
+#sidebar ul.menu li.feed-sp-s48 a:hover,
+#sidebar ul.menu li.google-sp-s48 a:hover,
+#sidebar ul.menu li.linkedin-sp-s48 a:hover,
+#sidebar ul.menu li.pinterest-sp-s48 a:hover,
+#sidebar ul.menu li.twitter-sp-s48 a:hover,
+#sidebar-alt ul.menu li.facebook-sp-s48 a:hover,
+#sidebar-alt ul.menu li.feed-sp-s48 a:hover,
+#sidebar-alt ul.menu li.google-sp-s48 a:hover,
+#sidebar-alt ul.menu li.linkedin-sp-s48 a:hover,
+#sidebar-alt ul.menu li.pinterest-sp-s48 a:hover,
+#sidebar-alt ul.menu li.twitter-sp-s48 a:hover,
+#footer-widgets ul.menu li.facebook-sp-s48 a:hover,
+#footer-widgets ul.menu li.feed-sp-s48 a:hover,
+#footer-widgets ul.menu li.google-sp-s48 a:hover,
+#footer-widgets ul.menu li.linkedin-sp-s48 a:hover,
+#footer-widgets ul.menu li.pinterest-sp-s48 a:hover,
+#footer-widgets ul.menu li.twitter-sp-s48 a:hover {
+	border: none;
+}
+
+#nav li.facebook-sp-s48 a,
+#subnav li.facebook-sp-s48 a,
+#header ul.menu li.facebook-sp-s48 a,
+#sidebar ul.menu li.facebook-sp-s48 a,
+#sidebar-alt ul.menu li.facebook-sp-s48 a,
+#footer-widgets ul.menu li.facebook-sp-s48 a {
+	background-position: -56px -6px;
+}
+
+#nav li.feed-sp-s48 a,
+#subnav li.feed-sp-s48 a,
+#header ul.menu li.feed-sp-s48 a,
+#sidebar ul.menu li.feed-sp-s48 a,
+#sidebar-alt ul.menu li.feed-sp-s48 a,
+#footer-widgets ul.menu li.feed-sp-s48 a {
+	background-position: -6px -6px;
+}
+
+#nav li.google-sp-s48 a,
+#subnav li.google-sp-s48 a,
+#header ul.menu li.google-sp-s48 a,
+#sidebar ul.menu li.google-sp-s48 a,
+#sidebar-alt ul.menu li.google-sp-s48 a,
+#footer-widgets ul.menu li.google-sp-s48 a {
+	background-position: -116px -6px;
+}
+
+#nav li.linkedin-sp-s48 a,
+#subnav li.linkedin-sp-s48 a,
+#header ul.menu li.linkedin-sp-s48 a,
+#sidebar ul.menu li.linkedin-sp-s48 a,
+#sidebar-alt ul.menu li.linkedin-sp-s48 a,
+#footer-widgets ul.menu li.linkedin-sp-s48 a {
+	background-position: -176px -6px;
+}
+
+#nav li.pinterest-sp-s48 a,
+#subnav li.pinterest-sp-s48 a,
+#header ul.menu li.pinterest-sp-s48 a,
+#sidebar ul.menu li.pinterest-sp-s48 a,
+#sidebar-alt ul.menu li.pinterest-sp-s48 a,
+#footer-widgets ul.menu li.pinterest-sp-s48 a {
+	background-position: -236px -6px;
+}
+
+#nav li.twitter-sp-s48 a,
+#subnav li.twitter-sp-s48 a,
+#header ul.menu li.twitter-sp-s48 a,
+#sidebar ul.menu li.twitter-sp-s48 a,
+#sidebar-alt ul.menu li.twitter-sp-s48 a,
+#footer-widgets ul.menu li.twitter-sp-s48 a {
+	background-position: -306px -6px;
+}
+
+
+/* Universal Space Classes for Nav, Subnav, Header Menu
+------------------------------------------------------------ */
+
+/* More Space Left */
+#nav .space-left,
+#subnav .space-left,
+#header ul.menu .space-left {
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+/* More Space Right */
+#nav .space-right,
+#subnav .space-right,
+#header ul.menu .space-right {
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+/* More Space Top */
+#nav .space-top,
+#subnav .space-top,
+#header ul.menu .space-top {
+	margin-top: 7px;
+}
+
+/* More Space Bottom */
+#nav .space-bottom,
+#subnav .space-bottom,
+#header ul.menu .space-bottom {
+	margin-bottom: 7px;
+}
+
+.widget_nav_menu .widget-area ul,
+#footer-widgets .widget_nav_menu ul li {
+	margin: 0 !important;
+}
