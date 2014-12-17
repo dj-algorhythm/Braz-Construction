@@ -1,1 +1,105 @@
-html,body{height:100%;width:100%}.backstretch-carousel{position:absolute;background-color:#000;height:100%;width:100%;padding:0 3.57142857em}#navbar.navbar.navbar-fixed-top.navbar-default{padding:0 4.8828125%;border-color:#3d5e19;width:92.67935578%;margin:0 auto}.content-wrapper{position:absolute;top:13.15789474%;padding:0 6.05263158%;width:100%;height:86.84210526%}#gallery{height:100%}.gallery-row{margin-top:3.57142857em;height:33.33333333%}.img-window{margin:0 !important;padding:0 3.66032211%;text-align:center}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.backstretch-carousel {
+  position: fixed;
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  padding: 0 3.5714285714285714285714285714286em;
+}
+#navbar.navbar.navbar-fixed-top.navbar-default {
+  padding: 0 4.8828125%;
+  border-color: #3d5e19;
+  width: 92.679355783308931185944363103953%;
+  margin: 0 auto;
+  font-family: "Cinzel Decorative", sans-serif;
+}
+/*------------------------MAIN CONTENT------------------------------------*/
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  display: table;
+  padding: 3.5714285714285714285714285714286em;
+}
+.content-wrapper-inner {
+  height: 100%;
+  dispaly: table-cell;
+}
+/*--------------------GALLERY---------------------------*/
+.gallery-row {
+  margin-top: 3.5714285714285714285714285714286em;
+  height: 38%;
+}
+.img-window {
+  margin: 0 !important;
+  padding: 0 3.6603221083455344070278184480234%;
+  text-align: center;
+}
+.gall-img-desc {
+  position: absolute;
+  display: none;
+  z-index: 5;
+  font-family: "Cinzel Decorative", sans-serif;
+  font-size: 1.3em;
+  color: #ffffff;
+}
+#desc_paint {
+  bottom: 5.25em;
+  left: 8.65em;
+}
+#desc_patio {
+  bottom: 4.5em;
+  left: 9.15em;
+}
+#desc_cabinet {
+  bottom: 4.5em;
+  left: 8.85em;
+}
+#desc_newcon {
+  bottom: 4.6em;
+  left: 7em;
+}
+#desc_roof {
+  bottom: 5.25em;
+  left: 8.75em;
+}
+#desc_tile {
+  bottom: 4.5em;
+  left: 9.25em;
+}
+#desc_crown {
+  bottom: 4.5em;
+  left: 8.85em;
+}
+#desc_ceiling {
+  bottom: 5.25em;
+  left: 9.3em;
+}
+#desc_bath {
+  bottom: 4.5em;
+  left: 7.85em;
+}
+#desc_faux {
+  bottom: 4.5em;
+  left: 9.65em;
+}
+#desc_hardwood {
+  bottom: 4.5em;
+  left: 8em;
+}
+#desc_venetian {
+  bottom: 4.5em;
+  left: 8.75em;
+}
+#imagelightbox {
+  cursor: pointer;
+  position: fixed;
+  z-index: 10000;
+  box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75);
+}
+.lightboxgallery {
+  display: none;
+}
