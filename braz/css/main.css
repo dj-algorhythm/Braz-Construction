@@ -94,12 +94,28 @@ body {
   bottom: 4.5em;
   left: 8.75em;
 }
-#imagelightbox {
-  cursor: pointer;
-  position: fixed;
-  z-index: 10000;
-  box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75);
-}
 .lightboxgallery {
   display: none;
+}
+.lightboxgallery img {
+  width: 17.857142857em;
+  height: 14.285714286em;
+}
+@media only screen and (min-width: 800px) {
+  .lightboxgallery img {
+    width: 28.571428571em;
+    height: 21.428571429em;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  .lightboxgallery img {
+    width: 57.142857143em;
+    height: 42.857142857em;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .lightboxgallery img {
+    width: 71.428571429em;
+    height: 53.571428571em;
+  }
 }
