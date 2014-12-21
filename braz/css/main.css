@@ -30,76 +30,47 @@ body {
 }
 /*--------------------GALLERY---------------------------*/
 .gallery-row {
-  margin-top: 3.5714285714285714285714285714286em;
-  height: 38%;
+  margin-top: 2.0em;
+  height: 20em;
 }
 .img-window {
   margin: 0 !important;
-  padding: 0 3.6603221083455344070278184480234%;
+  padding: 3.6603221083455344070278184480234% 25.186567164179104477611940298507%;
   text-align: center;
 }
+@media only screen and (min-width: 768px) {
+  .img-window {
+    padding: 0 3.6603221083455344070278184480234%;
+  }
+}
 .gall-img-desc {
-  position: absolute;
+  position: relative;
   display: none;
+  margin: auto;
   z-index: 5;
   font-family: "Cinzel Decorative", sans-serif;
-  font-size: 1.3em;
   color: #ffffff;
 }
-#desc_paint {
-  bottom: 5.25em;
-  left: 8.65em;
+@media only screen and (min-width: 768px) {
+  .gall-img-desc {
+    font-size: 1.3em;
+  }
 }
-#desc_patio {
-  bottom: 4.5em;
-  left: 9.15em;
-}
-#desc_cabinet {
-  bottom: 4.5em;
-  left: 8.85em;
-}
-#desc_newcon {
-  bottom: 4.6em;
-  left: 7em;
-}
-#desc_roof {
-  bottom: 5.25em;
-  left: 8.75em;
-}
-#desc_tile {
-  bottom: 4.5em;
-  left: 9.25em;
-}
-#desc_crown {
-  bottom: 4.5em;
-  left: 8.85em;
-}
-#desc_ceiling {
-  bottom: 5.25em;
-  left: 9.3em;
-}
-#desc_bath {
-  bottom: 4.5em;
-  left: 7.85em;
-}
-#desc_faux {
-  bottom: 4.5em;
-  left: 9.65em;
-}
-#desc_hardwood {
-  bottom: 4.5em;
-  left: 8em;
-}
-#desc_venetian {
-  bottom: 4.5em;
-  left: 8.75em;
-}
+/*.gall-desc-wrap {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 49.285714286% 0 49.285714286%;
+}*/
 .lightboxgallery {
   display: none;
 }
 .lightboxgallery img {
   width: 17.857142857em;
-  height: 14.285714286em;
+  height: 13.428571429em;
 }
 @media only screen and (min-width: 800px) {
   .lightboxgallery img {

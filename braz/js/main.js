@@ -1,25 +1,39 @@
-window.onresize = setImgSize;
-var setImgSize = function (){
-    /*var imgWindowWidth = $('.img-window').width();
-    $('.img-window > img').width(.7816128773924881877152238327861 * imgWindowWidth);
-    var imgWidth = .7816128773924881877152238327861 * imgWindowWidth;
-    $('.img-window > img').height(imgWidth * 1/1.5121951219512195121951219512195);*/
-    var winWidth = $('.img-window').width();
-    $('.gall-image').height(winWidth * 1/1.333333);
-    if($(document).width() < 768){
-      $('.img-window').css('padding', '0 25.186567164179104477611940298507%');
-      $('.gall-image').width('80%');
-    } else {
-      $('.gall-image').width('100%');
-    }
-};
+$(".hisrc img").hisrc();
+$(".hisrc img+img").hisrc({
+  useTransparentGif: true,
+  speedTestUri: '50K.jpg'
+});
 
 $(document).ready(function(){
-  $(".hisrc img").hisrc();
-  $(".hisrc img+img").hisrc({
-    useTransparentGif: true,
-    speedTestUri: '50K.jpg'
-  });
+  var gallImgMgr = {
+
+    gallImgWindow: $('.img-window'),
+    gallImg: $('.gall-image'),
+
+    setGallImgSize: function(){
+      if($(document).width() < 768){
+        this.gallImg.width('80%');
+      } else {
+        this.gallImg.width('90%');
+      }
+      this.gallImg.height(this.gallImg.width() * 1/1.333333);
+      this.gallImgWindow.height(this.gallImg.height());
+      this.setGallImgDesc();
+    },
+
+    setGallImgDesc: function(){
+      var gallImgDesc = $('.gall-img-desc');
+      var descHeight = gallImgDesc.height();
+      var halfGallImgHeight = this.gallImg.height()/2;
+      gallImgDesc.css('bottom', function(){
+        var offset = descHeight/2;
+        return halfGallImgHeight + offset;
+      });
+    }
+
+  }
+
+  window.onresize = gallImgMgr.setGallImgSize();
 
   $(".backstretch-carousel").backstretch([
     "./img/bg-services.jpg",
@@ -39,7 +53,7 @@ $(document).ready(function(){
   }, { offset: '50%' });
 
 
-  setImgSize();
+  gallImgMgr.setGallImgSize();
 
 
   $('.img-window').hover(function(event){
@@ -47,15 +61,15 @@ $(document).ready(function(){
       var imgSrc = img.attr("src");
       var newSrc = imgSrc.replace(".png", "Tint.png");
       img.attr("src", newSrc);
-      $(this).children('.gall-img-desc').addClass('animated fadeInDown').css('display', 'block');
+      $(this).find('.gall-img-desc').addClass('animated fadeInDown').css('display', 'block');
   },function(){
       var img = $(this).children('.gall-image');
       var imgSrc = img.attr("src");
       var newSrc = imgSrc.replace("Tint.png" ,".png");
       img.attr("src", newSrc);
-      $(this).children('.gall-img-desc').removeClass('animated fadeInDown').css('display', 'none');
+      $(this).find('.gall-img-desc').removeClass('animated fadeInDown').css('display', 'none');
   });
 
-  
+
 
 });
