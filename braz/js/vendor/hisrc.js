@@ -246,7 +246,7 @@
 						} else {
 
 							// check if client can get high res image
-							if ($.hisrc.devicePixelRatio > 1 && $.hisrc.bandwidth === 'high') {
+							if (($.hisrc.devicePixelRatio > 1 && $.hisrc.bandwidth === 'high') || document.documentElement.clientWidth >= 1600) {
 								var image2x = $el.data('2x');
 								if (!image2x) {
 									// use naming convention.
@@ -278,4 +278,3 @@
 	};
 
 })(jQuery);
-

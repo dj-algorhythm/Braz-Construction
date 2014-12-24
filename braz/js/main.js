@@ -22,13 +22,24 @@ $(document).ready(function(){
     },
 
     setGallImgDesc: function(){
-      var gallImgDesc = $('.gall-img-desc');
+      this.gallImgWindow.each(function(index){
+        var position;
+        var gallImgDesc = $(this).find('.gall-img-desc');
+        var descHeight = gallImgDesc.height();
+        var offset = descHeight/2;
+        var halfGallImgHeight = $(this).height()/2;
+        position = halfGallImgHeight + offset;
+        gallImgDesc.css('bottom', position);
+      });
+
+      /*var gallImgDesc = $('.gall-img-desc');
       var descHeight = gallImgDesc.height();
       var halfGallImgHeight = this.gallImg.height()/2;
       gallImgDesc.css('bottom', function(){
-        var offset = descHeight/2;
+        var offset;
+        $(event.currentTarget).find('br') ? offset = descHeight : offset = descHeight/2;
         return halfGallImgHeight + offset;
-      });
+      });*/
     }
 
   }

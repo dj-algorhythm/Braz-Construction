@@ -1,39 +1,33 @@
-var fileRef,docRef,savedState,savePath, filePath = "//vboxsrv/BrazConstruction/braz/img/g_venetian";
+var fileRef,docRef,savePath, filePath = "//vboxsrv/Windows7Ultimate_shrFldr/brz_images_1/";
+app.preferences.typeUnits = TypeUnits.PIXELS;
 
 
-for (var i = 0; i < 3; ++i){
-    fileRef = File(filePath + i + ".png");
+
+for (var i = 0; i < 47; ++i){
+    fileRef = File(filePath + i + ".jpg");
     docRef = app.open(fileRef);
 
-    docRef.crop(new Array(172,0,1194,768));
     savedState = docRef.activeHistoryState;
-    app.activeDocument.save();
 
     jpgSaveOptions = new JPEGSaveOptions();
     jpgSaveOptions.formatOptions = FormatOptions.STANDARDBASELINE;
     jpgSaveOptions.matte = MatteType.NONE;
     jpgSaveOptions.quality = 12;
 
-    docRef.resizeImage(1000,750);
+    docRef.resizeImage(1000,750,96,ResampleMethod.PRESERVEDETAILS);
     savePath = new File(filePath + i + "_1000x750.jpg");
     app.activeDocument.saveAs(savePath,jpgSaveOptions,true,Extension.LOWERCASE);
     savePath = null;
     docRef.activeHistoryState = savedState;
 
-    docRef.resizeImage(800,600);
+    docRef.resizeImage(800,600,96,ResampleMethod.PRESERVEDETAILS);
     savePath = new File(filePath + i + "_800x600.jpg");
     app.activeDocument.saveAs(savePath,jpgSaveOptions,true,Extension.LOWERCASE);
     savePath = null;
     docRef.activeHistoryState = savedState;
 
-    docRef.resizeImage(400,300);
+    docRef.resizeImage(400,300,96,ResampleMethod.PRESERVEDETAILS);
     savePath = new File(filePath + i + "_400x300.jpg");
-    app.activeDocument.saveAs(savePath,jpgSaveOptions,true,Extension.LOWERCASE);
-    savePath = null;
-    docRef.activeHistoryState = savedState;
-
-    docRef.resizeImage(250,188);
-    savePath = new File(filePath + i + "_250x188.jpg");
     app.activeDocument.saveAs(savePath,jpgSaveOptions,true,Extension.LOWERCASE);
     savePath = null;
     docRef.activeHistoryState = savedState;
