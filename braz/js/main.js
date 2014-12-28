@@ -1,50 +1,54 @@
-$(".hisrc img").hisrc();
-$(".hisrc img+img").hisrc({
-  useTransparentGif: true,
-  speedTestUri: '50K.jpg'
-});
+$.hisrc.speedTest();
 
 $(document).ready(function(){
-  var gallImgMgr = {
 
-    gallImgWindow: $('.img-window'),
-    gallImg: $('.gall-image'),
+  $(".hisrc img").hisrc();
+  $(".hisrc img+img").hisrc({
+    useTransparentGif: false,
+    speedTestUri: './50K.jpg'
+  });
 
-    setGallImgSize: function(){
-      if($(document).width() < 768){
-        this.gallImg.width('80%');
-      } else {
-        this.gallImg.width('90%');
-      }
-      this.gallImg.height(this.gallImg.width() * 1/1.333333);
-      this.gallImgWindow.height(this.gallImg.height());
-      this.setGallImgDesc();
-    },
+  // Set navbar size
 
-    setGallImgDesc: function(){
-      this.gallImgWindow.each(function(index){
-        var position;
-        var gallImgDesc = $(this).find('.gall-img-desc');
-        var descHeight = gallImgDesc.height();
-        var offset = descHeight/2;
-        var halfGallImgHeight = $(this).height()/2;
-        position = halfGallImgHeight + offset;
-        gallImgDesc.css('bottom', position);
-      });
+  var setNav = function() {
+    var cntWidth = $('#content-wrapper').width();
+    $('#navbar').css('width', cntWidth);
+  };
 
-      /*var gallImgDesc = $('.gall-img-desc');
-      var descHeight = gallImgDesc.height();
-      var halfGallImgHeight = this.gallImg.height()/2;
-      gallImgDesc.css('bottom', function(){
-        var offset;
-        $(event.currentTarget).find('br') ? offset = descHeight : offset = descHeight/2;
-        return halfGallImgHeight + offset;
-      });*/
+  var resizeMgr = function() {
+
+  // Resize gallery images
+
+    this.gallImgWindow = $('.img-window');
+    this.gallImg = $('.gall-image');
+
+    if($(document).width() < 768){
+      this.gallImg.width('80%');
+    } else {
+      this.gallImg.width('90%');
     }
+    this.gallImg.height(this.gallImg.width() * 1/1.333333);
+    this.gallImgWindow.height(this.gallImg.height());
 
-  }
+  // Set gallery image description position when shown
 
-  window.onresize = gallImgMgr.setGallImgSize();
+    this.gallImgWindow.each(function(index){
+      var position;
+      var gallImgDesc = $(this).find('.gall-img-desc');
+      var descHeight = gallImgDesc.height();
+      var offset = descHeight/2;
+      var halfGallImgHeight = $(this).height()/2;
+      position = halfGallImgHeight + offset;
+      gallImgDesc.css('bottom', position);
+    });
+
+  // Resize navbar
+    setNav();
+  };
+
+  resizeMgr();
+
+  window.onresize = resizeMgr();
 
   $(".backstretch-carousel").backstretch([
     "./img/bg-services.jpg",
@@ -62,10 +66,6 @@ $(document).ready(function(){
      $(".backstretch-carousel").backstretch("prev");
     }
   }, { offset: '50%' });
-
-
-  gallImgMgr.setGallImgSize();
-
 
   $('.img-window').hover(function(event){
       var img = $(this).children('.gall-image');

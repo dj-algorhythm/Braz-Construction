@@ -50,7 +50,8 @@
       var self = this;
       $('body').on('click', 'div[data-lightbox]' /*'a[rel^=lightbox], area[rel^=lightbox], a[data-lightbox], area[data-lightbox]'*/, function(event) {
         //self.start($(event.currentTarget));
-        var firstImg = $('#gall_paint').find('img').filter(':first');
+        var dataLBValue = $(this).attr('data-lightbox');
+        var firstImg = $('img[data-lightbox="' + dataLBValue + '"]').filter(':first');
         self.start(firstImg);
         return false;
       });

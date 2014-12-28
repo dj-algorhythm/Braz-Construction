@@ -19,7 +19,7 @@
 		useTransparentGif: false,
 		transparentGifSrc: 'data:image/gif;base64,R0lGODlhAQABAIAAAMz/AAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==',
 		minKbpsForHighBandwidth: 300,
-		speedTestUri: '50K.jpg',
+		speedTestUri: './50K.jpg',
 		speedTestKB: 50,
 		speedTestExpireMinutes: 30,
 		forcedBandwidth: false,

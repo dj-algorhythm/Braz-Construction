@@ -13,7 +13,6 @@ body {
 #navbar.navbar.navbar-fixed-top.navbar-default {
   padding: 0 4.8828125%;
   border-color: #3d5e19;
-  width: 92.679355783308931185944363103953%;
   margin: 0 auto;
   font-family: "Cinzel Decorative", sans-serif;
 }
@@ -54,6 +53,7 @@ body {
   margin: auto;
   z-index: 5;
   font-family: "Cinzel Decorative", sans-serif;
+  font-size: 0.8em;
   color: #ffffff;
 }
 @media only screen and (min-width: 768px) {
