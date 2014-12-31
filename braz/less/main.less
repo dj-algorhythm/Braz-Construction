@@ -1,3 +1,5 @@
+@import "variables.less";
+
 html, body {
     height: 100%;
     width: 100%;
@@ -11,14 +13,33 @@ html, body {
     padding: 0 3.5714285714285714285714285714286em;//0 2.2631578947368421052631578947368%;
 }
 
-#navbar.navbar.navbar-fixed-top.navbar-default {
-    padding: 0 4.8828125%;
+#nav-wrap {
+    position: fixed;
+    left: 0;
+    right:0;
+    width: 100%;
+    padding: 0 3.5714285714285714285714285714286em;
+    min-height: 50px;
+    z-index: 1030;
+}
+
+#navbar {
+    padding: 0 1.5%;
     border-color: #3d5e19;
-    //width: 92.679355783308931185944363103953%;
+    border-width: 0 0 2.3px;
+    border-radius: 0;
+    width: 100%;
     margin: 0 auto;
     font-family: "Cinzel Decorative", sans-serif;
 }
 
+.navbar-brand {
+    padding: 0;
+
+    > img {
+        width: @navbar-height * 2.408695652;
+    }
+}
 /*------------------------MAIN CONTENT------------------------------------*/
 .content-wrapper {
     width: 100%;
@@ -39,16 +60,31 @@ html, body {
 
 .gallery-row{
     margin-top: 2.0em;
-    height: 30.642857143em;
-      @media only screen and (min-width: 768px) {height: 20em;}
+    height: 35em;
+
+    @media only screen and (min-width: 768px) {height: 15em;}
+}
+
+.img-window-wrap {
+    text-align: center;
 }
 
 .img-window{
-    margin: 0 !important;
-    padding: 3.6603221083455344070278184480234% 25.186567164179104477611940298507%;
     text-align: center;
+    margin: 2em auto;
+    height: 10.357142857em;
 
-    @media only screen and (min-width: 768px) {padding: 0 3.6603221083455344070278184480234%;}
+    @media only screen and (min-width: 768px) {
+      height: 12.857142857em;
+    }
+
+    @media only screen and (min-width: 978px) {
+      height: 14em;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      width: 18.5em;
+    }
 }
 
 
@@ -59,8 +95,19 @@ html, body {
     z-index: 5;
     font-family: "Cinzel Decorative", sans-serif;
     font-size: 0.8em;
-        @media only screen and (min-width: 768px) {font-size: 1.3em;}
+        @media only screen and (min-width: 768px) {font-size: 1em;}
+        @media only screen and (min-width: 1200px) {font-size: 1.3em;}
     color: #ffffff;
+}
+
+.gall-image {
+    width: 11.785714286em;
+    height: 86.991869919%;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 768px) {
+      width: 100%;
+    }
 }
 
 

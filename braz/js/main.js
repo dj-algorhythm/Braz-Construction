@@ -1,4 +1,4 @@
-$.hisrc.speedTest();
+//$.hisrc.speedTest();
 
 $(document).ready(function(){
 
@@ -8,50 +8,19 @@ $(document).ready(function(){
     speedTestUri: './50K.jpg'
   });
 
-  // Set navbar size
-
-  var setNav = function() {
-    var cntWidth = $('#content-wrapper').width();
-    $('#navbar').css('width', cntWidth);
-  };
-
-  var resizeMgr = function() {
-
-  // Resize gallery images
-
-    this.gallImgWindow = $('.img-window');
-    this.gallImg = $('.gall-image');
-
-    if($(document).width() < 768){
-      this.gallImg.width('80%');
-    } else {
-      this.gallImg.width('90%');
-    }
-    this.gallImg.height(this.gallImg.width() * 1/1.333333);
-    this.gallImgWindow.height(this.gallImg.height());
-
-  // Set gallery image description position when shown
-
-    this.gallImgWindow.each(function(index){
-      var position;
-      var gallImgDesc = $(this).find('.gall-img-desc');
-      var descHeight = gallImgDesc.height();
-      var offset = descHeight/2;
-      var halfGallImgHeight = $(this).height()/2;
-      position = halfGallImgHeight + offset;
-      gallImgDesc.css('bottom', position);
-    });
-
-  // Resize navbar
-    setNav();
-  };
-
-  resizeMgr();
-
-  window.onresize = resizeMgr();
+  $('.img-window').each(function(index){
+    var position;
+    var gallImgDesc = $(this).find('.gall-img-desc');
+    var gallImg = $(this).find('.gall-image');
+    var descHeight = gallImgDesc.height();
+    var offset = descHeight/2;
+    var halfGallImgHeight = gallImg.height()/2;
+    position = halfGallImgHeight + offset;
+    gallImgDesc.css('bottom', position);
+  });
 
   $(".backstretch-carousel").backstretch([
-    "./img/bg-services.jpg",
+    "./img/bg-gallery3.jpg",
     "./img/bg-gallery1.jpg",
     "./img/bg-gallery2.jpg"],
     {duration:1000,fade:1000});
