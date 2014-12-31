@@ -8,6 +8,23 @@ $(document).ready(function(){
     speedTestUri: './50K.jpg'
   });
 
+  $(window).scroll(function(){
+    var currentScreen = $('.screen').filter(function(){
+      var offset = $(this).offset();
+      return offset.top === 0;
+    });
+
+    if (currentScreen.attr('id', 'welcome')) {
+      $('#navbar').css('border-color', '#4E2005')
+    } else if (currentScreen.attr('id', 'services')) {
+      $('#navbar').css('border-color', '#4E2005')
+    } else if (currentScreen.attr('id', 'gallery')) {
+      $('#navbar').css('border-color', '#4E2005')
+    } else (currentScreen.attr('id', 'contact')) {
+      $('#navbar').css('border-color', '#4E2005')
+    }
+  });
+
   $('.img-window').each(function(index){
     var position;
     var gallImgDesc = $(this).find('.gall-img-desc');
