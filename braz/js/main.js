@@ -8,10 +8,10 @@ $(document).ready(function(){
     speedTestUri: './50K.jpg'
   });
 
-  $(window).scroll(function(){
+  /*$(window).scroll(function(){
     var currentScreen = $('.screen').filter(function(){
       var offset = $(this).offset();
-      return offset.top === 0;
+      return offset.top == 0;
     });
 
     if (currentScreen.attr('id', 'welcome')) {
@@ -23,7 +23,7 @@ $(document).ready(function(){
     } else (currentScreen.attr('id', 'contact')) {
       $('#navbar').css('border-color', '#4E2005')
     }
-  });
+  });*/
 
   $('.img-window').each(function(index){
     var position;
@@ -38,6 +38,7 @@ $(document).ready(function(){
 
   $(".backstretch-carousel").backstretch([
     "./img/bg-gallery3.jpg",
+    "./img/bg-services.jpg",
     "./img/bg-gallery1.jpg",
     "./img/bg-gallery2.jpg"],
     {duration:1000,fade:1000});

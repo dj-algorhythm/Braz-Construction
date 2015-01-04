@@ -41,11 +41,27 @@ body {
   display: table;
   padding: 3.5714285714285714285714285714286em 3.5714285714285714285714285714286em 0;
 }
-.content-wrapper-inner {
-  height: 100%;
-  dispaly: table-cell;
+/*--------------------SERVICES---------------------------*/
+#services-wrap {
+  position: relative;
+  top: 16.6666667%;
+  text-align: center;
+  display: table-cell;
+}
+#services-wrap p {
+  font-family: 'Tangerine', sans-serif;
+  font-size: 1.75em;
+  color: #ffffff;
+}
+#services-wrap img {
+  width: 15.714285714em;
+  height: 2.142857143em;
 }
 /*--------------------GALLERY---------------------------*/
+.gallery-wrap {
+  height: 100%;
+  display: table-cell;
+}
 .gallery-row {
   margin-top: 2.0em;
   height: 35em;
