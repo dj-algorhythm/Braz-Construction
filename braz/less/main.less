@@ -57,17 +57,74 @@ html, body {
     top: 16.6666667%;
     text-align: center;
     display: table-cell;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
 
-    p {
+    h1 {
       font-family: 'Tangerine', sans-serif;
-      font-size: 1.75em;
-      color: #ffffff;
+      @media only screen and (max-width: 768px) {font-size: 1.8em;}
     }
 
-    img {
-      width: 15.714285714em;
-      height: 2.142857143em;
+    h4 {
+      position: relative;
+
+
+      @media only screen and (max-width: 768px) {font-size: 1.2em;}
     }
+
+    header img {
+      width: 16.071428571em;
+      height: 2.142857143em;
+
+      @media only screen and (min-width: 768px) {width: 23em; height: 1.75em;}
+    }
+
+
+    #srvcs-content-container {
+      padding: 0 0.714285714em 0;
+      .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+      .track { background: transparent url(../img/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+      .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+      .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+
+          #srvcs-content {
+            height: 18.571428571em;
+            position: relative;
+            overflow: hidden;
+            //height: 55.714285714em;
+
+              #srvcs-text {
+                position: absolute;
+                font-size: 0.75em;
+                list-style: none;
+                left: 0;
+                top: 0;
+                padding: 0 2.5em 0;
+                margin: 0;
+
+                .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
+                @media only screen and (min-width: 768px) {font-size: 1em;}
+
+                #our_srvcs {
+                  display: none;
+                  @media only screen and (min-width: 768px) {display: block;}
+                }
+
+                #our_srvcs2 {
+                  display: block;
+                  @media only screen and (min-width: 768px) {display: none;}
+                }
+
+
+              }
+          }
+    }
+
+
+
+
+
 }
 
     /*--------------------GALLERY---------------------------*/

@@ -68,6 +68,6 @@ $(document).ready(function(){
       $(this).find('.gall-img-desc').removeClass('animated fadeInDown').css('display', 'none');
   });
 
-
+  $('#srvcs-content-container').tinyscrollbar({trackSize: 100});
 
 });
