@@ -3,6 +3,7 @@
 html, body {
     height: 100%;
     width: 100%;
+    color: #ffffff;
 }
 
 .backstretch-carousel{
@@ -50,61 +51,140 @@ html, body {
    // margin: 0 auto;
 }
 
+    /*--------------------WELCOME----------------------------*/
+
+#welcome-wrap {
+  position: relative;
+  top: 19em;
+  text-align: center;
+
+  @media only screen and (min-width: 768px) {top: 21.928571429em;}
+
+  .row {
+    font-family: "Raleway", sans-serif;
+
+    div:first-child {
+      text-align: center;
+      @media only screen and (min-width: 768px) {width: 45%;}
+      img {
+        width: 100%;
+        height: 2em;
+        @media only screen and (min-width: 768px) {height: 2.857142857em;}
+        @media only screen and (min-width: 600px) {height: 2.5em;}
+      }
+    }
+
+    h2 {
+      font-family: "Cinzel Decorative", sans-serif;
+      @media only screen and (min-width: 768px) {margin-bottom: 5px;}
+    }
+
+    h1 {
+      font-family: "Tangerine", sans-serif;
+      position: relative;
+      top: 0.85em;
+      right: 0.65em;
+      @media only screen and (max-width: 767px) {display: none;}
+    }
+
+
+    p {
+      @media only screen and (min-width: 714px) and (max-width: 767px) {padding-right: 7.5em; padding-left: 7.5em;}
+      @media only screen and (min-width: 768px) {padding-right: 2.5em; padding-left: 2.5em; text-align:left;}
+    }
+  }
+}
+
     /*--------------------SERVICES---------------------------*/
 
 #services-wrap {
     position: relative;
     top: 16.6666667%;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: center;
     display: table-cell;
-    color: #ffffff;
     font-family: 'Raleway', sans-serif;
 
-    h1 {
-      font-family: 'Tangerine', sans-serif;
-      @media only screen and (max-width: 768px) {font-size: 1.8em;}
+    @media only screen and (min-width: 768px) {
+      padding-left: 30px;
+      padding-right: 30px;
     }
 
-    h4 {
-      position: relative;
-
-
-      @media only screen and (max-width: 768px) {font-size: 1.2em;}
+    @media only screen and (min-width: 980px) {
+      padding-left: 50px;
+      padding-right: 50px;
     }
 
-    header img {
-      width: 16.071428571em;
-      height: 2.142857143em;
-
-      @media only screen and (min-width: 768px) {width: 23em; height: 1.75em;}
+    @media only screen and (min-width: 1024px) {
+      padding-left: 65px;
+      padding-right: 65px;
     }
 
+    @media only screen and (min-width: 1200px) {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+
+    #glass {
+      width: 100%;
+      height: 28.571428571em;
+    }
 
     #srvcs-content-container {
-      padding: 0 0.714285714em 0;
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      .row:first-child {
+
+      }
+
+      h1 {
+        font-family: 'Tangerine', sans-serif;
+        margin-bottom: 0;
+        @media only screen and (max-width: 600px) {font-size: 1.8em;}
+      }
+
+      h4 {
+        @media only screen and (max-width: 767px) {font-size: 1.2em;}
+      }
+
+      header img {
+        width: 18.214285714em;
+        height: 1.4em;
+        margin-bottom: 1.5em;
+
+        @media only screen and (min-width: 768px) {width: 26.428571429em; height: 1.75em;}
+      }
+
       .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
       .track { background: transparent url(../img/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
       .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
       .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
 
           #srvcs-content {
-            height: 18.571428571em;
-            position: relative;
-            overflow: hidden;
-            //height: 55.714285714em;
+              height: 18.571428571em;
+              position: relative;
+              overflow: hidden;
+              font-size: 0.875em;
 
               #srvcs-text {
                 position: absolute;
-                font-size: 0.75em;
                 list-style: none;
                 left: 0;
                 top: 0;
                 padding: 0 2.5em 0;
                 margin: 0;
 
-                .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+                @media only screen and (min-width: 600px) and (max-width: 768px) {padding-left: 60px; padding-right: 60px;}
 
-                @media only screen and (min-width: 768px) {font-size: 1em;}
+                .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
 
                 #our_srvcs {
                   display: none;
@@ -116,6 +196,15 @@ html, body {
                   @media only screen and (min-width: 768px) {display: none;}
                 }
 
+                .row:nth-of-type(2) {
+                  @media only screen and (min-width: 768px){padding-left: 12em; padding-right: 12em;}
+                }
+
+                .col-sm-4:nth-of-type(1) {
+                  @media only screen and (min-width: 768px) {
+                    text-align: left;
+                  }
+                }
 
               }
           }
@@ -172,7 +261,6 @@ html, body {
     font-size: 0.8em;
         @media only screen and (min-width: 768px) {font-size: 1em;}
         @media only screen and (min-width: 1200px) {font-size: 1.3em;}
-    color: #ffffff;
 }
 
 .gall-image {

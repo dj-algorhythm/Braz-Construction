@@ -8,22 +8,25 @@ $(document).ready(function(){
     speedTestUri: './50K.jpg'
   });
 
-  /*$(window).scroll(function(){
+  $(window).scroll(function(){
     var currentScreen = $('.screen').filter(function(){
       var offset = $(this).offset();
       return offset.top == 0;
     });
 
     if (currentScreen.attr('id', 'welcome')) {
-      $('#navbar').css('border-color', '#4E2005')
+      $('#navbar').css('border-color', '#612B03');
     } else if (currentScreen.attr('id', 'services')) {
-      $('#navbar').css('border-color', '#4E2005')
-    } else if (currentScreen.attr('id', 'gallery')) {
-      $('#navbar').css('border-color', '#4E2005')
-    } else (currentScreen.attr('id', 'contact')) {
-      $('#navbar').css('border-color', '#4E2005')
-    }
-  });*/
+      $('#navbar').css('border-color', '#C69C6D');
+    } else if (currentScreen.attr('id', 'gallery1')) {
+      $('#navbar').css('border-color', '#3d5e19');
+    } else if (currentScreen.attr('id', 'gallery2')) {
+      $('#navbar').css('border-color', '#3A1002');
+    } else if (currentScreen.attr('id', 'gallery3')) {
+      $('#navbar').css('border-color', '#3d5e19');
+    } else (currentScreen.attr('id', 'contact'))
+      $('#navbar').css('border-color', '#3A1002');
+  });
 
   $('.img-window').each(function(index){
     var position;
@@ -38,7 +41,8 @@ $(document).ready(function(){
 
   $(".backstretch-carousel").backstretch([
     "./img/bg-gallery3.jpg",
-    "./img/bg-services.jpg",
+    "./img/bg-welcome.jpg",
+    "./img/bg-services_naked.jpg",
     "./img/bg-gallery1.jpg",
     "./img/bg-gallery2.jpg"],
     {duration:1000,fade:1000});
