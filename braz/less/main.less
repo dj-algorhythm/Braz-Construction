@@ -66,11 +66,15 @@ html, body {
     div:first-child {
       text-align: center;
       @media only screen and (min-width: 768px) {width: 45%;}
+      @media only screen and (min-width: 1366px) {position: relative; right: 1em; top: 1em;}
       img {
         width: 100%;
         height: 2em;
-        @media only screen and (min-width: 768px) {height: 2.857142857em;}
-        @media only screen and (min-width: 600px) {height: 2.5em;}
+        @media only screen and (min-width: 570px) and (max-width: 767px) {width: 25.714285714em;}
+        @media only screen and (min-width: 768px) {width: 18.857142857em;}
+        @media only screen and (min-width: 960px) {width: 21em;}
+        @media only screen and (min-width: 1200px) {width: 23em;}
+        @media only screen and (min-width: 1366px) {width: 25em;}
       }
     }
 
@@ -81,16 +85,20 @@ html, body {
 
     h1 {
       font-family: "Tangerine", sans-serif;
+      font-size: 2.4em;
       position: relative;
       top: 0.85em;
       right: 0.65em;
       @media only screen and (max-width: 767px) {display: none;}
+      @media only screen and (min-width: 1366px) {font-size: 3em;}
     }
-
 
     p {
       @media only screen and (min-width: 714px) and (max-width: 767px) {padding-right: 7.5em; padding-left: 7.5em;}
-      @media only screen and (min-width: 768px) {padding-right: 2.5em; padding-left: 2.5em; text-align:left;}
+      @media only screen and (min-width: 768px) {padding-left: 1em; padding-right: 2.5em; text-align:left;}
+      @media only screen and (min-width: 937px) {padding-right: 4em;}
+      @media only screen and (min-width: 1173px) {padding-right: 5em;}
+      @media only screen and (min-width: 1132px) {padding-right: 6em;}
     }
   }
 }
@@ -163,7 +171,7 @@ html, body {
         @media only screen and (min-width: 768px) {width: 26.428571429em; height: 1.75em;}
       }
 
-      .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+      .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; right: 5%; width: 15px; }
       .track { background: transparent url(../img/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
       .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
       .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
@@ -197,7 +205,7 @@ html, body {
                 }
 
                 .row:nth-of-type(2) {
-                  @media only screen and (min-width: 768px){padding-left: 12em; padding-right: 12em;}
+                  @media only screen and (min-width: 768px){padding-left: 5em; padding-right: 5em;}
                 }
 
                 .col-sm-4:nth-of-type(1) {

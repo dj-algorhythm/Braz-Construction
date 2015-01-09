@@ -64,18 +64,40 @@ body {
     width: 45%;
   }
 }
+@media only screen and (min-width: 1366px) {
+  #welcome-wrap .row div:first-child {
+    position: relative;
+    right: 1em;
+    top: 1em;
+  }
+}
 #welcome-wrap .row div:first-child img {
   width: 100%;
   height: 2em;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 570px) and (max-width: 767px) {
   #welcome-wrap .row div:first-child img {
-    height: 2.857142857em;
+    width: 25.714285714em;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   #welcome-wrap .row div:first-child img {
-    height: 2.5em;
+    width: 18.857142857em;
+  }
+}
+@media only screen and (min-width: 960px) {
+  #welcome-wrap .row div:first-child img {
+    width: 21em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #welcome-wrap .row div:first-child img {
+    width: 23em;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  #welcome-wrap .row div:first-child img {
+    width: 25em;
   }
 }
 #welcome-wrap .row h2 {
@@ -88,6 +110,7 @@ body {
 }
 #welcome-wrap .row h1 {
   font-family: "Tangerine", sans-serif;
+  font-size: 2.4em;
   position: relative;
   top: 0.85em;
   right: 0.65em;
@@ -95,6 +118,11 @@ body {
 @media only screen and (max-width: 767px) {
   #welcome-wrap .row h1 {
     display: none;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  #welcome-wrap .row h1 {
+    font-size: 3em;
   }
 }
 @media only screen and (min-width: 714px) and (max-width: 767px) {
@@ -105,9 +133,24 @@ body {
 }
 @media only screen and (min-width: 768px) {
   #welcome-wrap .row p {
+    padding-left: 1em;
     padding-right: 2.5em;
-    padding-left: 2.5em;
     text-align: left;
+  }
+}
+@media only screen and (min-width: 937px) {
+  #welcome-wrap .row p {
+    padding-right: 4em;
+  }
+}
+@media only screen and (min-width: 1173px) {
+  #welcome-wrap .row p {
+    padding-right: 5em;
+  }
+}
+@media only screen and (min-width: 1132px) {
+  #welcome-wrap .row p {
+    padding-right: 6em;
   }
 }
 /*--------------------SERVICES---------------------------*/
@@ -188,6 +231,7 @@ body {
   position: relative;
   background-position: 0 0;
   float: right;
+  right: 5%;
   width: 15px;
 }
 #services-wrap #srvcs-content-container .track {
@@ -258,8 +302,8 @@ body {
 }
 @media only screen and (min-width: 768px) {
   #services-wrap #srvcs-content-container #srvcs-content #srvcs-text .row:nth-of-type(2) {
-    padding-left: 12em;
-    padding-right: 12em;
+    padding-left: 5em;
+    padding-right: 5em;
   }
 }
 @media only screen and (min-width: 768px) {

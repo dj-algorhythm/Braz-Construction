@@ -39,13 +39,23 @@ $(document).ready(function(){
     gallImgDesc.css('bottom', position);
   });
 
+  if ($(window).width() < 768) {
   $(".backstretch-carousel").backstretch([
     "./img/bg-gallery3.jpg",
-    "./img/bg-welcome.jpg",
+    "./img/bg-welcome_half.jpg",
     "./img/bg-services_naked.jpg",
     "./img/bg-gallery1.jpg",
     "./img/bg-gallery2.jpg"],
     {duration:1000,fade:1000});
+  } else {
+    $(".backstretch-carousel").backstretch([
+      "./img/bg-gallery3.jpg",
+      "./img/bg-welcome.jpg",
+      "./img/bg-services_naked.jpg",
+      "./img/bg-gallery1.jpg",
+      "./img/bg-gallery2.jpg"],
+    {duration:1000,fade:1000});
+  }
 
   $(".backstretch-carousel").backstretch("pause");
 
@@ -72,6 +82,6 @@ $(document).ready(function(){
       $(this).find('.gall-img-desc').removeClass('animated fadeInDown').css('display', 'none');
   });
 
-  $('#srvcs-content-container').tinyscrollbar({trackSize: 100});
+  $('#srvcs-content-container').tinyscrollbar({trackSize: 100, wheelLock: false});
 
 });
