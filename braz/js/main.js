@@ -7,28 +7,9 @@ $(document).ready(function(){
     useTransparentGif: false,
     speedTestUri: './50K.jpg'
   });
+  
 
-  $(window).scroll(function(){
-    var currentScreen = $('.screen').filter(function(){
-      var offset = $(this).offset();
-      return offset.top == 0;
-    });
-
-    if (currentScreen.attr('id', 'welcome')) {
-      $('#navbar').css('border-color', '#612B03');
-    } else if (currentScreen.attr('id', 'services')) {
-      $('#navbar').css('border-color', '#C69C6D');
-    } else if (currentScreen.attr('id', 'gallery1')) {
-      $('#navbar').css('border-color', '#3d5e19');
-    } else if (currentScreen.attr('id', 'gallery2')) {
-      $('#navbar').css('border-color', '#3A1002');
-    } else if (currentScreen.attr('id', 'gallery3')) {
-      $('#navbar').css('border-color', '#3d5e19');
-    } else (currentScreen.attr('id', 'contact'))
-      $('#navbar').css('border-color', '#3A1002');
-  });
-
-  $('.img-window').each(function(index){
+  $('.img-window').each(function(){
     var position;
     var gallImgDesc = $(this).find('.gall-img-desc');
     var gallImg = $(this).find('.gall-image');

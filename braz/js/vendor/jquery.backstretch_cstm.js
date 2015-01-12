@@ -211,10 +211,20 @@
       // Show the slide at a certain position
     , show: function (newIndex) {
 
+        var navBorderColors = [
+          '#3D5E19',
+          '#612B03', 
+          '#C69C6D',
+          '#3D5E19',
+          '#3A1002',
+        ];
+
         // Validate index
         if (Math.abs(newIndex) > this.images.length - 1) {
           return;
         }
+
+        $('#navbar').css('border-color', navBorderColors[newIndex]);
 
         // Vars
         var self = this
@@ -269,13 +279,7 @@
 
     , next: function () {
         // Next slide
-        var nxtImg = this.index < this.images.length - 1 ? this.index + 1 : 0;
-        return (function(){
-          if (nxtImg == 1) {
-            this.show(nxtImg);
-            
-          }
-        }());
+        return this.show(this.index < this.images.length - 1 ? this.index + 1 : 0);
       }
 
     , prev: function () {

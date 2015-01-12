@@ -109,13 +109,7 @@ html, body {
     position: relative;
     top: 16.6666667%;
     clear: both;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
     display: table-cell;
-    font-family: 'Raleway', sans-serif;
 
     @media only screen and (min-width: 768px) {
       padding-left: 30px;
@@ -142,86 +136,101 @@ html, body {
       height: 28.571428571em;
     }
 
-    #srvcs-content-container {
-      position: absolute;
-      z-index: 20;
-      top: 0;
-      left: 0;
-      right: 0;
+    #services-wrap-inner {
+      position: relative;
+      width: 19.642857143em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-family: 'Raleway', sans-serif;
 
-      .row:first-child {
+      @media only screen and (min-width: 500px) {width: 22.375em;}
+      @media only screen and (min-width: 500px) {width: 27.5em;}
+      @media only screen and (min-width: 768px) {width: 42.857142857em;}
+      @media only screen and (min-width: 992px) {width: 54.857142857em;}
+      @media only screen and (min-width: 1200px) {width: 64.285714286em;}
 
-      }
+      #srvcs-content-container {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
 
-      h1 {
-        font-family: 'Tangerine', sans-serif;
-        margin-bottom: 0;
-        @media only screen and (max-width: 600px) {font-size: 1.8em;}
-      }
+        > .row {
+          margin-left: 0;
+          margin-right: 0;
 
-      h4 {
-        @media only screen and (max-width: 767px) {font-size: 1.2em;}
-      }
-
-      header img {
-        width: 18.214285714em;
-        height: 1.4em;
-        margin-bottom: 1.5em;
-
-        @media only screen and (min-width: 768px) {width: 26.428571429em; height: 1.75em;}
-      }
-
-      .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; right: 5%; width: 15px; }
-      .track { background: transparent url(../img/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
-      .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
-      .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
-
-          #srvcs-content {
-              height: 18.571428571em;
-              position: relative;
-              overflow: hidden;
-              font-size: 0.875em;
-
-              #srvcs-text {
-                position: absolute;
-                list-style: none;
-                left: 0;
-                top: 0;
-                padding: 0 2.5em 0;
-                margin: 0;
-
-                @media only screen and (min-width: 600px) and (max-width: 768px) {padding-left: 60px; padding-right: 60px;}
-
-                .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
-
-                #our_srvcs {
-                  display: none;
-                  @media only screen and (min-width: 768px) {display: block;}
-                }
-
-                #our_srvcs2 {
-                  display: block;
-                  @media only screen and (min-width: 768px) {display: none;}
-                }
-
-                .row:nth-of-type(2) {
-                  @media only screen and (min-width: 768px){padding-left: 5em; padding-right: 5em;}
-                }
-
-                .col-sm-4:nth-of-type(1) {
-                  @media only screen and (min-width: 768px) {
-                    text-align: left;
-                  }
-                }
-
-              }
+          > div {
+            padding-left: 0;
+            padding-right: 0;
           }
+        }
+
+        h1 {
+          font-family: 'Tangerine', sans-serif;
+          margin-bottom: 0;
+          @media only screen and (max-width: 600px) {font-size: 1.8em;}
+        }
+
+        h4 {
+          font-weight: bold;
+          @media only screen and (max-width: 767px) {font-size: 1.2em;}
+        }
+
+        header img {
+          width: 18.214285714em;
+          height: 1.4em;
+          margin-bottom: 1.5em;
+
+          @media only screen and (min-width: 600px) {width: 25em; height: 1.5em;}
+          @media only screen and (min-width: 768px) {width: 26.428571429em; height: 1.75em;}
+
+        }
+
+        .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; right: 1%; width: 15px; }
+        .track { background: transparent url(../img/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+        .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+        .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+
+        #srvcs-content {
+          height: 18.571428571em;
+          position: relative;
+          overflow: hidden;
+          font-size: 0.875em;
+
+          #srvcs-text {
+            position: absolute;
+            list-style: none;
+            left: 0;
+            top: 0;
+            padding: 0 2.5em 0;
+            margin: 0;
+
+
+
+            .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
+            #our_srvcs {
+              display: none;
+              @media only screen and (min-width: 768px) {display: block;}
+            }
+
+            #our_srvcs2 {
+              display: block;
+              @media only screen and (min-width: 768px) {display: none;}
+            }
+
+            .col-sm-4:nth-of-type(1) {
+              @media only screen and (min-width: 768px) {
+                text-align: left;
+              }
+            }
+
+          }
+        }
+      }
     }
-
-
-
-
-
 }
 
     /*--------------------GALLERY---------------------------*/
