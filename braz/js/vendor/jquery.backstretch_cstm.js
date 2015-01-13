@@ -212,11 +212,12 @@
     , show: function (newIndex) {
 
         var navBorderColors = [
-          '#3D5E19',
+          '#3A1002',
           '#612B03', 
           '#C69C6D',
           '#3D5E19',
           '#3A1002',
+          '#3D5E19'
         ];
 
         // Validate index
@@ -269,6 +270,19 @@
 
                         // Resize
                         self.resize();
+
+                        if ($(this).attr('src') == './img/bg-welcome.jpg')
+                          $('.nav li').filter($(this).attr('href', '#welcome')).toggleClass("active");
+                        if ($(this).attr('src') == './img/bg-services.jpg')
+                          $('.nav li').filter($(this).attr('href', '#services')).toggleClass("active");
+                        if ($(this).attr('src') == './img/bg-gallery1.jpg')
+                          $('.nav li').filter($(this).attr('href', '#gallery1')).toggleClass("active");
+                        if ($(this).attr('src') == './img/bg-gallery2.jpg')
+                          $('.nav li').filter($(this).attr('href', '#gallery1')).toggleClass("active");
+                        if ($(this).attr('src') == './img/bg-gallery3.jpg')
+                          $('.nav li').filter($(this).attr('href', '#gallery1')).toggleClass("active");
+                        if ($(this).attr('src') == './img/bg-contact.jpg')
+                          $('.nav li').filter($(this).attr('href', '#contact')).toggleClass("active");
                       })
                       .appendTo(self.$wrap);
 

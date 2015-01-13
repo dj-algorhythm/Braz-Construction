@@ -38,8 +38,8 @@
         this._name     = pluginName;
 
         var self        = this
-        ,   $viewport   = $container.find("#srvcs-content")
-        ,   $overview   = $container.find("#srvcs-text")
+        ,   $viewport   = $container.find(".screen-content")
+        ,   $overview   = $container.find(".screen-text")
         ,   $scrollbar  = $container.find(".scrollbar")
         ,   $track      = $scrollbar.find(".track")
         ,   $thumb      = $scrollbar.find(".thumb")

@@ -49,6 +49,11 @@ html, body {
     padding: 3.5714285714285714285714285714286em 3.5714285714285714285714285714286em 0;
     //padding-top: 7.8313253012048192771084337349398%;
    // margin: 0 auto;
+
+   .glass {
+        width: 100%;
+        height: 28.571428571em;
+    }
 }
 
     /*--------------------WELCOME----------------------------*/
@@ -105,7 +110,7 @@ html, body {
 
     /*--------------------SERVICES---------------------------*/
 
-#services-wrap {
+.screen-wrap {
     position: relative;
     top: 16.6666667%;
     clear: both;
@@ -131,11 +136,6 @@ html, body {
       padding-right: 150px;
     }
 
-    #glass {
-      width: 100%;
-      height: 28.571428571em;
-    }
-
     #services-wrap-inner {
       position: relative;
       width: 19.642857143em;
@@ -148,9 +148,9 @@ html, body {
       @media only screen and (min-width: 500px) {width: 27.5em;}
       @media only screen and (min-width: 768px) {width: 42.857142857em;}
       @media only screen and (min-width: 992px) {width: 54.857142857em;}
-      @media only screen and (min-width: 1200px) {width: 64.285714286em;}
+      @media only screen and (min-width: 1200px) {width: 64.285714286em;} 
 
-      #srvcs-content-container {
+      #services-content-container {
         position: absolute;
         z-index: 20;
         top: 0;
@@ -193,13 +193,13 @@ html, body {
         .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
         .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
 
-        #srvcs-content {
+        .screen-content {
           height: 18.571428571em;
           position: relative;
           overflow: hidden;
           font-size: 0.875em;
 
-          #srvcs-text {
+          .screen-text {
             position: absolute;
             list-style: none;
             left: 0;
@@ -311,5 +311,97 @@ html, body {
     @media only screen and (min-width: 800px) {width: 28.571428571em; height: 21.428571429em;} //400px x 300px
     @media only screen and (min-width: 1366px) {width: 57.142857143em; height: 42.857142857em;} //800px x 600px
     @media only screen and (min-width: 1920px) {width: 71.428571429em; height: 53.571428571em;} //1000px x 750px
+  }
+}
+
+      /*-----------------------CONTACT------------------------------*/
+#contact-wrap-inner {
+  position: relative;
+  width: 19.642857143em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+  @media only screen and (min-width: 500px) {width: 22.375em;}
+  @media only screen and (min-width: 500px) {width: 27.5em;}
+  @media only screen and (min-width: 768px) {width: 42.857142857em;}
+  @media only screen and (min-width: 992px) {width: 54.857142857em;}
+  @media only screen and (min-width: 1200px) {width: 64.285714286em;} 
+
+
+  #contact-content-container {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    > .row {
+      margin-left: 0;
+      margin-right: 0;
+
+      > div {
+        padding-left: 0;
+        padding-right: 0;
+
+        
+        img {
+          width: 7.142857143em;
+          height: 7.142857143em;
+
+          @media only screen and (min-width: 500px) {width: 10.714285714em; height: 10.714285714em;}
+          @media only screen and (min-width: 992px) {width: 14.285714286em; height: 14.285714286em;}
+        }
+        
+      }
+    }
+
+    h1 {
+      font-family: 'Tangerine', sans-serif;
+      margin-bottom: 0;
+      font-size: 2.571428571em;
+      @media only screen and (max-width: 768px) {font-size: 1.8em;}
+    }
+
+    .screen-content {
+      height: 26.785714286em;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.875em;
+      bottom: 4.285714286em; 
+
+      @media only screen and (min-width: 500px) {bottom: 4.642857143em; height: 29em;}
+
+      :after {
+       content: " ";
+       display: table;
+      }     
+
+      .screen-text {
+        position: absolute;
+        list-style: none;
+        left: 0;
+        top: 0;
+        padding: 0 2.5em 0;
+        margin: 0;
+
+        #brazImg1 {
+
+          :after {
+            content: " ";
+            display: table;
+          }
+
+          @media only screen and (min-width: 768px) {display: none;}
+        }
+
+        #brazImg2 {
+          display: none;
+
+          @media only screen and (min-width: 768px) {display: block;}
+        }
+      }
+    }
   }
 }

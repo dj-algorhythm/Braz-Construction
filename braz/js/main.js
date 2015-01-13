@@ -22,19 +22,21 @@ $(document).ready(function(){
 
   if ($(window).width() < 768) {
   $(".backstretch-carousel").backstretch([
-    "./img/bg-gallery3.jpg",
+    "./img/bg-contact.jpg",
     "./img/bg-welcome_half.jpg",
     "./img/bg-services_naked.jpg",
     "./img/bg-gallery1.jpg",
-    "./img/bg-gallery2.jpg"],
+    "./img/bg-gallery2.jpg",
+    "./img/bg-gallery3.jpg"],
     {duration:1000,fade:1000});
   } else {
     $(".backstretch-carousel").backstretch([
-      "./img/bg-gallery3.jpg",
+      "./img/bg-contact.jpg",
       "./img/bg-welcome.jpg",
       "./img/bg-services_naked.jpg",
       "./img/bg-gallery1.jpg",
-      "./img/bg-gallery2.jpg"],
+      "./img/bg-gallery2.jpg",
+      "./img/bg-gallery3.jpg"],
     {duration:1000,fade:1000});
   }
 
@@ -63,6 +65,7 @@ $(document).ready(function(){
       $(this).find('.gall-img-desc').removeClass('animated fadeInDown').css('display', 'none');
   });
 
-  $('#srvcs-content-container').tinyscrollbar({trackSize: 100, wheelLock: false});
+  $('#services-content-container').tinyscrollbar({trackSize: 100, wheelLock: false});
+  $('#contact-content-container').tinyscrollbar({trackSize: 100, wheelLock: false});
 
 });
