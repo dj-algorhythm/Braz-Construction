@@ -1,5 +1,5 @@
 app.preferences.rulerUnits = Units.PIXELS;
-var dir = "//vboxsrv/Windows7Ultimate_shrFldr/brz_images_crop/",
+var dir = "//vboxsrv/BrazConstruction/resizeCrop/",
     folderObj = Folder(dir),
     files = folderObj.getFiles("*"),
     fileRef, docRef, strFileName, newFileName;
@@ -10,7 +10,7 @@ for (var i = 0; i < files.length; ++i){
     strFileName = fileRef.name;
 
     docRef = app.open(fileRef);
-    docRef.crop(new Array(172,0,1194,768));
+    docRef.crop(new Array(240,0,1680,1080));
     savedState = docRef.activeHistoryState;
 
     jpgSaveOptions = new JPEGSaveOptions();

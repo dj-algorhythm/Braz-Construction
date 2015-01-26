@@ -1,13 +1,4 @@
-//$.hisrc.speedTest();
-
 $(document).ready(function(){
-
-  $(".hisrc img").hisrc();
-  $(".hisrc img+img").hisrc({
-    useTransparentGif: false,
-    speedTestUri: './50K.jpg'
-  });
-  
 
   $('.img-window').each(function(){
     var position;
@@ -36,7 +27,7 @@ $(document).ready(function(){
       "./img/bg-services_naked.jpg",
       "./img/bg-gallery1.jpg",
       "./img/bg-gallery2.jpg",
-      "./img/bg-gallery3.jpg"],
+      "./img/bg-gallerry3.jpg"],
     {duration:1000,fade:1000});
   }
 
