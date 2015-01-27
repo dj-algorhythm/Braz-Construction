@@ -44,11 +44,17 @@ body {
   margin-right: auto;
   position: relative;
   text-align: center;
-  height: 32.7127659px;
+  height: 30px;
   width: 160px;
   padding-left: 5px;
   padding-right: 5px;
-  left: 2%;
+  right: 2%;
+}
+@media only and screen (min-width: 768px) {
+  #loader #posWrap {
+    left: 2%;
+    right: 0;
+  }
 }
 #loader #posWrap #loading {
   width: 100%;
@@ -100,7 +106,12 @@ body {
 }
 .content-wrapper .glass {
   width: 100%;
-  height: 28.571428571em;
+  height: 35.714285714em;
+}
+@media only screen and (min-width: 768) {
+  .content-wrapper .glass {
+    height: 28.571428571em;
+  }
 }
 /*--------------------WELCOME----------------------------*/
 #welcome-wrap {
@@ -158,6 +169,17 @@ body {
 @media only screen and (min-width: 1366px) {
   #welcome-wrap .row div:first-child img {
     width: 25em;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  #welcome-wrap .row div:first-child + div {
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  #welcome-wrap .row div:first-child + div {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 #welcome-wrap .row h2 {
@@ -358,7 +380,7 @@ body {
   width: 25px;
 }
 .screen-wrap #services-wrap-inner #services-content-container .screen-content {
-  height: 18.571428571em;
+  height: 32.142857143em;
   position: relative;
   overflow: hidden;
   font-size: 0.875em;
@@ -438,7 +460,7 @@ body {
 }
 .gall-img-desc {
   position: relative;
-  display: none;
+  display: block;
   margin: auto;
   z-index: 5;
   font-family: "Cinzel Decorative", sans-serif;
@@ -447,6 +469,7 @@ body {
 @media only screen and (min-width: 768px) {
   .gall-img-desc {
     font-size: 1em;
+    display: none;
   }
 }
 @media only screen and (min-width: 1200px) {

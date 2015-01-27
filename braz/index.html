@@ -57,17 +57,9 @@
               }
           };
 
-          $(window).load(function(){              
-                
-              var loaded = function(){
-                var nonePreloader = function(){
-                  $('#loader').css('display', 'none');
-                }
-                $('body').addClass('loaded');
-                setTimeout(nonePreloader, 1500);
-              };
-
-              $('#loading').lazylinepainter( 
+          $(document).ready(function(){
+            
+                $('#loading').lazylinepainter( 
                  {
                     
                     "svgData": pathObj,
@@ -75,24 +67,47 @@
                     "strokeColor": "#E0B687",
                     "drawSequential":false,
                     "responsive": false,
-                    "width": 150,
-                    "height": 32.7127659,
+                    "width": 200,
+                    "height": 43.610212,
                     "speedMultiplier": 3,
-              }).lazylinepainter('paint');
+                }).lazylinepainter('paint'); 
 
-              //setTimeout(loaded, 5000);          
+
+                function fakeLoad(){
+                  var rmvPreloader = function(){
+                    $('#loader').css('display', 'none');
+                  }
+                  $('body').addClass('loaded');
+                  setTimeout(rmvPreloader, 1500);
+                }                    
+            
+                setTimeout(fakeLoad, 10000);
+
+                //$.hisrc.speedTest();
+                $(".hisrc img").hisrc();
+                $(".hisrc img+img").hisrc({
+                    useTransparentGif: false,
+                    speedTestUri: './50K.jpg'
+                });
+
+              $(window).load(function(){
+                var rmvPreloader = function(){
+                  $('#loader').css('display', 'none');
+                }
+                $('body').addClass('loaded');
+                setTimeout(rmvPreloader, 1500);
+              });
           });
+            
+          
 
-          //$.hisrc.speedTest();
+          
 
-          $(".hisrc img").hisrc();
-            $(".hisrc img+img").hisrc({
-              useTransparentGif: false,
-              speedTestUri: './50K.jpg'
-          });
+          
 
           
         </script>
+        
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Cinzel+Decorative|Raleway:200">
@@ -111,6 +126,8 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+
+
 
         <div id="loader" class="content-wrapper">
             <div class="hisrc">             
@@ -158,7 +175,7 @@
                   <h2>Braz<br>Construction</h2>
                   <img src="./img/bc_ornament.png">
                 </div>
-                <div class="col-sm-6">
+                <div id="welcomeDiv" class="col-sm-6">
                     <h1>Welcome to Braz Construction!</h1><br><br>
                     <p>Your entry-point to a unique combination of services and products designed just for you.</p><br>
                     <p>Available anytime, anywhere.</p>
