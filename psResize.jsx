@@ -1,5 +1,5 @@
 app.preferences.rulerUnits = Units.PIXELS;
-var dir = "//vboxsvr/BrazConstruction/imgStore3/",
+var dir = "//vboxsvr/BrazConstruction/imgStore4/",
     folderObj = Folder(dir),
     files = folderObj.getFiles("*"),
     fileRef, docRef, strFileName, newFileName;

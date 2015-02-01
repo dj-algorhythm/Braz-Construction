@@ -1,0 +1,833 @@
+@import "./bootstrap/variables.less";
+
+html, body {
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+}
+
+/*------------------PRELOADER---------------------*/
+
+#loader {
+    opacity: 1;
+    position: fixed;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    color: #E0B687;
+    background: #000000;
+    left: 0;
+    right: 0;
+    padding-top: 75px;
+    -webkit-transition: opacity 1s ease-out;
+    -o-transition: opacity 1s ease-out;
+    transition: opacity 1s ease-out;
+
+    @media only screen
+      and (width: 320px)
+      and (height: 480px)
+      and (orientation: portrait) {
+          padding-top: 180px;
+    }
+
+    @media only screen
+      and (min-width: 320px)
+      and (min-height: 500px)
+      and (orientation: portrait){
+          padding-top: 225px;
+    }
+
+    #centerWrap {
+      height: 263.44148931px;
+      text-align: center;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media only screen
+        and (width: 320px)
+        and (height: 568px)
+        and (orientation: portrait){
+            margin-left: 50px;
+      }
+
+      @media only screen
+        and (width: 568px)
+        and (height: 320px)
+        and (orientation: landscape){
+            margin-left: 50px;
+      }
+
+      @media only screen and (min-height: 900px) {height: 322.034543606px;}
+
+    }
+
+    #imgWrap {   
+   
+      dispaly: table-row;
+      vertical-align: middle;
+
+      @media only screen and (min-width: 600px) {right: 8%;}
+      @media only screen and (min-width: 1024px) {width: 28.571428571em; height: 16.740872657em;}
+      @media only screen and (min-width: 1920px) {width: 42.857142857em; height: 25.111308986em;}
+
+      @media only screen and (min-height: 900px) {width: 28.571428571em; height: 16.740872657em;}
+    }  
+
+    img {    
+
+      /*width: 21.428571429em;
+      height: 12.555654493em;*/
+
+      width: 14.285714286em;
+      height: 6.952380953em;
+      margin-bottom: 10px;
+
+      @media only screen and (min-width: 1024px) {width: 28.571428571em; height: 13.904761905em;}
+      @media only screen and (min-width: 1920px) {width: 42.857142857em; height: 20.857142857em;}
+
+      @media only screen and (min-height: 900px) {width: 28.571428571em; height: 13.904761905em;}
+    }
+
+    #posWrap {
+
+      text-align: center;
+      display: list-item;
+      list-style-type: none;
+      vertical-align: middle;
+      margin-right: auto;
+
+      @media only screen and (min-width: 450px) and (max-width: 499px) {margin-left: 6.6666667em;}
+      @media only screen and (min-width: 768px) and (max-width: 1023px) {margin-left: 7em;}
+      @media only screen and (min-width: 1024px) {margin-left: 10.714285714em;}
+      @media only screen and (min-width: 1920px) {}
+
+      @media only screen and (min-height: 900px) {margin-left: 10.714285714em;}
+      
+      #loading {
+        width: 100%;
+        height: 100%;
+      }
+  }
+}
+
+.loaded{ 
+    #loader {
+      opacity: 0;
+    }
+}
+
+/*-----------------BACKSTRETCH------------------------*/
+
+.backstretch-carousel{
+    position: fixed;
+    background-color:  #000000;
+    height: 100%;
+    width: 100%;
+    
+    @media only screen and (min-width: 400px) {padding: 0 3.5714285714285714285714285714286em;} //@ 400px
+}
+
+/*-----------------NAVIGATION------------------------*/
+
+#nav-wrap {
+    position: fixed;
+    left: 0;
+    right:0;
+    width: 100%;
+    min-height: 50px;
+    z-index: 1030;
+
+    @media only screen and (min-width: 400px) {
+      padding: 0 3.5714285714285714285714285714286em;
+    }
+}
+
+#navbar {
+    padding: 0 1.5%;
+    border-color: #3d5e19;
+    border-width: 0 0 2.3px;
+    border-radius: 0;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Cinzel Decorative", sans-serif;
+}
+
+.navbar-brand {
+    padding: 0;
+
+    > img {
+        width: @navbar-height * 2.408695652;
+    }
+}
+/*------------------------MAIN CONTENT------------------------------------*/
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: table;
+    overflow-y: hidden;
+
+    @media only screen and (min-width: 400px) {
+      padding: 3.5714285714285714285714285714286em 3.5714285714285714285714285714286em 0;
+    }
+
+   .glass {
+        width: 90%;
+
+        @media only screen 
+          and (min-width: 768px) {height: 28.571428571em;}
+
+
+
+        @media only screen
+          and (min-width: 1024px)
+          and (min-height: 600px){
+              width: 100%;
+              height: 30em;
+        }
+
+        @media only screen 
+          and (min-height: 900px) {height: 32em;}
+    }
+
+    .glass-text {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0 2.5em 0;
+      margin: 0;
+    }
+}
+
+.screen {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+    /*--------------------WELCOME----------------------------*/
+
+#welcome-wrap {
+  text-align: center;
+  position: relative;
+  top: 3em;
+
+  @media only screen 
+    and (width: 320px)
+    and (height: 480px)
+    and (orientation: portrait){
+        top: 16em;
+  }
+
+  @media only screen
+    and (width: 320px)
+    and (height: 568px)
+    and (orientation: portrait) {
+        top: 20em;
+  }    
+
+  @media only screen
+    and (width: 360px)
+    and (height: 640px)
+    and (orientation: portrait){
+        top: 25em;
+  }
+
+  @media only screen
+    and (width: 600px)
+    and (height: 1024px)
+    and (orientation: portrait){
+      top: 35em;
+    }
+
+  @media only screen 
+    and (min-width: 768px) {top: 21.928571429em;}
+
+  @media only screen
+    and (min-width: 1024px)
+    and (min-height: 600px){
+        top: 23.5em;
+  }
+
+  @media only screen and (min-height: 900px) {top: 30em;}
+
+  .row {
+    font-family: "Raleway", sans-serif;
+    overflow-y: hidden;
+
+    div:first-child {
+      text-align: center;
+      @media only screen and (min-width: 768px) {width: 45%;}
+      @media only screen and (min-width: 1366px) {position: relative; right: 1em; top: 1em;}
+      img {
+        width: 100%;
+        height: 2em;
+        @media only screen and (min-width: 568px) and (max-width: 767px) {width: 23em; height: 2.5em;}
+        @media only screen and (min-width: 768px) {width: 18.857142857em;}
+        @media only screen and (min-width: 960px) {width: 21em;}
+        @media only screen and (min-width: 1200px) {width: 23em;}
+        @media only screen and (min-width: 1366px) {width: 25em;}
+      }
+
+    }
+
+    div:first-child + div {
+      @media only screen and (min-width: 1100px) {padding-left: 20px;}
+      @media only screen and (min-width: 1100px) {padding-left: 30px; padding-right: 30px;}
+    }
+
+    h2 {
+      font-family: "Cinzel Decorative", sans-serif;
+      font-size: 1.5em;
+
+      @media only screen
+        and (min-width: 320px)
+        and (orientation: portrait){
+            font-size: 2em;
+      }
+
+      @media only screen
+        and (min-width: 1024px)
+        and (min-height: 600px){
+            font-size: 2.3em;
+      }
+
+      @media only screen and (min-width: 768px) {margin-bottom: 5px;}
+    }
+
+    h1 {
+      font-family: "Tangerine", sans-serif;
+      font-size: 2.4em;
+      position: relative;
+      top: 0.85em;
+      right: 0.65em;
+      @media only screen and (max-width: 767px) {display: none;}
+      @media only screen and (min-width: 1366px) {font-size: 3em;}
+    }
+
+    p {
+      @media only screen and (min-width: 714px) and (max-width: 767px) {padding-right: 7.5em; padding-left: 7.5em;}
+      @media only screen and (min-width: 768px) {padding-left: 1em; padding-right: 2.5em; text-align:left;}
+      @media only screen and (min-width: 937px) {padding-right: 4em;}
+      @media only screen and (min-width: 1173px) {padding-right: 5em;}
+      @media only screen and (min-width: 1132px) {padding-right: 6em;}
+    }
+  }
+}
+
+    /*--------------------SERVICES---------------------------*/
+
+.screen-wrap {
+    position: relative;
+    display: table-cell;
+
+    @media only screen and (min-width: 768px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    @media only screen and (min-width: 980px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      padding-left: 65px;
+      padding-right: 65px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+
+    #services-wrap-inner {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-family: 'Raleway', sans-serif;
+
+      
+      @media only screen and (min-width: 500px) {width: 27.5em;}
+      @media only screen and (min-width: 600px) {width: 35em;}
+      @media only screen and (min-width: 768px) {width: 42.857142857em;}
+      @media only screen and (min-width: 992px) {width: 54.857142857em;}
+      @media only screen and (min-width: 1200px) {width: 64.285714286em;}
+
+      .glass {
+        height: 23.214285714em;
+
+        @media only screen
+          and (min-width: 320px){
+            height: 16.75em;
+        }
+
+        @media only screen
+          and (min-width: 600px){
+            width: 100%;
+          }
+
+        @media only screen
+          and (height: 1024px){
+            height: 21em;
+          }
+
+        @media only screen
+          and (min-width: 1024px)
+          and (min-height: 600px){
+              width: 100%;
+              height: 31em;
+        }
+
+      }
+
+      #services-content-container1 {  
+        display: block;
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 0.875em;
+
+        @media only screen and (min-height: 900px) {font-size: 1.25em;}
+
+        > .row {
+          margin-left: 0;
+          margin-right: 0;
+
+          > div {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }    
+        #glass-content1 {
+          height: 12.142857143;
+          position: relative;
+
+          .glass-text {
+            padding: 0 1em 0;
+          }
+        }
+
+        h1 {
+          font-family: 'Tangerine', sans-serif;
+          margin-bottom: 0;
+          font-size: 2.125em;
+        }
+
+        header img {
+          width: 16.071428571em;
+          height: 1.3em;
+          margin-bottom: 1em;
+
+          @media only screen
+            and (width: 360px)
+            and (height: 640px)
+            and (orientation: portrait){
+                width: 22em;
+                height: 2em;
+          }
+        }
+        @media only screen and (min-width: 768px) {display: none;}        
+      }
+      #services-content-container2 {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        @media only screen and (min-width: 768px){
+          display: block;          
+        }
+
+        > .row {
+          margin-left: 0;
+          margin-right: 0;
+
+          > div {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        h1 {
+          font-family: 'Tangerine', sans-serif;
+          margin-bottom: 0;
+          
+          @media only screen 
+            and (max-width: 600px) {font-size: 1.8em;}
+
+          @media only screen
+            and (min-width: 1024px)
+            and (min-height: 600px){
+                font-size: 3em;
+          }
+        }
+
+        h4 {
+          font-weight: bold;
+          @media only screen and (max-width: 767px) {font-size: 1.2em;}
+        }
+
+        header img {
+          width: 26.428571429em;
+          height: 1.75em;
+
+          @media only screen
+            and (min-width: 1024px)
+            and (min-height: 600px){
+                width: 30em;
+                height: 2em;
+          }
+
+        }
+
+        #glass-content2 {
+          height: 32.142857143em;
+          position: relative;
+          font-size: 0.875em;
+
+          @media only screen
+            and (min-width: 1024px)
+            and (min-height: 600px){
+                font-size: 1em;
+          }
+
+          .glass-text {
+            .col-sm-4:nth-of-type(1) {
+              @media only screen and (min-width: 768px) {text-align: left;}
+            }
+          }
+        }
+      }
+    }
+
+    #service-list-wrap {
+        position: relative;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        @media only screen and (min-width: 768px) {display: none;}
+
+        @media only screen
+          and (width: 360px)
+          and (height: 640px)
+          and (orientation: portrait){
+              top: 1em;
+        }
+
+        #service-list {                    
+          text-align: center;
+          font-weight: bold;
+          background-color: rgba(13,12,13,0.65);
+          font-size: 0.875em;
+          padding-right: 30px; 
+
+          @media only screen
+            and (min-width: 320){
+                text-align: left;
+          }
+
+          .row {
+            @media only screen
+              and (width: 320px)
+              and (height: 568px)
+              and (orientation: portrait){
+                margin-left: 0;
+                margin-right: 10px;
+            }
+          }
+
+          @media only screen and (min-height: 900px) {font-size: 1.25em;}
+
+          h4 {
+            font-weight: bold;
+            text-align: center;         
+          }
+        }
+    }
+}
+
+    /*--------------------GALLERY---------------------------*/
+
+.gallery-wrap {
+    height: 100%;
+    display: table-cell;
+}
+.gallery-row{
+    margin-top: 2.0em;
+    height: 35em;
+
+    @media only screen and (min-width: 768px) {height: 15em;}
+    @media only screen and (-webkit-min-device-pixel-ratio:1.3),
+           only screen and (-o-min-device-pixel-ratio: 13/10),
+           only screen and (min-resolution: 120dpi),
+           only screen and (min-height: 900px) {height: 48em;}
+}
+
+.img-window-wrap {
+    text-align: center;
+}
+
+.img-window{
+    text-align: center;
+    margin: 1em auto;
+    height: 10.357142857em;
+
+    @media only screen and (min-width: 768px) {
+      height: 12.857142857em;
+    }
+
+    @media only screen and (min-width: 978px) {
+      height: 14em;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      width: 18.5em;
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+      only screen and (-o-min-device-pixel-ratio: 13/10),
+      only screen and (min-resolution: 120dpi),
+      only screen and (min-height: 900px) {margin: 5em auto;}
+}
+
+
+.gall-img-desc {
+    position: relative;
+    display: block;
+    margin: auto;
+    z-index: 5;
+    font-family: "Cinzel Decorative", sans-serif;
+    font-size: 0.8em;
+        @media only screen and (min-width: 768px) {font-size: 1em; display: none;}
+        @media only screen and (min-width: 1200px) {font-size: 1.3em;}
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+          only screen and (-o-min-device-pixel-ratio: 13/10),
+          only screen and (min-resolution: 120dpi),
+          only screen and (min-height: 900px) {font-size: 1.2em;}
+
+        @media only screen
+          and (width: 240px)
+          and (height: 320px)
+          and (orientation: portrait) {
+              font-size: 0.75em;
+              font-weight: bold;
+        }
+}
+
+.gall-image {
+    width: 11.785714286em;
+    height: 86.991869919%;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 768px) {
+      width: 100%;
+    }
+
+    @media only screen and (min-height: 900px) {
+      width: 16.071428571em;
+      height: 12.284902597em;
+    }
+}
+
+.lightboxgallery {
+  display: none;
+
+  img {
+    width: 17.857142857em; //250px
+    height: 13.428571429em;//188px
+
+    @media only screen and (min-width: 800px) {width: 28.571428571em; height: 21.428571429em;} //400px x 300px
+    @media only screen and (min-width: 1366px) {width: 57.142857143em; height: 42.857142857em;} //800px x 600px
+    @media only screen and (min-width: 1920px) {width: 71.428571429em; height: 53.571428571em;} //1000px x 750px
+  }
+}
+
+      /*-----------------------CONTACT------------------------------*/
+
+.contact-info {
+    font-weight: bold;
+}
+
+#contact-wrap-inner {
+  dispaly: table-cell;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+  @media only screen and (min-width: 500px) {width: 22.375em;}
+  @media only screen and (min-width: 500px) {width: 27.5em;}
+  @media only screen and (min-width: 768px) {width: 42.857142857em;}
+  @media only screen and (min-width: 992px) {width: 54.857142857em;}
+  @media only screen and (min-width: 1200px) {width: 64.285714286em;} 
+
+  .glass {
+    height: 18.928571429em;
+
+    @media only screen
+      and (min-width: 1024px)
+      and (min-height: 600px){
+          width: 100%;
+          height: 30em;
+    }
+  }
+
+  #contact-glass-content1 {
+    position: absolute;
+    z-index: 20;
+    top: 5%;
+    left: 0;
+    right: 0;
+    font-size: 0.875em;    
+    padding-left: 50px;
+    padding-right: 50px; 
+    
+    @media only screen and (min-width: 768px) {display: none;}
+
+    #brazImg1 {
+      
+      width: 7.142857143em;
+      height: 7.142857143em;
+
+      @media only screen
+        and (width: 360px)
+        and (height: 640px)
+        and (orientation: portrait){
+            width: 10em;
+            height: 10em;
+      }
+
+      @media only screen and (min-width: 500px) {width: 10.714285714em; height: 10.714285714em;}
+
+      :after {
+        content: " ";
+        display: table;
+      }
+    }
+
+    h1 {
+      
+      font-family: 'Tangerine', sans-serif;
+      font-size: 2em;
+
+      @media only screen
+        and (width: 360px) 
+        and (height: 640px)
+        and (orientation: portrait){
+            font-size: 2.5em;
+      }
+
+      @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+               only screen and (-o-min-device-pixel-ratio: 13/10),
+               only screen and (min-resolution: 120dpi),
+               only screen and (min-height: 900px) {font-size: 2.75em;}    
+    }
+  }
+
+  #contact-glass-content2 {
+    display: none;
+
+    @media only screen and (min-width: 768px) {
+      display: initial;      
+    }
+
+    position: absolute;
+      z-index: 20;
+      top: 20%;
+      left: 0;
+      right: 0;
+
+      > .row {
+        margin-left: 0;
+        margin-right: 0;
+
+        > div {
+          padding-left: 0;
+          padding-right: 0;
+
+          
+          img {
+            width: 10.714285714em;
+            height: 10.714285714em;
+            
+            @media only screen and (min-width: 992px) {width: 14.285714286em; height: 14.285714286em;}
+          }
+          
+        }
+      }
+
+      h1 {
+        font-family: 'Tangerine', sans-serif;
+        margin-bottom: 0;
+        font-size: 1.8em;
+
+        @media only screen
+          and (min-width: 1024px)
+          and (min-height: 600px){
+              font-size: 2.25em;
+        }
+      }
+
+      #glass-content-contact {
+        height: 29em;
+        position: relative;
+        bottom: 4.642857143em; 
+
+        :after {
+         content: " ";
+         display: table;
+        }     
+
+        .glass-text {
+
+          #gtLeft {
+            position: relative;
+            top: 30px;
+          }
+
+          .contact-info {
+            position: relative;
+            top: 75px;
+          }
+        }
+      }
+  }
+}
+
+#contact-bottom-content {
+  position: relative;
+  top: 10px;
+  background-color: rgba(13,12,13,0.5);
+  font-family: 'Raleway', sans-serif;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  @media only screen
+    and (width: 240px)
+    and (height: 320px)
+    and (orientation: portrait){
+        text-align: center;
+        font-weight: bold;
+        font-size: 0.85em;
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+         only screen and (-o-min-device-pixel-ratio: 13/10),
+         only screen and (min-resolution: 120dpi),
+         only screen and (min-height: 900px) {font-size: 1.25em;}
+
+  .contact-info {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  @media only screen and (min-width: 768px) {display: none;}
+}

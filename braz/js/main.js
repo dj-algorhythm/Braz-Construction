@@ -15,24 +15,74 @@ $(document).ready(function(){
     $('.navbar-collapse').collapse('hide');
   });
 
-  if ($(window).width() < 768) {
+  // if ($(window).width() < 768) {
+  // $(".backstretch-carousel").backstretch([
+  //   "./img/bg-contactHalf.jpg",
+  //   "./img/bg-welcomeHalf.jpg",
+  //   "./img/bg-servicesHalf.jpg",
+  //   "./img/bg-designEmbossedRed.jpg",
+  //   "./img/bg-designEmbossedGreen.jpg",
+  //   "./img/bg-designEmbossedBeige.jpg"],
+  //   {duration:1000,fade:1000});
+  // } else if ($(window).width() > 768 && ($(window).height() >= 2*$(window).width())) {
+  //   $(".backstretch-carousel").backstretch([
+  //   "./img/bg-contactTall.jpg",
+  //   "./img/bg-welcomeTall.jpg",
+  //   "./img/bg-servicesTall.jpg",
+  //   "./img/bg-designEmbossedRed.jpg",
+  //   "./img/bg-designEmbossedGreen.jpg",
+  //   "./img/bg-designEmbossedBeige.jpg"],
+  //   {duration:1000,fade:1000});
+  // } else {
+  //   $(".backstretch-carousel").backstretch([
+  //     "./img/bg-contact.jpg",
+  //     "./img/bg-welcome.jpg",
+  //     "./img/bg-services.jpg",
+  //     "./img/bg-gallery1.jpg",
+  //     "./img/bg-gallery2.jpg",
+  //     "./img/bg-gallerry3.jpg"],
+  //   {duration:1000,fade:1000});
+  // }
+
+  /*if ($(window).width() < 768) {
   $(".backstretch-carousel").backstretch([
     "./img/bg-contactHalf.jpg",
     "./img/bg-welcomeHalf.jpg",
     "./img/bg-servicesHalf.jpg",
-    "./img/bg-texture_DarkGrey_Red.jpg",
-    "./img/bg-texture_DarkGrey_Green.jpg",
-    "./img/bg-texture_DarkGrey_Beige.jpg"],
+    "./img/bg-designEmbossedRed.jpg",
+    "./img/bg-designEmbossedGreen.jpg",
+    "./img/bg-designEmbossedBeige.jpg"],
     {duration:1000,fade:1000});
-  } else if ($(window).width() > 768 && ($(window).height() >= 2*$(window).width())) {
+  } else*/
+  if (($(window).width() >= 1080) && ($(window).height() > $(window).width())) {
     $(".backstretch-carousel").backstretch([
     "./img/bg-contactTall.jpg",
     "./img/bg-welcomeTall.jpg",
     "./img/bg-servicesTall.jpg",
-    "./img/bg-texture_DarkGrey_Red.jpg",
-    "./img/bg-texture_DarkGrey_Green.jpg",
-    "./img/bg-texture_DarkGrey_Beige.jpg"],
+    "./img/bg-designEmbossedRed.jpg",
+    "./img/bg-designEmbossedGreen.jpg",
+    "./img/bg-designEmbossedBeige.jpg"],
     {duration:1000,fade:1000});
+  } else if (($(window).width() <= 800) && ($(window).height() > $(window).width())){
+    if (($(window).width() == 360)&&($(window).height() == 640)){
+      $(".backstretch-carousel").backstretch([
+        "./img/bg-contact.jpg",
+        "./img/bg-welcomeHalf.jpg",
+        "./img/bg-servicesHalf.jpg",
+        "./img/bg-designEmbossedRed.jpg",
+        "./img/bg-designEmbossedGreen.jpg",
+        "./img/bg-designEmbossedBeige.jpg"],
+        {duration:1000,fade:1000});
+    } else {
+        $(".backstretch-carousel").backstretch([
+        "./img/bg-contact.jpg",
+        "./img/bg-welcomeHalf.jpg",
+        "./img/bg-services.jpg",
+        "./img/bg-designEmbossedRed.jpg",
+        "./img/bg-designEmbossedGreen.jpg",
+        "./img/bg-designEmbossedBeige.jpg"],
+        {duration:1000,fade:1000});
+      }
   } else {
     $(".backstretch-carousel").backstretch([
       "./img/bg-contact.jpg",
@@ -70,8 +120,4 @@ $(document).ready(function(){
         $(this).find('.gall-img-desc').removeClass('animated fadeInDown').css('display', 'none');
     });
   }
-
-  $('#services-content-container').tinyscrollbar({trackSize: 100, wheelLock: false});
-  $('#contact-content-container').tinyscrollbar({trackSize: 100, wheelLock: false});
-
 });

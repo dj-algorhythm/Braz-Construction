@@ -14,7 +14,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <script src="./js/vendor/jquery-1.11.1.min.js"></script>
         <script>window.jQuery || document.write('<script src="./js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-        <script src="./js/vendor/jquery.lazylinepainter-1.5.1.js"></script>
+        <script src="./js/vendor/jquery.lazylinepainter-1.5.1.min.js"></script>
         <script src="./js/vendor/hisrc.js"></script>
         <!--<script src="./js/preload.js"></script>-->
         <script>
@@ -57,31 +57,71 @@
               }
           };
 
-          $(document).ready(function(){
-            
-                $('#loading').lazylinepainter( 
-                 {
-                    
-                    "svgData": pathObj,
-                    "strokeWidth": 1,
-                    "strokeColor": "#E0B687",
-                    "drawSequential":false,
-                    "responsive": false,
-                    "width": 200,
-                    "height": 43.610212,
-                    "speedMultiplier": 3,
-                }).lazylinepainter('paint'); 
+          var lpControl = {
 
+              dims: [
+                [200,400,100,21.8085106],
+                [400,600,150,32.7127659],
+                [600,800,200,43.6170212]
+              ],
 
-                function fakeLoad(){
-                  var rmvPreloader = function(){
-                    $('#loader').css('display', 'none');
+              lazyPaint: function(){
+
+                var imgWidth = $('#imgWrap > img').width();
+                var svgWidth, svgHeight, svgMargin;
+
+                for(var p = 0; this.dims.length; ++p){
+                  if ((imgWidth >= this.dims[p][0]) && (imgWidth < this.dims[p][1])){
+                    svgWidth = this.dims[p][2];
+                    svgHeight = this.dims[p][3];
+                    break;
                   }
-                  $('body').addClass('loaded');
-                  setTimeout(rmvPreloader, 1500);
-                }                    
-            
-                setTimeout(fakeLoad, 10000);
+                }
+
+                $('#posWrap').width(svgWidth).height(svgHeight);
+
+                if (imgWidth < 400){
+                  svgMargin = 0.5*svgWidth;
+                  $('#posWrap').css('margin-left', svgMargin);
+                } else if ((imgWidth >= 400)&&(imgWidth < 600)){
+                  svgMargin = 0.9*svgWidth;                                    
+                  $('#posWrap').css('margin-left', svgMargin);
+                } else {
+                  svgMargin = 1.35*svgWidth;
+                  $('#posWrap').css('margin-left', svgMargin);
+                }
+
+                $('#loading').lazylinepainter({
+                          "svgData": pathObj,
+                          "strokeWidth": 1,
+                          "strokeColor": "#E0B687",
+                          "drawSequential":false,
+                          "responsive": false,
+                          "width": svgWidth,
+                          "height": svgHeight,
+                          "speedMultiplier": 3
+                }).lazylinepainter('paint');                
+
+                function repaint(){
+                  $('#loading').lazylinepainter('erase')
+                  .lazylinepainter('paint');
+                }
+
+                function paintControl(){
+                  var repaintInterval = setInterval(repaint, 6750);
+                  function stopPaint(){
+                    clearInterval(repaintInterval);
+                  }
+                  setTimeout(stopPaint, 120000);
+                }                
+
+                setTimeout(paintControl, 5000);                
+              }
+          }
+
+          $(document).ready(function(){
+
+                lpControl.lazyPaint();                 
 
                 //$.hisrc.speedTest();
                 $(".hisrc img").hisrc();
@@ -98,14 +138,6 @@
                 setTimeout(rmvPreloader, 1500);
               });
           });
-            
-          
-
-          
-
-          
-
-          
         </script>
         
         <link rel="stylesheet" href="./css/normalize.css">
@@ -113,7 +145,7 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Cinzel+Decorative|Raleway:200">
         <link rel="stylesheet" href="./css/animate.css">
         <link rel="stylesheet" href="./css/lightbox.css">
-        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/__main.css">
 
         <!-- Modernizer -->
         <script src="./js/vendor/modernizr-2.6.2.min.js"></script>
@@ -125,22 +157,19 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
 
 
-
-        <div id="loader" class="content-wrapper">
-            <div class="hisrc">             
-                  <img src="./img/preloader_plaque300x176.png" data-1x="./img/preloader_plaque600x352.png">
-              <div id="posWrap">
-                  <div id="loading"></div>
-              </div>
+        <div id="loader" class="content-wrapper">               
+            <div class="hisrc" id="centerWrap">
+                  <div id="imgWrap"><img src="./img/preloader_plaque300x145.png" data-1x="./img/preloader_plaque600x293.png" data-2x="./img/preloader_plaque900x438.png"></div>
+                  <div id="posWrap">
+                      <div id="loading"></div>
+                  </div>
             </div>
         </div>
+            
 
-        <div  class="backstretch-carousel">
-
-        </div>
+        <div  class="backstretch-carousel"></div>
 
          <header role="banner">
             <div id="nav-wrap">
@@ -170,19 +199,19 @@
         <!-- Welcome start -->
         <div id="welcome" class="content-wrapper screen">
             <div id="welcome-wrap" class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-6 col-xs-12">
                   <h2>Braz<br>Construction</h2>
                   <img src="./img/bc_ornament.png">
                 </div>
-                <div id="welcomeDiv" class="col-sm-6">
+                <div id="welcomeDiv" class="col-sm-6 col-xs-12">
                     <h1>Welcome to Braz Construction!</h1><br><br>
                     <p>Your entry-point to a unique combination of services and products designed just for you.</p><br>
                     <p>Available anytime, anywhere.</p>
                 </div>
-            </div>
+              </div>
 
-            </div>
+              </div>
         </div>
         <!-- Welcome end -->
 
@@ -192,19 +221,35 @@
               <div id="services-wrap-inner">
                   <img class="glass" src="./img/glass.png">
 
-                    <div id="services-content-container">
+                    <div id="services-content-container1">
                         <div class="row">
-                          <div class="col-sm-12">
-                            <header id="services-header">
+                          <div class="col-xs-12">
+                            <header>
                               <h1>Thank you for your interest in our services!</h1>
                               <img src="./img/srvcsDivider.png">
                             </header>
                           </div>
                         </div>
-                      <div class="scrollbar noSelect"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                      <div class="screen-content">
-                        <div class="screen-text" class="noSelect">
-                          <div id="our_srvcs" class="row">
+                        <div id="glass-content1">
+                          <div class="glass-text" class="container">
+                              <div class="col-xs-12">
+                                Using <strong>industry expertise, keen insight,</strong> and <strong>vision</strong> we provide optimal solutions peculiar to your own requirements.<br><br>We completely understand the challenges you face in today's ever-changing, complex and often unpredictable business environment.
+                              </div>
+                          </div>                          
+                        </div>
+                    </div>
+                    <div id="services-content-container2">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <header>
+                              <h1>Thank you for your interest in our services!</h1>
+                              <img src="./img/srvcsDivider.png">
+                            </header>
+                          </div>
+                        </div>
+                      <div id="glass-content2">
+                        <div class="glass-text">
+                          <div class="row">
                             <div class="col-sm-12">
                               <h4>Our services include&#58;</h4>
                             </div>
@@ -212,7 +257,7 @@
                           <div class="row">
                               <div class="col-sm-4">
                                 Using <strong>industry expertise, keen insight,</strong> and <strong>vision</strong> we provide optimal solutions peculiar to your own requirements.<br><br>We completely understand the challenges you face in today's ever-changing, complex and often unpredictable business environment.
-                                <h4 id="our_srvcs2">Our services include&#58;</h4>
+                                <!--<h4 id="our_srvcs2">Our services include&#58;</h4>-->
                               </div>
                               <div class="col-sm-4">
                                 New Construction<br>
@@ -245,7 +290,51 @@
                                 Preventative Maintenance<br>
                                 and much more.....
                               </div>
-                          </div>
+                          </div>                          
+                        </div>
+                      </div>
+                    </div>                                        
+              </div>
+              <div id="service-list-wrap">
+                <div id="service-list" class="container">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <h4>Our Services Include&#58;</h4>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-4">
+                          New Construction<br>
+                          Custom Cabinetry<br>
+                          Crown Molding<br>
+                          Custom Patio<br>
+                          Car Ports<br>
+                          Room Additions<br>
+                          Deck Construction<br>
+                          Electrical<br>
+                          Management<br>
+                          Architecture (if needed)<br>                                                  
+                        </div>
+                        <div class="col-xs-4">                          
+                          Hardy Plank Install<br>
+                          Roofing<br>
+                          Plumbing<br>
+                          Painting<br>
+                          Drywall<br>
+                          Plaster<br>
+                          Faux Finish<br>
+                          Venician Texture<br>
+                          Tile<br>
+                          Hardwood Floor<br>                                                               
+                        </div>
+                        <div class="col-xs-4">                          
+                          Kitchen and Bathroom Remodeling<br>
+                          Add-on Fences/Roofing<br>                        
+                          Ceiling Tile/Grids<br>
+                          Flooring Remodels<br>
+                          Tenant Improvments<br>
+                          Preventative Maintenance<br>
+                          and much more.....                       
                         </div>
                       </div>
                     </div>
@@ -333,7 +422,7 @@
                     <div class="col-sm-4 img-window-wrap">
                         <div data-lightbox="marble" class="img-window">
                           <img class="gall-image" src="./img/gall_marble.png">
-                          <p class="gall-img-desc">Marble/Granite<br/>Countertops</p>
+                          <p class="gall-img-desc">Marble&#47<br>Granite<br/>Countertops</p>
                         </div>
                     </div>
                     <div class="col-sm-4 img-window-wrap">
@@ -392,33 +481,49 @@
             <div class="screen-wrap">
               <div id="contact-wrap-inner">
                   <img class="glass" src="./img/glass.png">
-                  <div id="contact-content-container">
-                    
+                  <div id="contact-glass-content1">                
+                    <img id="brazImg1" src="./img/braz_trac.jpg">
+                    <h1>I am focused on my clients needs, and I work to realize their dreams as if they were my own.</h1>                
+                  </div>
+                  <div id="contact-glass-content2">                    
                       <div class="row">
-                        <div class="scrollbar noSelect"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
-                          <div class="screen-content">
-                          <div class="screen-text">
-                          <div id="brazImg1" class="col-sm-4">
-                              <img src="./img/braz_trac.jpg">
-                              <h1>I am focused on my clients needs, and I work to realize their dreams as if they were my own.</h1><br>
-                          </div>
-                          <div class="col-sm-4">
-                            <p>Through dedication to our customers and our commitment to quality, we offer you the best service in the industry. Our goal is to create satisfied customers out of each and every contact.</p>
-                            <br>
-                            <p>If you have any questions or comments feel free to contact us. We look forward to hearing from you soon!</p>
-                          </div>
-                          <div id="brazImg2" class="col-sm-4">
-                              <img src="./img/braz_trac.jpg">
-                              <h1>I am focused on my clients needs, and I work to realize their dreams as if they were my own.</h1>
-                          </div>
-                          <div class="col-sm-4">
-                              <p>Office:281.835.0772</p>
-                              <p>Mobile:281.782.5152</p>
-                              <p>Email:braz.jb@hotmail.com</p>
-                          </div>
+                        <div id="glass-content-contact">
+                          <div class="glass-text">                          
+                            <div id="gtLeft" class="col-sm-4">
+                              <p>Through dedication to our customers and our commitment to quality, we offer you the best service in the industry. Our goal is to create satisfied customers out of each and every contact.</p>
+                              <br>
+                              <p>If you have any questions or comments feel free to contact us. We look forward to hearing from you soon!</p>
+                            </div>
+                            <div id="brazImg2" class="col-sm-4">
+                                <img src="./img/braz_trac.jpg">
+                                <h1>I am focused on my clients needs, and I work to realize their dreams as if they were my own.</h1>
+                            </div>
+                            <div class="col-sm-4 contact-info">
+                                <p>Office&nbsp;&nbsp;281.835.0772</p>
+                                <p>Mobile&nbsp;&nbsp;281.782.5152</p>
+                                <p>Email&nbsp;&nbsp;braz.jb@hotmail.com</p>
+                            </div>
                         </div>
                         </div>
                       </div>
+                  </div>                  
+              </div>              
+              <div id="contact-bottom-content">
+                  <div class="row">
+                    <div class="col-xs-12 contact-info">
+                      <p>Office:&nbsp;&nbsp;281.835.0772</p>
+                      <p>Mobile:&nbsp;&nbsp;281.782.5152</p>
+                      <p>Email:&nbsp;&nbsp;braz.jb@hotmail.com</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                      <p>Through dedication to our customers and our commitment to quality, we offer you the best service in the industry. Our goal is to create satisfied customers out of each and every contact.
+                      </p>
+                    </div>                    
+                    <div class="col-xs-12 col-sm-6">
+                      <p>If you have any questions or comments feel free to contact us. We look forward to hearing from you soon!</p>
+                    </div>
                   </div>
               </div>
             </div>
@@ -460,6 +565,15 @@
           <img src="./img/g_paint32_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint32_800x600.jpg" data-2x="./img/g_paint32_1000x750.jpg"/>
           <img src="./img/g_paint33_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint33_800x600.jpg" data-2x="./img/g_paint33_1000x750.jpg"/>
           <img src="./img/g_paint34_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint34_800x600.jpg" data-2x="./img/g_paint34_1000x750.jpg"/>
+          <img src="./img/g_paint35_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint35_800x600.jpg" data-2x="./img/g_paint35_1000x750.jpg"/>
+          <img src="./img/g_paint36_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint36_800x600.jpg" data-2x="./img/g_paint36_1000x750.jpg"/>
+          <img src="./img/g_paint37_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint37_800x600.jpg" data-2x="./img/g_paint37_1000x750.jpg"/>
+          <img src="./img/g_paint38_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint38_800x600.jpg" data-2x="./img/g_paint38_1000x750.jpg"/>
+          <img src="./img/g_paint39_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint39_800x600.jpg" data-2x="./img/g_paint39_1000x750.jpg"/>
+          <img src="./img/g_paint40_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint40_800x600.jpg" data-2x="./img/g_paint40_1000x750.jpg"/>
+          <img src="./img/g_paint41_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint41_800x600.jpg" data-2x="./img/g_paint41_1000x750.jpg"/>
+          <img src="./img/g_paint42_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint42_800x600.jpg" data-2x="./img/g_paint42_1000x750.jpg"/>
+          <img src="./img/g_paint43_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint43_800x600.jpg" data-2x="./img/g_paint43_1000x750.jpg"/>
         </div>
 
         <div class="lightboxgallery hisrc">
@@ -476,6 +590,7 @@
           <img src="./img/g_cabinets3_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets3_800x600.jpg" data-2x="./img/g_cabinets3_1000x750.jpg"/>
           <img src="./img/g_cabinets4_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets4_800x600.jpg" data-2x="./img/g_cabinets4_1000x750.jpg"/>
           <img src="./img/g_cabinets5_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets5_800x600.jpg" data-2x="./img/g_cabinets5_1000x750.jpg"/>
+          <img src="./img/g_cabinets6_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets6_800x600.jpg" data-2x="./img/g_cabinets6_1000x750.jpg"/>
         </div>
 
         <div class="lightboxgallery hisrc">
@@ -514,7 +629,6 @@
         <div class="lightboxgallery hisrc">
           <img src="./img/g_patio0_400x300.jpg" data-lightbox="patio" data-1x="./img/g_patio0_800x600.jpg" data-2x="./img/g_patio0_1000x750.jpg"/>
           <img src="./img/g_patio1_400x300.jpg" data-lightbox="patio" data-1x="./img/g_patio1_800x600.jpg" data-2x="./img/g_patio1_1000x750.jpg"/>
-          <img src="./img/g_patio2_400x300.jpg" data-lightbox="patio" data-1x="./img/g_patio2_800x600.jpg" data-2x="./img/g_patio2_1000x750.jpg"/>
         </div>
 
         <div class="lightboxgallery hisrc">
@@ -682,15 +796,20 @@
           <img src="./img/g_lighting6_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting6_800x600.jpg" data-2x="./img/g_lighting6_1000x750.jpg"/>
           <img src="./img/g_lighting7_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting7_800x600.jpg" data-2x="./img/g_lighting7_1000x750.jpg"/>
           <img src="./img/g_lighting8_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting8_800x600.jpg" data-2x="./img/g_lighting8_1000x750.jpg"/>
+          <img src="./img/g_lighting9_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting9_800x600.jpg" data-2x="./img/g_lighting9_1000x750.jpg"/>
+          <img src="./img/g_lighting10_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting10_800x600.jpg" data-2x="./img/g_lighting10_1000x750.jpg"/>
+          <img src="./img/g_lighting11_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting11_800x600.jpg" data-2x="./img/g_lighting11_1000x750.jpg"/>
+          <img src="./img/g_lighting12_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting12_800x600.jpg" data-2x="./img/g_lighting12_1000x750.jpg"/>
+          <img src="./img/g_lighting13_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting13_800x600.jpg" data-2x="./img/g_lighting13_1000x750.jpg"/>
+          <img src="./img/g_lighting14_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting14_800x600.jpg" data-2x="./img/g_lighting14_1000x750.jpg"/>
+        </div>
         </div>
 
         
-        <script src="./js/vendor/jquery.backstretch_cstm.js"></script>
-        <script src="./js/vendor/waypoints.js"></script>        
+        
         <script src="./js/vendor/bootstrap.min.js"></script>
         <script src="./js/vendor/lightbox.js"></script>
         <script src="./js/plugins.js"></script>
-        <script src="./js/vendor/jquery.tinyscrollbar.js"></script>
         <script src="./js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
