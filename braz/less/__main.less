@@ -37,6 +37,12 @@ html, body {
           padding-top: 225px;
     }
 
+    @media only screen
+      and (min-width: 1880px)
+      and (min-height: 950px){
+          padding-top: 400px;
+    }
+
     #centerWrap {
       height: 263.44148931px;
       text-align: center;
@@ -175,18 +181,6 @@ html, body {
         width: 90%;
 
         @media only screen 
-          and (min-width: 768px) {height: 28.571428571em;}
-
-
-
-        @media only screen
-          and (min-width: 1024px)
-          and (min-height: 600px){
-              width: 100%;
-              height: 30em;
-        }
-
-        @media only screen 
           and (min-height: 900px) {height: 32em;}
     }
 
@@ -226,51 +220,156 @@ html, body {
   }    
 
   @media only screen
-    and (width: 360px)
-    and (height: 640px)
+    and (min-width: 320px)
+    and (height: 640px){
+        top: 25em;
+  }
+
+  @media only screen
+    and (min-width: 360px)
+    and (min-height: 640px)
     and (orientation: portrait){
         top: 25em;
   }
 
   @media only screen
-    and (width: 600px)
-    and (height: 1024px)
+    and (width: 480px)
+    and (height: 640px)
     and (orientation: portrait){
-      top: 35em;
-    }
+        top: 20em;
+  }
+
+  @media only screen
+      and (width: 640px)
+      and (height: 1024px)
+      and (orientation: portrait){
+          top: 40em;
+  }
 
   @media only screen 
     and (min-width: 768px) {top: 21.928571429em;}
 
   @media only screen
-    and (min-width: 1024px)
-    and (min-height: 600px){
+    and (width: 768px)
+    and (height: 1024px)
+    and (orientation:portrait){
+        top: 40em;
+  }  
+
+  @media only screen
+    and (width: 1024px)
+    and (height: 600px){
         top: 23.5em;
   }
 
-  @media only screen and (min-height: 900px) {top: 30em;}
+  @media only screen
+      and (width: 1024px)
+      and (height: 768px){
+        top: 27em;
+  }
+
+  @media only screen
+    and (min-width: 1200px)
+    and (min-height: 600px){
+        top: 23em;
+  }
+
+  @media only screen
+    and (min-width: 1885px)
+    and (min-height: 950px){
+      top: 35em;
+  }
 
   .row {
     font-family: "Raleway", sans-serif;
     overflow-y: hidden;
 
+    div {
+      @media only screen
+      and (width: 768px)
+      and (height: 1024px)
+      and (orientation: portrait){
+          float: none;
+          margin-left: auto;
+          margin-right: auto;
+      }
+    }
+
     div:first-child {
       text-align: center;
-      @media only screen and (min-width: 768px) {width: 45%;}
-      @media only screen and (min-width: 1366px) {position: relative; right: 1em; top: 1em;}
+
+      @media only screen 
+        and (min-width: 768px) {
+          width: 45%;
+        }
+
+      @media only screen
+        and (width: 768px) 
+        and (height: 1024px)
+        and (orientation: portrait){
+          width: 100%;
+      }
+      
+      @media only screen 
+        and (min-width: 1366px) {
+          position: relative; right: 1em; top: 1em;
+      }
+
       img {
         width: 100%;
         height: 2em;
-        @media only screen and (min-width: 568px) and (max-width: 767px) {width: 23em; height: 2.5em;}
-        @media only screen and (min-width: 768px) {width: 18.857142857em;}
-        @media only screen and (min-width: 960px) {width: 21em;}
-        @media only screen and (min-width: 1200px) {width: 23em;}
-        @media only screen and (min-width: 1366px) {width: 25em;}
+        @media only screen 
+          and (min-width: 568px) 
+          and (max-width: 767px) {
+            width: 23em; height: 2.5em;
+          }
+
+        @media only screen 
+          and (min-width: 768px) {
+            width: 18.857142857em;
+          }
+
+        @media only screen
+          and (width: 768px)
+          and (height: 1024px)
+          and (orientation: portrait){
+              width: 22em;
+              height: 2.3em;
+        }
+
+        @media only screen 
+          and (min-width: 960px) {
+            width: 21em;
+          }
+
+        @media only screen 
+          and (min-width: 1200px) {
+            width: 23em;
+          }
+
+        @media only screen 
+          and (min-width: 1300px) {
+            width: 25em;
+            height: 2.3em;
+          }
+
+        @media only screen
+          and (min-width: 1880px)
+          and (min-height: 950px) {
+            width: 35em;
+            height: 3.5em;
+        }
       }
 
     }
 
     div:first-child + div {
+      @media only screen
+        and (width: 768px)
+        and (height: 1024px)
+        and (orientation: screen){
+            text-align: center;
+      }
       @media only screen and (min-width: 1100px) {padding-left: 20px;}
       @media only screen and (min-width: 1100px) {padding-left: 30px; padding-right: 30px;}
     }
@@ -286,9 +385,29 @@ html, body {
       }
 
       @media only screen
+        and (width: 640px)
+        and (height: 1024px)
+        and (orientation: portrait){
+            font-size: 2.5em;
+      }
+
+      @media only screen
+        and (width: 768px)
+        and (height: 1024px)
+        and (orientation: portrait){
+            font-size: 2.5em;
+      }
+
+      @media only screen
         and (min-width: 1024px)
         and (min-height: 600px){
             font-size: 2.3em;
+      }
+
+      @media only screen
+        and (min-width: 1880px)
+        and (min-height: 950px){
+            font-size: 3.5em;
       }
 
       @media only screen and (min-width: 768px) {margin-bottom: 5px;}
@@ -300,16 +419,57 @@ html, body {
       position: relative;
       top: 0.85em;
       right: 0.65em;
+
       @media only screen and (max-width: 767px) {display: none;}
+
+      @media only screen
+        and (width: 768px)
+        and (height: 1024px)
+        and (orientation:portrait){
+            right: 0;
+      }
+
       @media only screen and (min-width: 1366px) {font-size: 3em;}
+
+      @media only screen
+        and (min-width: 1880px)
+        and (min-height: 950px){
+            font-size: 4em;
+      }
     }
 
     p {
-      @media only screen and (min-width: 714px) and (max-width: 767px) {padding-right: 7.5em; padding-left: 7.5em;}
-      @media only screen and (min-width: 768px) {padding-left: 1em; padding-right: 2.5em; text-align:left;}
-      @media only screen and (min-width: 937px) {padding-right: 4em;}
-      @media only screen and (min-width: 1173px) {padding-right: 5em;}
-      @media only screen and (min-width: 1132px) {padding-right: 6em;}
+      @media only screen 
+        and (min-width: 714px) 
+        and (max-width: 767px) {
+          padding-right: 7.5em; padding-left: 7.5em;
+        }
+
+      @media only screen 
+      and (min-width: 768px) {
+        padding-left: 1em; padding-right: 2.5em; text-align:left;
+      }
+
+      @media only screen
+        and (min-width: 1200px){
+          padding-right: 5em;
+      }
+
+      @media only screen 
+        and (width:768px)
+        and (height: 1024px)
+        and (orientation: portrait){
+          text-align: center;
+          padding-left: 0;
+          padding-right: 0
+      }
+
+      @media only screen
+        and (min-width: 1880px)
+        and (min-height: 950px){
+          padding-right: 4em;
+          font-size: 2em;
+      }
     }
   }
 }
@@ -368,15 +528,36 @@ html, body {
           }
 
         @media only screen
+          and (width:768px)
+          and (height: 1024px)
+          and (orientation:portrait){
+              height: 28.75em;
+        }
+
+        @media only screen
+          and (width: 640px)
           and (height: 1024px){
             height: 21em;
-          }
+        }
+
+        @media only screen
+          and (width: 800px)
+          and (min-height: 500px){
+            height: 28.5em;
+        }
 
         @media only screen
           and (min-width: 1024px)
           and (min-height: 600px){
               width: 100%;
-              height: 31em;
+              height: 32em;
+        }
+
+        @media only screen
+          and (min-width: 1880px)
+          and (min-height: 950px){
+            width: 100%;
+            height: 40em;
         }
 
       }
@@ -465,11 +646,23 @@ html, body {
             and (min-height: 600px){
                 font-size: 3em;
           }
+
+          @media only screen
+            and (min-width: 1880px)
+            and (min-height: 950px){
+                font-size: 4em;
+          }
         }
 
         h4 {
           font-weight: bold;
           @media only screen and (max-width: 767px) {font-size: 1.2em;}
+
+          @media only screen
+            and (min-width: 1880px)
+            and (min-height: 950px){
+                font-size: 1.5em;
+          }
         }
 
         header img {
@@ -483,6 +676,13 @@ html, body {
                 height: 2em;
           }
 
+          @media only screen
+            and (min-width: 1880px)
+            and (min-height: 950px){
+                width: 40em;
+                height: 3em;
+          }
+
         }
 
         #glass-content2 {
@@ -494,6 +694,12 @@ html, body {
             and (min-width: 1024px)
             and (min-height: 600px){
                 font-size: 1em;
+          }
+
+          @media only screen
+            and (min-width: 1880px)
+            and (min-height: 950px) {
+                font-size: 1.25em;
           }
 
           .glass-text {
@@ -541,6 +747,25 @@ html, body {
                 margin-left: 0;
                 margin-right: 10px;
             }
+
+            @media only screen
+                and (max-width: 319px)
+                and (max-height: 400px)
+                and (orientation: portrait){
+                    display: table;
+                    margin-right: -15px;
+              }
+
+            .col-xs-4 {
+              @media only screen
+                and (max-width: 319px)
+                and (max-height: 400px)
+                and (orientation: portrait){
+                    float: none;
+                    text-align: center;
+                    display: table-row;
+              }
+            }
           }
 
           @media only screen and (min-height: 900px) {font-size: 1.25em;}
@@ -563,11 +788,31 @@ html, body {
     margin-top: 2.0em;
     height: 35em;
 
-    @media only screen and (min-width: 768px) {height: 15em;}
-    @media only screen and (-webkit-min-device-pixel-ratio:1.3),
-           only screen and (-o-min-device-pixel-ratio: 13/10),
-           only screen and (min-resolution: 120dpi),
-           only screen and (min-height: 900px) {height: 48em;}
+    @media only screen 
+      and (min-width: 768px) {
+        height: 15em;
+    }
+
+    @media only screen 
+      and (-webkit-min-device-pixel-ratio:1.3),
+      and (-o-min-device-pixel-ratio: 13/10),
+      and (min-resolution: 120dpi),
+      and (min-height: 900px) {
+        height: 48em;
+    }
+
+    @media only screen
+      and (width: 640px)
+      and (height: 1024px){
+        height: auto;
+    }
+
+    @media only screen
+      and (width: 768px)
+      and (height: 1024px)
+      and (orientation: portrait){
+          height: 10em;
+    }
 }
 
 .img-window-wrap {
@@ -589,6 +834,13 @@ html, body {
 
     @media only screen and (min-width: 1024px) {
       width: 18.5em;
+    }
+
+    @media only screen
+      and (min-width: 1880px)
+      and (min-height: 950px){
+          width: 20em;
+          height: 15.28787878em;
     }
 
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
@@ -626,13 +878,28 @@ html, body {
     height: 86.991869919%;
     margin: 0 auto;
 
-    @media only screen and (min-width: 768px) {
-      width: 100%;
+    @media only screen 
+      and (min-width: 768px) {
+        width: 100%;
     }
 
     @media only screen and (min-height: 900px) {
       width: 16.071428571em;
       height: 12.284902597em;
+    }
+
+    @media only screen
+      and (width: 768px)
+      and (height: 1024px){
+        width: 14em;
+        height: 10.701515151em;
+    }
+
+    @media only screen
+      and (min-width: 1880px)
+      and (min-height: 950px){
+        width: 20em;
+        height: 15.28787878em;
     }
 }
 
@@ -670,13 +937,50 @@ html, body {
   @media only screen and (min-width: 1200px) {width: 64.285714286em;} 
 
   .glass {
-    height: 18.928571429em;
+    height: 18.928571429em;    
+
+    @media only screen
+      and (width: 640px)
+      and (height: 1024px)
+      and (orientation: portrait){
+          width: 100%;
+          height: 21em;
+    }
+
+    @media only screen
+      and (width: 768px)
+      and (height: 1024px)
+      and (orientation:portrait){
+          width: 105%;
+          height: 28em;
+    }
+
+    @media only screen
+      and (width: 800px)
+      and (min-height: 500px){
+          width: 105%;
+          height: 28em;
+    }
 
     @media only screen
       and (min-width: 1024px)
       and (min-height: 600px){
           width: 100%;
           height: 30em;
+    }
+
+    @media only screen
+      and (width: 1024px)
+      and (height: 768px){
+          width: 100%;
+          height: 28em;
+    }
+
+    @media only screen
+      and (min-width: 1880px)
+      and (min-height:950px){
+        width: 100%;
+        height: 40em;
     }
   }
 
@@ -698,8 +1002,8 @@ html, body {
       height: 7.142857143em;
 
       @media only screen
-        and (width: 360px)
-        and (height: 640px)
+        and (min-width: 360px)
+        and (min-height: 600px)
         and (orientation: portrait){
             width: 10em;
             height: 10em;
@@ -719,10 +1023,17 @@ html, body {
       font-size: 2em;
 
       @media only screen
-        and (width: 360px) 
-        and (height: 640px)
+        and (min-width: 360px) 
+        and (min-height: 600px)
         and (orientation: portrait){
             font-size: 2.5em;
+      }
+
+      @media only screen
+        and (width: 480px)
+        and (height: 640px)
+        and (orientation: portrait){
+            font-size:2.5em;
       }
 
       @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
@@ -774,6 +1085,12 @@ html, body {
           and (min-height: 600px){
               font-size: 2.25em;
         }
+
+        @media only screen
+          and (min-width: 1880px)
+          and (min-height: 950px){
+              font-size: 3.5em;
+        }
       }
 
       #glass-content-contact {
@@ -791,11 +1108,29 @@ html, body {
           #gtLeft {
             position: relative;
             top: 30px;
+
+            @media only screen
+              and (min-width: 768px)
+              and (min-height: 1024px){
+                  top: 0px;
+            }
+
+            @media only screen
+              and (min-width: 1880px)
+              and (min-height: 950px){
+                  font-size: 1.2em;
+            }
           }
 
           .contact-info {
             position: relative;
             top: 75px;
+
+            @media only screen
+              and (min-width: 1880px)
+              and (min-height: 950px){
+                  font-size: 1.5em;
+            }
           }
         }
       }

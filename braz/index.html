@@ -8,13 +8,15 @@
         <meta name="author" content"Joseph Berryman for Creatrix Web Solutions">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Braz Construction</title>
-        <meta name="description" content="Residential and Commercial construction services. Serving the Greater Houston, Missouri City, and Pearland">
+        <meta name="description" content="Residential and Commercial construction services. Serving Greater Houston, Missouri City, and Pearland">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <script src="./js/vendor/jquery-1.11.1.min.js"></script>
         <script>window.jQuery || document.write('<script src="./js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
         <script src="./js/vendor/jquery.lazylinepainter-1.5.1.min.js"></script>
+        <script src="./js/vendor/jquery.lazyload.min.js"></script>
+        <script src="./js/plugins.min.js"></script>
         <script src="./js/vendor/hisrc.js"></script>
         <!--<script src="./js/preload.js"></script>-->
         <script>
@@ -119,32 +121,43 @@
               }
           }
 
+          $('.screen').stalactite({
+              duration: 0,
+              easing: '',
+              cssPrep: false,
+              fluid: true,
+          });
+
+          $.hisrc.speedTest();
+
           $(document).ready(function(){
 
-                lpControl.lazyPaint();                 
+            lpControl.lazyPaint();                 
 
-                //$.hisrc.speedTest();
-                $(".hisrc img").hisrc();
-                $(".hisrc img+img").hisrc({
-                    useTransparentGif: false,
-                    speedTestUri: './50K.jpg'
-                });
+            
+            $(".hisrc img").hisrc();
+            $(".hisrc img+img").hisrc({
+                useTransparentGif: false,
+                speedTestUri: './50K.jpg'
+            });
 
-              $(window).load(function(){
-                var rmvPreloader = function(){
-                  $('#loader').css('display', 'none');
-                }
-                $('body').addClass('loaded');
-                setTimeout(rmvPreloader, 1500);
-              });
+            $(function() {
+              $("img.lazy").lazyload();
+            });
+
+            $(window).load(function(){
+              var rmvPreloader = function(){
+                $('#loader').css('display', 'none');
+              }
+              $('body').addClass('loaded');
+              setTimeout(rmvPreloader, 1500);
+            });
           });
         </script>
         
-        <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Cinzel+Decorative|Raleway:200">
-        <link rel="stylesheet" href="./css/animate.css">
-        <link rel="stylesheet" href="./css/lightbox.css">
+        <link rel="stylesheet" href="./css/animateLightbox.min.css">
         <link rel="stylesheet" href="./css/__main.css">
 
         <!-- Modernizer -->
@@ -197,7 +210,7 @@
 
 
         <!-- Welcome start -->
-        <div id="welcome" class="content-wrapper screen">
+        <div id="welcome" class="content-wrapper screen" data-role="page">
             <div id="welcome-wrap" class="container-fluid">
               <div class="row">
                 <div class="col-sm-6 col-xs-12">
@@ -216,7 +229,7 @@
         <!-- Welcome end -->
 
         <!-- Services start -->
-        <div id="services" class="content-wrapper screen">
+        <div id="services" class="content-wrapper screen" data-role="page">
             <div class="screen-wrap">
               <div id="services-wrap-inner">
                   <img class="glass" src="./img/glass.png">
@@ -344,7 +357,7 @@
         <!-- Services end -->
 
         <!-- Gallery I start -->
-        <div id="gallery1" class="content-wrapper screen">
+        <div id="gallery1" class="content-wrapper screen" data-role="page">
             <div class="container-fluid gallery-wrap">
                   <div class="row gallery-row">
                     <div class="col-sm-4 img-window-wrap">
@@ -361,7 +374,7 @@
                     </div>
                     <div class="col-sm-4 img-window-wrap">
                         <div data-lightbox="cabinets" class="img-window">
-                            <img class="gall-image" src="./img/gall_cabinet.png">
+                            <img class="gall-image" src="./img/gall_cabinets.png">
                             <p class="gall-img-desc">Custom<br/>Cabinets</p>
                         </div>
                     </div>
@@ -369,19 +382,19 @@
                   <div class="row gallery-row">
                     <div class="col-sm-4 img-window-wrap">
                         <div data-lightbox="newcon" class="img-window">
-                            <img class="gall-image" src="./img/gall_newCon.png">
+                            <img class="gall-image" src="./img/gall_newcon.png">
                             <p class="gall-img-desc">New<br/>Construction</p>
                         </div>
                     </div>
                     <div class="col-sm-4 img-window-wrap">
                         <div data-lightbox="floors" class="img-window">
-                            <img class="gall-image" src="./img/gall_floor.png">
+                            <img class="gall-image" src="./img/gall_floors.png">
                             <p class="gall-img-desc">Custom<br/>Flooring</p>
                         </div>
                     </div>
                     <div class="col-sm-4 img-window-wrap">
                         <div data-lightbox="patio" class="img-window">
-                            <img class="gall-image" src="./img/gall_patio.png">
+                            <img class="gall-image" src="./img/gall_patios.png">
                             <p class="gall-img-desc">Patios</p>
                         </div>
                     </div>
@@ -390,7 +403,7 @@
         </div><!-- Gallery I end -->
 
         <!-- Gallery II start -->
-        <div id="gallery2" class="content-wrapper screen">
+        <div id="gallery2" class="content-wrapper screen" data-role="page">
             <div class="container-fluid gallery-wrap">
                   <div class="row gallery-row">
                     <div class="col-sm-4 img-window-wrap">
@@ -401,7 +414,7 @@
                     </div>
                     <div class="col-sm-4 img-window-wrap">
                         <div data-lightbox="ceiling" class="img-window">
-                            <img class="gall-image" src="./img/gall_ceiling.png">
+                            <img class="gall-image" src="./img/gall_ceilings.png">
                             <p class="gall-img-desc">Ceiling</p>
                         </div>
                     </div>
@@ -436,7 +449,7 @@
         </div><!-- Gallery II end -->
 
         <!-- Gallery III start -->
-        <div id="gallery3" class="content-wrapper screen">
+        <div id="gallery3" class="content-wrapper screen" data-role="page">
           <div class="container-fluid gallery-wrap">
             <div class="row gallery-row">
               <div class="col-sm-4 img-window-wrap">
@@ -459,16 +472,22 @@
               </div>
             </div>
             <div class="row gallery-row">
-              <div class="col-sm-6 img-window-wrap">
+              <div class="col-sm-4 img-window-wrap">
                   <div data-lightbox="archways" class="img-window">
                     <img class="gall-image"src="./img/gall_archways.png">
                     <p class="gall-img-desc">Custom<br>Archways<br>and<br>Columns</p>
                   </div>
               </div>
-              <div class="col-sm-6 img-window-wrap">
+              <div class="col-sm-4 img-window-wrap">
                   <div data-lightbox="foundations" class="img-window">
                     <img class="gall-image" src="./img/gall_foundations.png">
                     <p class="gall-img-desc">Foundations<br>and<br>Driveways</p>
+                  </div>
+              </div>
+              <div class="col-sm-4 img-window-wrap">
+                  <div data-lightbox="balconies" class="img-window">
+                    <img class="gall-image" src="./img/gall_balconies.png">
+                    <p class="gall-img-desc">Stairways<br>and<br>Balconies</p>
                   </div>
               </div>
               
@@ -477,7 +496,7 @@
         </div><!-- Gallery III end -->
 
         <!-- Contact start -->
-        <div id="contact" class="content-wrapper screen">
+        <div id="contact" class="content-wrapper screen" data-role="page">
             <div class="screen-wrap">
               <div id="contact-wrap-inner">
                   <img class="glass" src="./img/glass.png">
@@ -529,287 +548,319 @@
             </div>
         </div><!-- Contact end -->
         
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_paint0_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint0_800x600.jpg" data-2x="./img/g_paint0_1000x750.jpg"/>
-          <img src="./img/g_paint1_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint1_800x600.jpg" data-2x="./img/g_paint1_1000x750.jpg"/>
-          <img src="./img/g_paint2_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint2_800x600.jpg" data-2x="./img/g_paint2_1000x750.jpg"/>
-          <img src="./img/g_paint3_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint3_800x600.jpg" data-2x="./img/g_paint3_1000x750.jpg"/>
-          <img src="./img/g_paint4_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint4_800x600.jpg" data-2x="./img/g_paint4_1000x750.jpg"/>
-          <img src="./img/g_paint5_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint5_800x600.jpg" data-2x="./img/g_paint5_1000x750.jpg"/>
-          <img src="./img/g_paint6_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint6_800x600.jpg" data-2x="./img/g_paint6_1000x750.jpg"/>
-          <img src="./img/g_paint7_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint7_800x600.jpg" data-2x="./img/g_paint7_1000x750.jpg"/>
-          <img src="./img/g_paint8_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint8_800x600.jpg" data-2x="./img/g_paint8_1000x750.jpg"/>
-          <img src="./img/g_paint9_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint9_800x600.jpg" data-2x="./img/g_paint9_1000x750.jpg"/>
-          <img src="./img/g_paint10_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint10_800x600.jpg" data-2x="./img/g_paint10_1000x750.jpg"/>
-          <img src="./img/g_paint11_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint11_800x600.jpg" data-2x="./img/g_paint11_1000x750.jpg"/>
-          <img src="./img/g_paint12_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint12_800x600.jpg" data-2x="./img/g_paint12_1000x750.jpg"/>
-          <img src="./img/g_paint13_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint13_800x600.jpg" data-2x="./img/g_paint13_1000x750.jpg"/>
-          <img src="./img/g_paint14_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint14_800x600.jpg" data-2x="./img/g_paint14_1000x750.jpg"/>
-          <img src="./img/g_paint15_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint15_800x600.jpg" data-2x="./img/g_paint15_1000x750.jpg"/>
-          <img src="./img/g_paint16_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint16_800x600.jpg" data-2x="./img/g_paint16_1000x750.jpg"/>
-          <img src="./img/g_paint17_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint17_800x600.jpg" data-2x="./img/g_paint17_1000x750.jpg"/>
-          <img src="./img/g_paint18_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint18_800x600.jpg" data-2x="./img/g_paint18_1000x750.jpg"/>
-          <img src="./img/g_paint19_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint19_800x600.jpg" data-2x="./img/g_paint19_1000x750.jpg"/>
-          <img src="./img/g_paint20_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint20_800x600.jpg" data-2x="./img/g_paint20_1000x750.jpg"/>
-          <img src="./img/g_paint21_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint21_800x600.jpg" data-2x="./img/g_paint21_1000x750.jpg"/>
-          <img src="./img/g_paint22_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint22_800x600.jpg" data-2x="./img/g_paint22_1000x750.jpg"/>
-          <img src="./img/g_paint23_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint23_800x600.jpg" data-2x="./img/g_paint23_1000x750.jpg"/>
-          <img src="./img/g_paint24_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint24_800x600.jpg" data-2x="./img/g_paint24_1000x750.jpg"/>
-          <img src="./img/g_paint25_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint25_800x600.jpg" data-2x="./img/g_paint25_1000x750.jpg"/>
-          <img src="./img/g_paint26_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint26_800x600.jpg" data-2x="./img/g_paint26_1000x750.jpg"/>
-          <img src="./img/g_paint27_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint27_800x600.jpg" data-2x="./img/g_paint27_1000x750.jpg"/>
-          <img src="./img/g_paint28_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint28_800x600.jpg" data-2x="./img/g_paint28_1000x750.jpg"/>
-          <img src="./img/g_paint29_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint29_800x600.jpg" data-2x="./img/g_paint29_1000x750.jpg"/>
-          <img src="./img/g_paint30_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint30_800x600.jpg" data-2x="./img/g_paint30_1000x750.jpg"/>
-          <img src="./img/g_paint31_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint31_800x600.jpg" data-2x="./img/g_paint31_1000x750.jpg"/>
-          <img src="./img/g_paint32_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint32_800x600.jpg" data-2x="./img/g_paint32_1000x750.jpg"/>
-          <img src="./img/g_paint33_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint33_800x600.jpg" data-2x="./img/g_paint33_1000x750.jpg"/>
-          <img src="./img/g_paint34_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint34_800x600.jpg" data-2x="./img/g_paint34_1000x750.jpg"/>
-          <img src="./img/g_paint35_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint35_800x600.jpg" data-2x="./img/g_paint35_1000x750.jpg"/>
-          <img src="./img/g_paint36_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint36_800x600.jpg" data-2x="./img/g_paint36_1000x750.jpg"/>
-          <img src="./img/g_paint37_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint37_800x600.jpg" data-2x="./img/g_paint37_1000x750.jpg"/>
-          <img src="./img/g_paint38_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint38_800x600.jpg" data-2x="./img/g_paint38_1000x750.jpg"/>
-          <img src="./img/g_paint39_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint39_800x600.jpg" data-2x="./img/g_paint39_1000x750.jpg"/>
-          <img src="./img/g_paint40_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint40_800x600.jpg" data-2x="./img/g_paint40_1000x750.jpg"/>
-          <img src="./img/g_paint41_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint41_800x600.jpg" data-2x="./img/g_paint41_1000x750.jpg"/>
-          <img src="./img/g_paint42_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint42_800x600.jpg" data-2x="./img/g_paint42_1000x750.jpg"/>
-          <img src="./img/g_paint43_400x300.jpg" data-lightbox="paint" data-1x="./img/g_paint43_800x600.jpg" data-2x="./img/g_paint43_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_paint0_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint0_800x600.jpg" data-2x="./img/g_paint0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint1_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint1_800x600.jpg" data-2x="./img/g_paint1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint2_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint2_800x600.jpg" data-2x="./img/g_paint2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint3_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint3_800x600.jpg" data-2x="./img/g_paint3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint4_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint4_800x600.jpg" data-2x="./img/g_paint4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint5_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint5_800x600.jpg" data-2x="./img/g_paint5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint6_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint6_800x600.jpg" data-2x="./img/g_paint6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint7_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint7_800x600.jpg" data-2x="./img/g_paint7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint8_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint8_800x600.jpg" data-2x="./img/g_paint8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint9_800x600.jpg" width="800" height="600" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint9_800x600.jpg" data-2x="./img/g_paint9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint10_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint10_800x600.jpg" data-2x="./img/g_paint10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint11_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint11_800x600.jpg" data-2x="./img/g_paint11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint12_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint12_800x600.jpg" data-2x="./img/g_paint12_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint13_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint13_800x600.jpg" data-2x="./img/g_paint13_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint14_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint14_800x600.jpg" data-2x="./img/g_paint14_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint15_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint15_800x600.jpg" data-2x="./img/g_paint15_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint16_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint16_800x600.jpg" data-2x="./img/g_paint16_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint17_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint17_800x600.jpg" data-2x="./img/g_paint17_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint18_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint18_800x600.jpg" data-2x="./img/g_paint18_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint19_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint19_800x600.jpg" data-2x="./img/g_paint19_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint20_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint20_800x600.jpg" data-2x="./img/g_paint20_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint21_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint21_800x600.jpg" data-2x="./img/g_paint21_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint22_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint22_800x600.jpg" data-2x="./img/g_paint22_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint23_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint23_800x600.jpg" data-2x="./img/g_paint23_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint24_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint24_800x600.jpg" data-2x="./img/g_paint24_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint25_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint25_800x600.jpg" data-2x="./img/g_paint25_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint26_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint26_800x600.jpg" data-2x="./img/g_paint26_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint27_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint27_800x600.jpg" data-2x="./img/g_paint27_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint28_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint28_800x600.jpg" data-2x="./img/g_paint28_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint29_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint29_800x600.jpg" data-2x="./img/g_paint29_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint30_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint30_800x600.jpg" data-2x="./img/g_paint30_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint31_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint31_800x600.jpg" data-2x="./img/g_paint31_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint32_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint32_800x600.jpg" data-2x="./img/g_paint32_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint33_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint33_800x600.jpg" data-2x="./img/g_paint33_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint34_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint34_800x600.jpg" data-2x="./img/g_paint34_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint35_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint35_800x600.jpg" data-2x="./img/g_paint35_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint36_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint36_800x600.jpg" data-2x="./img/g_paint36_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint37_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint37_800x600.jpg" data-2x="./img/g_paint37_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint38_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint38_800x600.jpg" data-2x="./img/g_paint38_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint39_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint39_800x600.jpg" data-2x="./img/g_paint39_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint40_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint40_800x600.jpg" data-2x="./img/g_paint40_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint41_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint41_800x600.jpg" data-2x="./img/g_paint41_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint42_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint42_800x600.jpg" data-2x="./img/g_paint42_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint43_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint43_800x600.jpg" data-2x="./img/g_paint43_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_paint44_800x600.jpg" width="800" height="600" data-lightbox="paint" data-1x="./img/g_paint44_800x600.jpg" data-2x="./img/g_paint44_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_roof0_400x300.jpg" data-lightbox="roof" data-1x="./img/g_roof0_800x600.jpg" data-2x="./img/g_roof0_1000x750.jpg"/>
-          <img src="./img/g_roof1_400x300.jpg" data-lightbox="roof" data-1x="./img/g_roof1_800x600.jpg" data-2x="./img/g_roof1_1000x750.jpg"/>
-          <img src="./img/g_roof2_400x300.jpg" data-lightbox="roof" data-1x="./img/g_roof2_800x600.jpg" data-2x="./img/g_roof2_1000x750.jpg"/>
-          <img src="./img/g_roof3_400x300.jpg" data-lightbox="roof" data-1x="./img/g_roof3_800x600.jpg" data-2x="./img/g_roof3_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_roof0_800x600.jpg" width="800" height="600" data-lightbox="roof" data-1x="./img/g_roof0_800x600.jpg" data-2x="./img/g_roof0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_roof1_800x600.jpg" width="800" height="600" data-lightbox="roof" data-1x="./img/g_roof1_800x600.jpg" data-2x="./img/g_roof1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_roof2_800x600.jpg" width="800" height="600" data-lightbox="roof" data-1x="./img/g_roof2_800x600.jpg" data-2x="./img/g_roof2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_roof3_800x600.jpg" width="800" height="600" data-lightbox="roof" data-1x="./img/g_roof3_800x600.jpg" data-2x="./img/g_roof3_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_cabinets0_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets0_800x600.jpg" data-2x="./img/g_cabinets0_1000x750.jpg"/>
-          <img src="./img/g_cabinets1_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets1_800x600.jpg" data-2x="./img/g_cabinets1_1000x750.jpg"/>
-          <img src="./img/g_cabinets2_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets2_800x600.jpg" data-2x="./img/g_cabinets2_1000x750.jpg"/>
-          <img src="./img/g_cabinets3_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets3_800x600.jpg" data-2x="./img/g_cabinets3_1000x750.jpg"/>
-          <img src="./img/g_cabinets4_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets4_800x600.jpg" data-2x="./img/g_cabinets4_1000x750.jpg"/>
-          <img src="./img/g_cabinets5_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets5_800x600.jpg" data-2x="./img/g_cabinets5_1000x750.jpg"/>
-          <img src="./img/g_cabinets6_400x300.jpg" data-lightbox="cabinets" data-1x="./img/g_cabinets6_800x600.jpg" data-2x="./img/g_cabinets6_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_cabinets0_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets0_800x600.jpg" data-2x="./img/g_cabinets0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets1_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets1_800x600.jpg" data-2x="./img/g_cabinets1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets2_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets2_800x600.jpg" data-2x="./img/g_cabinets2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets3_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets3_800x600.jpg" data-2x="./img/g_cabinets3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets4_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets4_800x600.jpg" data-2x="./img/g_cabinets4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets5_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets5_800x600.jpg" data-2x="./img/g_cabinets5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets6_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets6_800x600.jpg" data-2x="./img/g_cabinets6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets7_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets7_800x600.jpg" data-2x="./img/g_cabinets7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets8_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets8_800x600.jpg" data-2x="./img/g_cabinets8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_cabinets9_800x600.jpg" width="800" height="600" data-lightbox="cabinets" data-1x="./img/g_cabinets9_800x600.jpg" data-2x="./img/g_cabinets9_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_newcon1_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon1_800x600.jpg" data-2x="./img/g_newcon1_1000x750.jpg"/>
-          <img src="./img/g_newcon2_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon2_800x600.jpg" data-2x="./img/g_newcon2_1000x750.jpg"/>
-          <img src="./img/g_newcon3_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon3_800x600.jpg" data-2x="./img/g_newcon3_1000x750.jpg"/>
-          <img src="./img/g_newcon4_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon4_800x600.jpg" data-2x="./img/g_newcon4_1000x750.jpg"/>
-          <img src="./img/g_newcon5_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon5_800x600.jpg" data-2x="./img/g_newcon5_1000x750.jpg"/>
-          <img src="./img/g_newcon6_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon6_800x600.jpg" data-2x="./img/g_newcon6_1000x750.jpg"/>
-          <img src="./img/g_newcon7_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon7_800x600.jpg" data-2x="./img/g_newcon7_1000x750.jpg"/>
-          <img src="./img/g_newcon8_400x300.jpg" data-lightbox="newcon" data-1x="./img/g_newcon8_800x600.jpg" data-2x="./img/g_newcon8_1000x750.jpg"/>          
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_newcon1_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon1_800x600.jpg" data-2x="./img/g_newcon1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon2_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon2_800x600.jpg" data-2x="./img/g_newcon2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon3_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon3_800x600.jpg" data-2x="./img/g_newcon3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon4_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon4_800x600.jpg" data-2x="./img/g_newcon4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon5_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon5_800x600.jpg" data-2x="./img/g_newcon5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon6_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon6_800x600.jpg" data-2x="./img/g_newcon6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon7_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon7_800x600.jpg" data-2x="./img/g_newcon7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon8_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon8_800x600.jpg" data-2x="./img/g_newcon8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_newcon9_800x600.jpg" width="800" height="600" data-lightbox="newcon" data-1x="./img/g_newcon9_800x600.jpg" data-2x="./img/g_newcon9_1000x750.jpg"/>          
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_tile0_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile0_800x600.jpg" data-2x="./img/g_tile0_1000x750.jpg"/>
-          <img src="./img/g_tile1_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile1_800x600.jpg" data-2x="./img/g_tile1_1000x750.jpg"/>
-          <img src="./img/g_tile2_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile2_800x600.jpg" data-2x="./img/g_tile2_1000x750.jpg"/>
-          <img src="./img/g_tile3_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile3_800x600.jpg" data-2x="./img/g_tile3_1000x750.jpg"/>
-          <img src="./img/g_tile4_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile4_800x600.jpg" data-2x="./img/g_tile4_1000x750.jpg"/>
-          <img src="./img/g_tile5_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile5_800x600.jpg" data-2x="./img/g_tile5_1000x750.jpg"/>
-          <img src="./img/g_tile6_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile6_800x600.jpg" data-2x="./img/g_tile6_1000x750.jpg"/>
-          <img src="./img/g_tile7_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile7_800x600.jpg" data-2x="./img/g_tile7_1000x750.jpg"/>
-          <img src="./img/g_tile8_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile8_800x600.jpg" data-2x="./img/g_tile8_1000x750.jpg"/>
-          <img src="./img/g_tile9_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile9_800x600.jpg" data-2x="./img/g_tile9_1000x750.jpg"/>
-          <img src="./img/g_tile10_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile10_800x600.jpg" data-2x="./img/g_tile10_1000x750.jpg"/>
-          <img src="./img/g_tile11_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile11_800x600.jpg" data-2x="./img/g_tile11_1000x750.jpg"/>
-          <img src="./img/g_tile12_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile12_800x600.jpg" data-2x="./img/g_tile12_1000x750.jpg"/>
-          <img src="./img/g_tile13_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile13_800x600.jpg" data-2x="./img/g_tile13_1000x750.jpg"/>
-          <img src="./img/g_tile14_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile14_800x600.jpg" data-2x="./img/g_tile14_1000x750.jpg"/>
-          <img src="./img/g_tile15_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile15_800x600.jpg" data-2x="./img/g_tile15_1000x750.jpg"/>
-          <img src="./img/g_tile16_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile16_800x600.jpg" data-2x="./img/g_tile16_1000x750.jpg"/>
-          <img src="./img/g_tile17_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile17_800x600.jpg" data-2x="./img/g_tile17_1000x750.jpg"/>
-          <img src="./img/g_tile18_400x300.jpg" data-lightbox="tile" data-1x="./img/g_tile18_800x600.jpg" data-2x="./img/g_tile18_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_tile0_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile0_800x600.jpg" data-2x="./img/g_tile0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile1_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile1_800x600.jpg" data-2x="./img/g_tile1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile2_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile2_800x600.jpg" data-2x="./img/g_tile2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile3_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile3_800x600.jpg" data-2x="./img/g_tile3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile4_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile4_800x600.jpg" data-2x="./img/g_tile4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile5_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile5_800x600.jpg" data-2x="./img/g_tile5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile6_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile6_800x600.jpg" data-2x="./img/g_tile6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile7_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile7_800x600.jpg" data-2x="./img/g_tile7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile8_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile8_800x600.jpg" data-2x="./img/g_tile8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile9_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile9_800x600.jpg" data-2x="./img/g_tile9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile10_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile10_800x600.jpg" data-2x="./img/g_tile10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile11_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile11_800x600.jpg" data-2x="./img/g_tile11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile12_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile12_800x600.jpg" data-2x="./img/g_tile12_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile13_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile13_800x600.jpg" data-2x="./img/g_tile13_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile14_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile14_800x600.jpg" data-2x="./img/g_tile14_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile15_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile15_800x600.jpg" data-2x="./img/g_tile15_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile16_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile16_800x600.jpg" data-2x="./img/g_tile16_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile17_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile17_800x600.jpg" data-2x="./img/g_tile17_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile18_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile18_800x600.jpg" data-2x="./img/g_tile18_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile19_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile19_800x600.jpg" data-2x="./img/g_tile19_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile20_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile20_800x600.jpg" data-2x="./img/g_tile20_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile21_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile21_800x600.jpg" data-2x="./img/g_tile21_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_tile22_800x600.jpg" width="800" height="600" data-lightbox="tile" data-1x="./img/g_tile22_800x600.jpg" data-2x="./img/g_tile22_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_patio0_400x300.jpg" data-lightbox="patio" data-1x="./img/g_patio0_800x600.jpg" data-2x="./img/g_patio0_1000x750.jpg"/>
-          <img src="./img/g_patio1_400x300.jpg" data-lightbox="patio" data-1x="./img/g_patio1_800x600.jpg" data-2x="./img/g_patio1_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_patio0_800x600.jpg" width="800" height="600" data-lightbox="patio" data-1x="./img/g_patio0_800x600.jpg" data-2x="./img/g_patio0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_patio1_800x600.jpg" width="800" height="600" data-lightbox="patio" data-1x="./img/g_patio1_800x600.jpg" data-2x="./img/g_patio1_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_ceiling0_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling0_800x600.jpg" data-2x="./img/g_ceiling0_1000x750.jpg"/>
-          <img src="./img/g_ceiling1_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling1_800x600.jpg" data-2x="./img/g_ceiling1_1000x750.jpg"/>
-          <img src="./img/g_ceiling2_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling2_800x600.jpg" data-2x="./img/g_ceiling2_1000x750.jpg"/>
-          <img src="./img/g_ceiling3_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling3_800x600.jpg" data-2x="./img/g_ceiling3_1000x750.jpg"/>
-          <img src="./img/g_ceiling4_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling4_800x600.jpg" data-2x="./img/g_ceiling4_1000x750.jpg"/>
-          <img src="./img/g_ceiling5_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling5_800x600.jpg" data-2x="./img/g_ceiling5_1000x750.jpg"/>
-          <img src="./img/g_ceiling6_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling6_800x600.jpg" data-2x="./img/g_ceiling6_1000x750.jpg"/>
-          <img src="./img/g_ceiling7_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling7_800x600.jpg" data-2x="./img/g_ceiling7_1000x750.jpg"/>
-          <img src="./img/g_ceiling8_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling8_800x600.jpg" data-2x="./img/g_ceiling8_1000x750.jpg"/>
-          <img src="./img/g_ceiling9_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling9_800x600.jpg" data-2x="./img/g_ceiling9_1000x750.jpg"/>
-          <img src="./img/g_ceiling10_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling10_800x600.jpg" data-2x="./img/g_ceiling10_1000x750.jpg"/>
-          <img src="./img/g_ceiling11_400x300.jpg" data-lightbox="ceiling" data-1x="./img/g_ceiling11_800x600.jpg" data-2x="./img/g_ceiling11_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_ceiling0_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling0_800x600.jpg" data-2x="./img/g_ceiling0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling1_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling1_800x600.jpg" data-2x="./img/g_ceiling1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling2_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling2_800x600.jpg" data-2x="./img/g_ceiling2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling3_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling3_800x600.jpg" data-2x="./img/g_ceiling3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling4_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling4_800x600.jpg" data-2x="./img/g_ceiling4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling5_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling5_800x600.jpg" data-2x="./img/g_ceiling5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling6_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling6_800x600.jpg" data-2x="./img/g_ceiling6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling7_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling7_800x600.jpg" data-2x="./img/g_ceiling7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling8_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling8_800x600.jpg" data-2x="./img/g_ceiling8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling9_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling9_800x600.jpg" data-2x="./img/g_ceiling9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling10_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling10_800x600.jpg" data-2x="./img/g_ceiling10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling11_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling11_800x600.jpg" data-2x="./img/g_ceiling11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_ceiling12_800x600.jpg" width="800" height="600" data-lightbox="ceiling" data-1x="./img/g_ceiling12_800x600.jpg" data-2x="./img/g_ceiling12_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_bathroom1_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom1_800x600.jpg" data-2x="./img/g_bathroom1_1000x750.jpg"/>
-          <img src="./img/g_bathroom2_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom2_800x600.jpg" data-2x="./img/g_bathroom2_1000x750.jpg"/>
-          <img src="./img/g_bathroom3_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom3_800x600.jpg" data-2x="./img/g_bathroom3_1000x750.jpg"/>
-          <img src="./img/g_bathroom4_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom4_800x600.jpg" data-2x="./img/g_bathroom4_1000x750.jpg"/>
-          <img src="./img/g_bathroom5_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom5_800x600.jpg" data-2x="./img/g_bathroom5_1000x750.jpg"/>
-          <img src="./img/g_bathroom6_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom6_800x600.jpg" data-2x="./img/g_bathroom6_1000x750.jpg"/>
-          <img src="./img/g_bathroom7_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom7_800x600.jpg" data-2x="./img/g_bathroom7_1000x750.jpg"/>
-          <img src="./img/g_bathroom8_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom8_800x600.jpg" data-2x="./img/g_bathroom8_1000x750.jpg"/>
-          <img src="./img/g_bathroom9_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom9_800x600.jpg" data-2x="./img/g_bathroom9_1000x750.jpg"/>
-          <img src="./img/g_bathroom10_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom10_800x600.jpg" data-2x="./img/g_bathroom10_1000x750.jpg"/>
-          <img src="./img/g_bathroom11_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom11_800x600.jpg" data-2x="./img/g_bathroom11_1000x750.jpg"/>
-          <img src="./img/g_bathroom12_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom12_800x600.jpg" data-2x="./img/g_bathroom12_1000x750.jpg"/>
-          <img src="./img/g_bathroom13_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom13_800x600.jpg" data-2x="./img/g_bathroom13_1000x750.jpg"/>
-          <img src="./img/g_bathroom14_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom14_800x600.jpg" data-2x="./img/g_bathroom14_1000x750.jpg"/>
-          <img src="./img/g_bathroom15_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom15_800x600.jpg" data-2x="./img/g_bathroom15_1000x750.jpg"/>
-          <img src="./img/g_bathroom16_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom16_800x600.jpg" data-2x="./img/g_bathroom16_1000x750.jpg"/>
-          <img src="./img/g_bathroom17_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom17_800x600.jpg" data-2x="./img/g_bathroom17_1000x750.jpg"/>
-          <img src="./img/g_bathroom18_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom18_800x600.jpg" data-2x="./img/g_bathroom18_1000x750.jpg"/>
-          <img src="./img/g_bathroom19_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom19_800x600.jpg" data-2x="./img/g_bathroom19_1000x750.jpg"/>
-          <img src="./img/g_bathroom20_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom20_800x600.jpg" data-2x="./img/g_bathroom20_1000x750.jpg"/>
-          <img src="./img/g_bathroom21_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom21_800x600.jpg" data-2x="./img/g_bathroom21_1000x750.jpg"/>
-          <img src="./img/g_bathroom22_400x300.jpg" data-lightbox="bathroom" data-1x="./img/g_bathroom22_800x600.jpg" data-2x="./img/g_bathroom22_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_bathroom1_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom1_800x600.jpg" data-2x="./img/g_bathroom1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom2_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom2_800x600.jpg" data-2x="./img/g_bathroom2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom3_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom3_800x600.jpg" data-2x="./img/g_bathroom3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom4_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom4_800x600.jpg" data-2x="./img/g_bathroom4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom5_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom5_800x600.jpg" data-2x="./img/g_bathroom5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom6_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom6_800x600.jpg" data-2x="./img/g_bathroom6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom7_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom7_800x600.jpg" data-2x="./img/g_bathroom7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom8_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom8_800x600.jpg" data-2x="./img/g_bathroom8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom9_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom9_800x600.jpg" data-2x="./img/g_bathroom9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom10_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom10_800x600.jpg" data-2x="./img/g_bathroom10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom11_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom11_800x600.jpg" data-2x="./img/g_bathroom11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom12_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom12_800x600.jpg" data-2x="./img/g_bathroom12_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom13_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom13_800x600.jpg" data-2x="./img/g_bathroom13_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom14_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom14_800x600.jpg" data-2x="./img/g_bathroom14_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom15_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom15_800x600.jpg" data-2x="./img/g_bathroom15_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom16_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom16_800x600.jpg" data-2x="./img/g_bathroom16_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom17_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom17_800x600.jpg" data-2x="./img/g_bathroom17_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom18_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom18_800x600.jpg" data-2x="./img/g_bathroom18_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom19_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom19_800x600.jpg" data-2x="./img/g_bathroom19_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom20_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom20_800x600.jpg" data-2x="./img/g_bathroom20_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom21_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom21_800x600.jpg" data-2x="./img/g_bathroom21_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom22_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom22_800x600.jpg" data-2x="./img/g_bathroom22_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom23_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom23_800x600.jpg" data-2x="./img/g_bathroom23_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom24_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom24_800x600.jpg" data-2x="./img/g_bathroom24_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom25_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom25_800x600.jpg" data-2x="./img/g_bathroom25_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom26_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom26_800x600.jpg" data-2x="./img/g_bathroom26_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom27_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom27_800x600.jpg" data-2x="./img/g_bathroom27_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_bathroom28_800x600.jpg" width="800" height="600" data-lightbox="bathroom" data-1x="./img/g_bathroom28_800x600.jpg" data-2x="./img/g_bathroom28_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_floors0_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors0_800x600.jpg" data-2x="./img/g_floors0_1000x750.jpg"/>
-          <img src="./img/g_floors1_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors1_800x600.jpg" data-2x="./img/g_floors1_1000x750.jpg"/>
-          <img src="./img/g_floors2_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors2_800x600.jpg" data-2x="./img/g_floors2_1000x750.jpg"/>
-          <img src="./img/g_floors3_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors3_800x600.jpg" data-2x="./img/g_floors3_1000x750.jpg"/>
-          <img src="./img/g_floors4_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors4_800x600.jpg" data-2x="./img/g_floors4_1000x750.jpg"/>
-          <img src="./img/g_floors5_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors5_800x600.jpg" data-2x="./img/g_floors5_1000x750.jpg"/>
-          <img src="./img/g_floors6_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors6_800x600.jpg" data-2x="./img/g_floors6_1000x750.jpg"/>
-          <img src="./img/g_floors7_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors7_800x600.jpg" data-2x="./img/g_floors7_1000x750.jpg"/>
-          <img src="./img/g_floors8_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors8_800x600.jpg" data-2x="./img/g_floors8_1000x750.jpg"/>
-          <img src="./img/g_floors9_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors9_800x600.jpg" data-2x="./img/g_floors9_1000x750.jpg"/>
-          <img src="./img/g_floors10_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors10_800x600.jpg" data-2x="./img/g_floors10_1000x750.jpg"/>
-          <img src="./img/g_floors11_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors11_800x600.jpg" data-2x="./img/g_floors11_1000x750.jpg"/>
-          <img src="./img/g_floors12_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors12_800x600.jpg" data-2x="./img/g_floors12_1000x750.jpg"/>
-          <img src="./img/g_floors13_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors13_800x600.jpg" data-2x="./img/g_floors13_1000x750.jpg"/>
-          <img src="./img/g_floors14_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors14_800x600.jpg" data-2x="./img/g_floors14_1000x750.jpg"/>
-          <img src="./img/g_floors15_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors15_800x600.jpg" data-2x="./img/g_floors15_1000x750.jpg"/>
-          <img src="./img/g_floors16_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors16_800x600.jpg" data-2x="./img/g_floors16_1000x750.jpg"/>
-          <img src="./img/g_floors17_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors17_800x600.jpg" data-2x="./img/g_floors17_1000x750.jpg"/>
-          <img src="./img/g_floors18_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors18_800x600.jpg" data-2x="./img/g_floors18_1000x750.jpg"/>
-          <img src="./img/g_floors19_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors19_800x600.jpg" data-2x="./img/g_floors19_1000x750.jpg"/>
-          <img src="./img/g_floors20_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors20_800x600.jpg" data-2x="./img/g_floors20_1000x750.jpg"/>
-          <img src="./img/g_floors21_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors21_800x600.jpg" data-2x="./img/g_floors21_1000x750.jpg"/>
-          <img src="./img/g_floors22_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors22_800x600.jpg" data-2x="./img/g_floors22_1000x750.jpg"/>
-          <img src="./img/g_floors23_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors23_800x600.jpg" data-2x="./img/g_floors23_1000x750.jpg"/>
-          <img src="./img/g_floors24_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors24_800x600.jpg" data-2x="./img/g_floors24_1000x750.jpg"/>
-          <img src="./img/g_floors25_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors25_800x600.jpg" data-2x="./img/g_floors25_1000x750.jpg"/>
-          <img src="./img/g_floors26_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors26_800x600.jpg" data-2x="./img/g_floors26_1000x750.jpg"/>
-          <img src="./img/g_floors27_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors27_800x600.jpg" data-2x="./img/g_floors27_1000x750.jpg"/>
-          <img src="./img/g_floors28_400x300.jpg" data-lightbox="floors" data-1x="./img/g_floors28_800x600.jpg" data-2x="./img/g_floors28_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_floors0_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors0_800x600.jpg" data-2x="./img/g_floors0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors1_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors1_800x600.jpg" data-2x="./img/g_floors1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors2_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors2_800x600.jpg" data-2x="./img/g_floors2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors3_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors3_800x600.jpg" data-2x="./img/g_floors3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors4_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors4_800x600.jpg" data-2x="./img/g_floors4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors5_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors5_800x600.jpg" data-2x="./img/g_floors5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors6_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors6_800x600.jpg" data-2x="./img/g_floors6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors7_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors7_800x600.jpg" data-2x="./img/g_floors7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors8_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors8_800x600.jpg" data-2x="./img/g_floors8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors9_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors9_800x600.jpg" data-2x="./img/g_floors9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors10_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors10_800x600.jpg" data-2x="./img/g_floors10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors11_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors11_800x600.jpg" data-2x="./img/g_floors11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors12_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors12_800x600.jpg" data-2x="./img/g_floors12_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors13_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors13_800x600.jpg" data-2x="./img/g_floors13_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors14_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors14_800x600.jpg" data-2x="./img/g_floors14_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors15_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors15_800x600.jpg" data-2x="./img/g_floors15_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors16_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors16_800x600.jpg" data-2x="./img/g_floors16_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors17_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors17_800x600.jpg" data-2x="./img/g_floors17_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors18_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors18_800x600.jpg" data-2x="./img/g_floors18_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors19_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors19_800x600.jpg" data-2x="./img/g_floors19_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors20_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors20_800x600.jpg" data-2x="./img/g_floors20_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors21_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors21_800x600.jpg" data-2x="./img/g_floors21_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors22_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors22_800x600.jpg" data-2x="./img/g_floors22_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors23_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors23_800x600.jpg" data-2x="./img/g_floors23_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors24_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors24_800x600.jpg" data-2x="./img/g_floors24_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors25_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors25_800x600.jpg" data-2x="./img/g_floors25_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors26_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors26_800x600.jpg" data-2x="./img/g_floors26_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors27_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors27_800x600.jpg" data-2x="./img/g_floors27_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors28_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors28_800x600.jpg" data-2x="./img/g_floors28_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors29_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors29_800x600.jpg" data-2x="./img/g_floors29_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors30_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors30_800x600.jpg" data-2x="./img/g_floors30_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_floors31_800x600.jpg" width="800" height="600" data-lightbox="floors" data-1x="./img/g_floors31_800x600.jpg" data-2x="./img/g_floors31_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_kitchen0_400x300.jpg" data-lightbox="kitchen" data-1x="./img/g_kitchen0_800x600.jpg" data-2x="./img/g_kitchen0_1000x750.jpg"/>
-          <img src="./img/g_kitchen1_400x300.jpg" data-lightbox="kitchen" data-1x="./img/g_kitchen1_800x600.jpg" data-2x="./img/g_kitchen1_1000x750.jpg"/>
-          <img src="./img/g_kitchen2_400x300.jpg" data-lightbox="kitchen" data-1x="./img/g_kitchen2_800x600.jpg" data-2x="./img/g_kitchen2_1000x750.jpg"/>
-          <img src="./img/g_kitchen3_400x300.jpg" data-lightbox="kitchen" data-1x="./img/g_kitchen3_800x600.jpg" data-2x="./img/g_kitchen3_1000x750.jpg"/>
-          <img src="./img/g_kitchen4_400x300.jpg" data-lightbox="kitchen" data-1x="./img/g_kitchen4_800x600.jpg" data-2x="./img/g_kitchen4_1000x750.jpg"/>
-          <img src="./img/g_kitchen5_400x300.jpg" data-lightbox="kitchen" data-1x="./img/g_kitchen5_800x600.jpg" data-2x="./img/g_kitchen5_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_kitchen0_800x600.jpg" width="800" height="600" data-lightbox="kitchen" data-1x="./img/g_kitchen0_800x600.jpg" data-2x="./img/g_kitchen0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_kitchen1_800x600.jpg" width="800" height="600" data-lightbox="kitchen" data-1x="./img/g_kitchen1_800x600.jpg" data-2x="./img/g_kitchen1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_kitchen2_800x600.jpg" width="800" height="600" data-lightbox="kitchen" data-1x="./img/g_kitchen2_800x600.jpg" data-2x="./img/g_kitchen2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_kitchen3_800x600.jpg" width="800" height="600" data-lightbox="kitchen" data-1x="./img/g_kitchen3_800x600.jpg" data-2x="./img/g_kitchen3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_kitchen4_800x600.jpg" width="800" height="600" data-lightbox="kitchen" data-1x="./img/g_kitchen4_800x600.jpg" data-2x="./img/g_kitchen4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_kitchen5_800x600.jpg" width="800" height="600" data-lightbox="kitchen" data-1x="./img/g_kitchen5_800x600.jpg" data-2x="./img/g_kitchen5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_kitchen6_800x600.jpg" width="800" height="600" data-lightbox="kitchen" data-1x="./img/g_kitchen6_800x600.jpg" data-2x="./img/g_kitchen6_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_woodwork0_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork0_800x600.jpg" data-2x="./img/g_woodwork0_1000x750.jpg"/>
-          <img src="./img/g_woodwork1_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork1_800x600.jpg" data-2x="./img/g_woodwork1_1000x750.jpg"/>
-          <img src="./img/g_woodwork2_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork2_800x600.jpg" data-2x="./img/g_woodwork2_1000x750.jpg"/>
-          <img src="./img/g_woodwork3_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork3_800x600.jpg" data-2x="./img/g_woodwork3_1000x750.jpg"/>
-          <img src="./img/g_woodwork4_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork4_800x600.jpg" data-2x="./img/g_woodwork4_1000x750.jpg"/>
-          <img src="./img/g_woodwork5_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork5_800x600.jpg" data-2x="./img/g_woodwork5_1000x750.jpg"/>
-          <img src="./img/g_woodwork6_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork6_800x600.jpg" data-2x="./img/g_woodwork6_1000x750.jpg"/>
-          <img src="./img/g_woodwork7_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork7_800x600.jpg" data-2x="./img/g_woodwork7_1000x750.jpg"/>
-          <img src="./img/g_woodwork8_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork8_800x600.jpg" data-2x="./img/g_woodwork8_1000x750.jpg"/>
-          <img src="./img/g_woodwork9_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork9_800x600.jpg" data-2x="./img/g_woodwork9_1000x750.jpg"/>
-          <img src="./img/g_woodwork10_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork10_800x600.jpg" data-2x="./img/g_woodwork10_1000x750.jpg"/>
-          <img src="./img/g_woodwork11_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork11_800x600.jpg" data-2x="./img/g_woodwork11_1000x750.jpg"/>
-          <img src="./img/g_woodwork12_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork12_800x600.jpg" data-2x="./img/g_woodwork12_1000x750.jpg"/>
-          <img src="./img/g_woodwork13_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork13_800x600.jpg" data-2x="./img/g_woodwork13_1000x750.jpg"/>
-          <img src="./img/g_woodwork14_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork14_800x600.jpg" data-2x="./img/g_woodwork14_1000x750.jpg"/>
-          <img src="./img/g_woodwork15_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork15_800x600.jpg" data-2x="./img/g_woodwork15_1000x750.jpg"/>
-          <img src="./img/g_woodwork16_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork16_800x600.jpg" data-2x="./img/g_woodwork16_1000x750.jpg"/>
-          <img src="./img/g_woodwork17_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork17_800x600.jpg" data-2x="./img/g_woodwork17_1000x750.jpg"/>
-          <img src="./img/g_woodwork18_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork18_800x600.jpg" data-2x="./img/g_woodwork18_1000x750.jpg"/>
-          <img src="./img/g_woodwork19_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork19_800x600.jpg" data-2x="./img/g_woodwork19_1000x750.jpg"/>
-          <img src="./img/g_woodwork20_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork20_800x600.jpg" data-2x="./img/g_woodwork20_1000x750.jpg"/>
-          <img src="./img/g_woodwork21_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork21_800x600.jpg" data-2x="./img/g_woodwork21_1000x750.jpg"/>
-          <img src="./img/g_woodwork22_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork22_800x600.jpg" data-2x="./img/g_woodwork22_1000x750.jpg"/>
-          <img src="./img/g_woodwork23_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork23_800x600.jpg" data-2x="./img/g_woodwork23_1000x750.jpg"/>
-          <img src="./img/g_woodwork24_400x300.jpg" data-lightbox="woodwork" data-1x="./img/g_woodwork24_800x600.jpg" data-2x="./img/g_woodwork24_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_woodwork0_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork0_800x600.jpg" data-2x="./img/g_woodwork0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork1_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork1_800x600.jpg" data-2x="./img/g_woodwork1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork2_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork2_800x600.jpg" data-2x="./img/g_woodwork2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork3_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork3_800x600.jpg" data-2x="./img/g_woodwork3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork4_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork4_800x600.jpg" data-2x="./img/g_woodwork4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork5_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork5_800x600.jpg" data-2x="./img/g_woodwork5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork6_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork6_800x600.jpg" data-2x="./img/g_woodwork6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork7_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork7_800x600.jpg" data-2x="./img/g_woodwork7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork8_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork8_800x600.jpg" data-2x="./img/g_woodwork8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork9_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork9_800x600.jpg" data-2x="./img/g_woodwork9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork10_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork10_800x600.jpg" data-2x="./img/g_woodwork10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork11_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork11_800x600.jpg" data-2x="./img/g_woodwork11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork12_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork12_800x600.jpg" data-2x="./img/g_woodwork12_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork13_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork13_800x600.jpg" data-2x="./img/g_woodwork13_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork14_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork14_800x600.jpg" data-2x="./img/g_woodwork14_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork15_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork15_800x600.jpg" data-2x="./img/g_woodwork15_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork16_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork16_800x600.jpg" data-2x="./img/g_woodwork16_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork17_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork17_800x600.jpg" data-2x="./img/g_woodwork17_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork18_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork18_800x600.jpg" data-2x="./img/g_woodwork18_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork19_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork19_800x600.jpg" data-2x="./img/g_woodwork19_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork20_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork20_800x600.jpg" data-2x="./img/g_woodwork20_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork21_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork21_800x600.jpg" data-2x="./img/g_woodwork21_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork22_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork22_800x600.jpg" data-2x="./img/g_woodwork22_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork23_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork23_800x600.jpg" data-2x="./img/g_woodwork23_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork24_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork24_800x600.jpg" data-2x="./img/g_woodwork24_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork25_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork25_800x600.jpg" data-2x="./img/g_woodwork25_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork26_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork26_800x600.jpg" data-2x="./img/g_woodwork26_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork27_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork27_800x600.jpg" data-2x="./img/g_woodwork27_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork28_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork28_800x600.jpg" data-2x="./img/g_woodwork28_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork29_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork29_800x600.jpg" data-2x="./img/g_woodwork29_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork30_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork30_800x600.jpg" data-2x="./img/g_woodwork30_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_woodwork31_800x600.jpg" width="800" height="600" data-lightbox="woodwork" data-1x="./img/g_woodwork31_800x600.jpg" data-2x="./img/g_woodwork31_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_commercial0_400x300.jpg" data-lightbox="commercial" data-1x="./img/g_commercial0_800x600.jpg" data-2x="./img/g_commercial0_1000x750.jpg"/>
-          <img src="./img/g_commercial1_400x300.jpg" data-lightbox="commercial" data-1x="./img/g_commercial1_800x600.jpg" data-2x="./img/g_commercial1_1000x750.jpg"/>
-          <img src="./img/g_commercial2_400x300.jpg" data-lightbox="commercial" data-1x="./img/g_commercial2_800x600.jpg" data-2x="./img/g_commercial2_1000x750.jpg"/>
-          <img src="./img/g_commercial3_400x300.jpg" data-lightbox="commercial" data-1x="./img/g_commercial3_800x600.jpg" data-2x="./img/g_commercial3_1000x750.jpg"/>
-          <img src="./img/g_commercial4_400x300.jpg" data-lightbox="commercial" data-1x="./img/g_commercial4_800x600.jpg" data-2x="./img/g_commercial4_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_commercial0_800x600.jpg" width="800" height="600" data-lightbox="commercial" data-1x="./img/g_commercial0_800x600.jpg" data-2x="./img/g_commercial0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_commercial1_800x600.jpg" width="800" height="600" data-lightbox="commercial" data-1x="./img/g_commercial1_800x600.jpg" data-2x="./img/g_commercial1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_commercial2_800x600.jpg" width="800" height="600" data-lightbox="commercial" data-1x="./img/g_commercial2_800x600.jpg" data-2x="./img/g_commercial2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_commercial3_800x600.jpg" width="800" height="600" data-lightbox="commercial" data-1x="./img/g_commercial3_800x600.jpg" data-2x="./img/g_commercial3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_commercial4_800x600.jpg" width="800" height="600" data-lightbox="commercial" data-1x="./img/g_commercial4_800x600.jpg" data-2x="./img/g_commercial4_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_outdoor0_400x300.jpg" data-lightbox="outdoor" data-1x="./img/g_outdoor0_800x600.jpg" data-2x="./img/g_outdoor0_1000x750.jpg"/>
-          <img src="./img/g_outdoor1_400x300.jpg" data-lightbox="outdoor" data-1x="./img/g_outdoor1_800x600.jpg" data-2x="./img/g_outdoor1_1000x750.jpg"/>
-          <img src="./img/g_outdoor2_400x300.jpg" data-lightbox="outdoor" data-1x="./img/g_outdoor2_800x600.jpg" data-2x="./img/g_outdoor2_1000x750.jpg"/>
-          <img src="./img/g_outdoor3_400x300.jpg" data-lightbox="outdoor" data-1x="./img/g_outdoor3_800x600.jpg" data-2x="./img/g_outdoor3_1000x750.jpg"/>
-          <img src="./img/g_outdoor4_400x300.jpg" data-lightbox="outdoor" data-1x="./img/g_outdoor4_800x600.jpg" data-2x="./img/g_outdoor4_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_outdoor0_800x600.jpg" width="800" height="600" data-lightbox="outdoor" data-1x="./img/g_outdoor0_800x600.jpg" data-2x="./img/g_outdoor0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_outdoor1_800x600.jpg" width="800" height="600" data-lightbox="outdoor" data-1x="./img/g_outdoor1_800x600.jpg" data-2x="./img/g_outdoor1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_outdoor2_800x600.jpg" width="800" height="600" data-lightbox="outdoor" data-1x="./img/g_outdoor2_800x600.jpg" data-2x="./img/g_outdoor2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_outdoor3_800x600.jpg" width="800" height="600" data-lightbox="outdoor" data-1x="./img/g_outdoor3_800x600.jpg" data-2x="./img/g_outdoor3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_outdoor4_800x600.jpg" width="800" height="600" data-lightbox="outdoor" data-1x="./img/g_outdoor4_800x600.jpg" data-2x="./img/g_outdoor4_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_marble0_400x300.jpg" data-lightbox="marble" data-1x="./img/g_marble0_800x600.jpg" data-2x="./img/g_marble0_1000x750.jpg"/>
-          <img src="./img/g_marble1_400x300.jpg" data-lightbox="marble" data-1x="./img/g_marble1_800x600.jpg" data-2x="./img/g_marble1_1000x750.jpg"/>
-          <img src="./img/g_marble2_400x300.jpg" data-lightbox="marble" data-1x="./img/g_marble2_800x600.jpg" data-2x="./img/g_marble2_1000x750.jpg"/>
-          <img src="./img/g_marble3_400x300.jpg" data-lightbox="marble" data-1x="./img/g_marble3_800x600.jpg" data-2x="./img/g_marble3_1000x750.jpg"/>
-          <img src="./img/g_marble4_400x300.jpg" data-lightbox="marble" data-1x="./img/g_marble4_800x600.jpg" data-2x="./img/g_marble4_1000x750.jpg"/>
-          <img src="./img/g_marble5_400x300.jpg" data-lightbox="marble" data-1x="./img/g_marble5_800x600.jpg" data-2x="./img/g_marble5_1000x750.jpg"/>
-          <img src="./img/g_marble6_400x300.jpg" data-lightbox="marble" data-1x="./img/g_marble6_800x600.jpg" data-2x="./img/g_marble6_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_marble0_800x600.jpg" width="800" height="600" data-lightbox="marble" data-1x="./img/g_marble0_800x600.jpg" data-2x="./img/g_marble0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_marble1_800x600.jpg" width="800" height="600" data-lightbox="marble" data-1x="./img/g_marble1_800x600.jpg" data-2x="./img/g_marble1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_marble2_800x600.jpg" width="800" height="600" data-lightbox="marble" data-1x="./img/g_marble2_800x600.jpg" data-2x="./img/g_marble2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_marble3_800x600.jpg" width="800" height="600" data-lightbox="marble" data-1x="./img/g_marble3_800x600.jpg" data-2x="./img/g_marble3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_marble4_800x600.jpg" width="800" height="600" data-lightbox="marble" data-1x="./img/g_marble4_800x600.jpg" data-2x="./img/g_marble4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_marble5_800x600.jpg" width="800" height="600" data-lightbox="marble" data-1x="./img/g_marble5_800x600.jpg" data-2x="./img/g_marble5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_marble6_800x600.jpg" width="800" height="600" data-lightbox="marble" data-1x="./img/g_marble6_800x600.jpg" data-2x="./img/g_marble6_1000x750.jpg"/>
         </div>
 
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_foundations0_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations0_800x600.jpg" data-2x="./img/g_foundations0_1000x750.jpg"/>
-          <img src="./img/g_foundations1_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations1_800x600.jpg" data-2x="./img/g_foundations1_1000x750.jpg"/>
-          <img src="./img/g_foundations2_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations2_800x600.jpg" data-2x="./img/g_foundations2_1000x750.jpg"/>
-          <img src="./img/g_foundations3_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations3_800x600.jpg" data-2x="./img/g_foundations3_1000x750.jpg"/>
-          <img src="./img/g_foundations4_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations4_800x600.jpg" data-2x="./img/g_foundations4_1000x750.jpg"/>
-          <img src="./img/g_foundations5_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations5_800x600.jpg" data-2x="./img/g_foundations5_1000x750.jpg"/>
-          <img src="./img/g_foundations6_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations6_800x600.jpg" data-2x="./img/g_foundations6_1000x750.jpg"/>
-          <img src="./img/g_foundations7_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations7_800x600.jpg" data-2x="./img/g_foundations7_1000x750.jpg"/>
-          <img src="./img/g_foundations8_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations8_800x600.jpg" data-2x="./img/g_foundations8_1000x750.jpg"/>
-          <img src="./img/g_foundations9_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations9_800x600.jpg" data-2x="./img/g_foundations9_1000x750.jpg"/>
-          <img src="./img/g_foundations10_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations10_800x600.jpg" data-2x="./img/g_foundations10_1000x750.jpg"/>
-          <img src="./img/g_foundations11_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations11_800x600.jpg" data-2x="./img/g_foundations11_1000x750.jpg"/>
-          <img src="./img/g_foundations12_400x300.jpg" data-lightbox="foundations" data-1x="./img/g_foundations12_800x600.jpg" data-2x="./img/g_foundations12_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_foundations0_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations0_800x600.jpg" data-2x="./img/g_foundations0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations1_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations1_800x600.jpg" data-2x="./img/g_foundations1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations2_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations2_800x600.jpg" data-2x="./img/g_foundations2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations3_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations3_800x600.jpg" data-2x="./img/g_foundations3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations4_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations4_800x600.jpg" data-2x="./img/g_foundations4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations5_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations5_800x600.jpg" data-2x="./img/g_foundations5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations6_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations6_800x600.jpg" data-2x="./img/g_foundations6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations7_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations7_800x600.jpg" data-2x="./img/g_foundations7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations8_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations8_800x600.jpg" data-2x="./img/g_foundations8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations9_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations9_800x600.jpg" data-2x="./img/g_foundations9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations10_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations10_800x600.jpg" data-2x="./img/g_foundations10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations11_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations11_800x600.jpg" data-2x="./img/g_foundations11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_foundations12_800x600.jpg" width="800" height="600" data-lightbox="foundations" data-1x="./img/g_foundations12_800x600.jpg" data-2x="./img/g_foundations12_1000x750.jpg"/>
         </div>
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_archways0_400x300.jpg" data-lightbox="archways" data-1x="./img/g_archways0_800x600.jpg" data-2x="./img/g_archways0_1000x750.jpg"/>
-          <img src="./img/g_archways1_400x300.jpg" data-lightbox="archways" data-1x="./img/g_archways1_800x600.jpg" data-2x="./img/g_archways1_1000x750.jpg"/>
-          <img src="./img/g_archways2_400x300.jpg" data-lightbox="archways" data-1x="./img/g_archways2_800x600.jpg" data-2x="./img/g_archways2_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_archways0_800x600.jpg" width="800" height="600" data-lightbox="archways" data-1x="./img/g_archways0_800x600.jpg" data-2x="./img/g_archways0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_archways1_800x600.jpg" width="800" height="600" data-lightbox="archways" data-1x="./img/g_archways1_800x600.jpg" data-2x="./img/g_archways1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_archways2_800x600.jpg" width="800" height="600" data-lightbox="archways" data-1x="./img/g_archways2_800x600.jpg" data-2x="./img/g_archways2_1000x750.jpg"/>
         </div>
-        <div class="lightboxgallery hisrc">
-          <img src="./img/g_lighting0_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting0_800x600.jpg" data-2x="./img/g_lighting0_1000x750.jpg"/>
-          <img src="./img/g_lighting1_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting1_800x600.jpg" data-2x="./img/g_lighting1_1000x750.jpg"/>
-          <img src="./img/g_lighting2_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting2_800x600.jpg" data-2x="./img/g_lighting2_1000x750.jpg"/>
-          <img src="./img/g_lighting3_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting3_800x600.jpg" data-2x="./img/g_lighting3_1000x750.jpg"/>
-          <img src="./img/g_lighting4_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting4_800x600.jpg" data-2x="./img/g_lighting4_1000x750.jpg"/>
-          <img src="./img/g_lighting5_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting5_800x600.jpg" data-2x="./img/g_lighting5_1000x750.jpg"/>
-          <img src="./img/g_lighting6_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting6_800x600.jpg" data-2x="./img/g_lighting6_1000x750.jpg"/>
-          <img src="./img/g_lighting7_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting7_800x600.jpg" data-2x="./img/g_lighting7_1000x750.jpg"/>
-          <img src="./img/g_lighting8_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting8_800x600.jpg" data-2x="./img/g_lighting8_1000x750.jpg"/>
-          <img src="./img/g_lighting9_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting9_800x600.jpg" data-2x="./img/g_lighting9_1000x750.jpg"/>
-          <img src="./img/g_lighting10_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting10_800x600.jpg" data-2x="./img/g_lighting10_1000x750.jpg"/>
-          <img src="./img/g_lighting11_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting11_800x600.jpg" data-2x="./img/g_lighting11_1000x750.jpg"/>
-          <img src="./img/g_lighting12_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting12_800x600.jpg" data-2x="./img/g_lighting12_1000x750.jpg"/>
-          <img src="./img/g_lighting13_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting13_800x600.jpg" data-2x="./img/g_lighting13_1000x750.jpg"/>
-          <img src="./img/g_lighting14_400x300.jpg" data-lightbox="lighting" data-1x="./img/g_lighting14_800x600.jpg" data-2x="./img/g_lighting14_1000x750.jpg"/>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_lighting0_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting0_800x600.jpg" data-2x="./img/g_lighting0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting1_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting1_800x600.jpg" data-2x="./img/g_lighting1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting2_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting2_800x600.jpg" data-2x="./img/g_lighting2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting3_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting3_800x600.jpg" data-2x="./img/g_lighting3_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting4_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting4_800x600.jpg" data-2x="./img/g_lighting4_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting5_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting5_800x600.jpg" data-2x="./img/g_lighting5_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting6_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting6_800x600.jpg" data-2x="./img/g_lighting6_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting7_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting7_800x600.jpg" data-2x="./img/g_lighting7_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting8_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting8_800x600.jpg" data-2x="./img/g_lighting8_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting9_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting9_800x600.jpg" data-2x="./img/g_lighting9_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting10_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting10_800x600.jpg" data-2x="./img/g_lighting10_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting11_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting11_800x600.jpg" data-2x="./img/g_lighting11_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting12_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting12_800x600.jpg" data-2x="./img/g_lighting12_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting13_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting13_800x600.jpg" data-2x="./img/g_lighting13_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting14_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting14_800x600.jpg" data-2x="./img/g_lighting14_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_lighting15_800x600.jpg" width="800" height="600" data-lightbox="lighting" data-1x="./img/g_lighting15_800x600.jpg" data-2x="./img/g_lighting15_1000x750.jpg"/>
         </div>
+        <div class="lightboxgallery">
+          <img class="lazy" data-original="./img/g_balconies0_800x600.jpg" width="800" height="600" data-lightbox="balconies" data-1x="./img/g_balconies0_800x600.jpg" data-2x="./img/g_balconies0_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_balconies1_800x600.jpg" width="800" height="600" data-lightbox="balconies" data-1x="./img/g_balconies1_800x600.jpg" data-2x="./img/g_balconies1_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_balconies2_800x600.jpg" width="800" height="600" data-lightbox="balconies" data-1x="./img/g_balconies2_800x600.jpg" data-2x="./img/g_balconies2_1000x750.jpg"/>
+          <img class="lazy" data-original="./img/g_balconies3_800x600.jpg" width="800" height="600" data-lightbox="balconies" data-1x="./img/g_balconies3_800x600.jpg" data-2x="./img/g_balconies3_1000x750.jpg"/>
         </div>
-
         
         
         <script src="./js/vendor/bootstrap.min.js"></script>
-        <script src="./js/vendor/lightbox.js"></script>
-        <script src="./js/plugins.js"></script>
+        <!--<script src="./js/vendor/jquery.mobile.custom.min.js"></script>-->
+        <script src="./js/vendor/lightbox_cstm.min.js"></script>
         <script src="./js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -1,5 +1,5 @@
 app.preferences.rulerUnits = Units.PIXELS;
-var dir = "//vboxsvr/BrazConstruction/imgStore4/",
+var dir = "//vboxsvr/BrazConstruction/imgStore_29032015/",
     folderObj = Folder(dir),
     files = folderObj.getFiles("*"),
     fileRef, docRef, strFileName, newFileName;
@@ -15,7 +15,7 @@ for (var i = 0; i < files.length; ++i){
     jpgSaveOptions = new JPEGSaveOptions();
     jpgSaveOptions.formatOptions = FormatOptions.OPTIMIZEDBASELINE;
     jpgSaveOptions.matte = MatteType.NONE;
-    jpgSaveOptions.quality = 12;
+    jpgSaveOptions.quality = 8;
 
     docRef.resizeImage(UnitValue(1000,"px"),UnitValue(750,"px"));
     newFileName = strFileName.replace(".jpeg", "_1000x750.jpg");
